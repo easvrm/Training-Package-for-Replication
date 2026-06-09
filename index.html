@@ -132,9 +132,11 @@
   .nb-note{font-size:14px;color:var(--text-muted);font-style:italic;padding:12px 16px;background:var(--bg);border-left:3px solid var(--teal-mid);margin:16px 0;border-radius:0 6px 6px 0;font-family:var(--font-ui);line-height:1.55}
   .nb-note strong{color:var(--navy);font-style:normal}
   .placeholder-body{font-style:italic;color:var(--text-light);font-size:14.5px;font-family:var(--font-ui)}
-  .sub-section-body ul{margin:10px 0 16px;padding-left:24px;font-family:var(--font-ui);font-size:15px;line-height:1.6;color:var(--text)}
-  .sub-section-body ul li{margin-bottom:6px}
-  .sub-section-body ul ul{margin:6px 0 6px 4px;padding-left:22px}
+  .sub-section-body ul{margin:10px 0 16px;padding-left:0;list-style:none;font-family:var(--font-ui);font-size:15px;line-height:1.6;color:var(--text)}
+  .sub-section-body ul li{margin-bottom:6px;padding-left:22px;position:relative}
+  .sub-section-body ul li::before{content:"";position:absolute;left:0;top:0.58em;width:8px;height:8px;border-radius:50%;background:var(--teal);opacity:0.85}
+  .sub-section-body ul ul{margin:6px 0 6px 4px;padding-left:0}
+  .sub-section-body ul ul li::before{background:transparent;border:2px solid var(--teal-mid);opacity:1}
   .sub-section-body ul li>strong:first-child{color:var(--navy)}
 
   .breadcrumb{font-family:var(--font-ui);font-size:12px;color:var(--text-light);margin-bottom:20px;display:flex;align-items:center;gap:6px}
