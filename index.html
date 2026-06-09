@@ -346,6 +346,23 @@
   }
 
   @media(max-width:900px){:root{--sidebar-w:240px}#content{padding:32px 24px 64px}#topbar{padding:0 24px}.module-hero h1{font-size:26px}.setup-grid{grid-template-columns:1fr}}
+
+  /* === Crucial-to-remember badge beside section heading === */
+  .m-sec-head{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--teal);margin-bottom:24px;padding-bottom:10px}
+  .m-sec-head .m-section-title{flex:0 1 auto;border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .crucial-badge{height:101px;width:auto;flex:0 0 auto;align-self:center;margin-top:-46px;margin-bottom:-46px;background:var(--bg)}
+  @media(max-width:680px){.crucial-badge{height:70px;margin-top:-30px;margin-bottom:-30px}}
+
+  /* === Driver PPE & e-trike imagery === */
+  .ppe-hero{display:block;width:100%;max-width:680px;height:auto;margin:6px auto 30px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.10)}
+  .ppe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:10px auto 26px;width:70%}
+  .ppe-grid figure{margin:0}
+  .ppe-grid figure.boots-center{grid-column:1 / -1;justify-self:center;width:calc(50% - 9px)}
+  .ppe-grid img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 1px 7px rgba(0,0,0,.09)}
+  .ppe-grid figcaption{font-family:var(--font-ui);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);padding-top:8px;text-align:center}
+  .etrike-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:16px 0 6px}
+  .etrike-row img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 1px 7px rgba(0,0,0,.09)}
+  @media(max-width:680px){.ppe-grid,.etrike-row{grid-template-columns:1fr}.ppe-grid figure.boots-center{width:100%}}
 </style>
 </head>
 <body>
@@ -376,6 +393,7 @@
     <a class="nav-item" data-page="m4" onclick="showPage('m4',this)"><span class="nav-icon"><img src="img/data_innovations_manager.png" alt=""></span><span class="label">Data &amp; Innovation Managers</span><span class="nav-score" data-score="m4">—</span></a>
     <a class="nav-item" data-page="m5" onclick="showPage('m5',this)"><span class="nav-icon"><img src="img/finance_manager.png" alt=""></span><span class="label">Finance Managers</span><span class="nav-score" data-score="m5">—</span></a>
     <a class="nav-item" data-page="m6" onclick="showPage('m6',this)"><span class="nav-icon"><img src="img/hr_manager.png" alt=""></span><span class="label">HR Managers</span><span class="nav-score" data-score="m6">—</span></a>
+    <a class="nav-item" data-page="m7" onclick="showPage('m7',this)"><span class="nav-icon"><img src="img/agriculture_manager.png" alt=""></span><span class="label">Agricultural and Extension Managers</span><span class="nav-score" data-score="m7">—</span></a>
   </div>
 </nav>
 <div id="main">
@@ -422,6 +440,7 @@
       <a class="role-tile" onclick="showPage('m4',null)"><span><span class="rt-num">04</span>Data &amp; Innovation Managers</span><span>→</span></a>
       <a class="role-tile" onclick="showPage('m5',null)"><span><span class="rt-num">05</span>Finance Managers</span><span>→</span></a>
       <a class="role-tile" onclick="showPage('m6',null)"><span><span class="rt-num">06</span>HR Managers</span><span>→</span></a>
+      <a class="role-tile" onclick="showPage('m7',null)"><span><span class="rt-num">07</span>Agricultural and Extension Managers</span><span>→</span></a>
     </div>
   </div>
 </div>
@@ -450,6 +469,7 @@
           <option value="m4">Data &amp; Innovation Managers</option>
           <option value="m5">Finance Managers</option>
           <option value="m6">HR Managers</option>
+          <option value="m7">Agricultural and Extension Managers</option>
         </select></label>
         <label>Hub Station<input type="text" id="profile-hub" autocomplete="off" placeholder="e.g. Kisii"/></label>
         <label>Email (optional)<input type="email" id="profile-email" autocomplete="off" placeholder="you@songa.mobi"/></label>
@@ -890,7 +910,10 @@
   </section>
 
   <section class="m-section" id="s-m1-01">
-    <h2 class="m-section-title">01. Your Role as a SONGA Driver</h2>
+    <div class="m-sec-head">
+      <h2 class="m-section-title">01. Your Role as a SONGA Driver</h2>
+      <img class="crucial-badge" src="img/Crucial_to_Remeber_Logo.png" alt="Crucial to remember"/>
+    </div>
 
 <div class="sub-section">
       <div class="sub-section-h">Your Mission as a Driver</div>
@@ -1026,6 +1049,8 @@
   <section class="m-section" id="s-m1-03">
     <h2 class="m-section-title">03. Personal Protective Equipment (PPE)</h2>
 
+    <img class="ppe-hero" src="img/Driver_PPE_Overall.png" alt="A SONGA driver in full personal protective equipment"/>
+
     <div class="sub-section">
       <div class="sub-section-h">Helmets and Safety Boots</div>
       <div class="sub-section-body">
@@ -1038,6 +1063,14 @@
       <div class="sub-section-body">
         <p>Drivers must wear protective gear, such as gloves, chest guard, and jackets, to enhance safety.</p>
       </div>
+    </div>
+
+    <div class="ppe-grid">
+      <figure><img src="img/Driver_Helmet.png" alt="Helmet"/><figcaption>Helmet</figcaption></figure>
+      <figure><img src="img/Driver_Reflector_Jacket.png" alt="Reflector jacket"/><figcaption>Reflector Jacket</figcaption></figure>
+      <figure><img src="img/Driver_Chest_Guard.png" alt="Chest guard"/><figcaption>Chest Guard</figcaption></figure>
+      <figure><img src="img/Driver_Gloves.png" alt="Gloves"/><figcaption>Gloves</figcaption></figure>
+      <figure class="boots-center"><img src="img/Driver_Safety_Boots.png" alt="Safety boots"/><figcaption>Safety Boots</figcaption></figure>
     </div>
 
     <div class="sub-section">
@@ -1068,6 +1101,10 @@
       <div class="sub-section-h">What Is an E-Trike?</div>
       <div class="sub-section-body">
         <p>The electric three-wheeler (e-trike) is your primary tool. It is battery-powered, quiet, and designed for rural terrain and produce transport.</p>
+        <div class="etrike-row">
+          <img src="img/e-trike_1.png" alt="SONGA e-trike"/>
+          <img src="img/e-trike_2.png" alt="SONGA e-trike"/>
+        </div>
         <div class="stat-grid">
           <div class="stat-card"><div class="stat-num">72V <small>51Ah</small></div><div class="stat-label">Lithium-ion battery pack</div></div>
           <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Gears — Low, Medium, High</div></div>
@@ -4580,39 +4617,111 @@
   </div>
 
   <nav class="section-nav" aria-label="Sections in this module">
-    <div class="section-nav-head">Sections in this module (13)</div>
+    <div class="section-nav-head">Sections in this module (7)</div>
     <ol class="section-nav-list">
-      <li><a data-jump="s-m5-00"><span class="sn-num">00</span>General Structure and Instructions</a></li>
-      <li><a data-jump="s-m5-01"><span class="sn-num">01</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-02"><span class="sn-num">02</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-03"><span class="sn-num">03</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-04"><span class="sn-num">04</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-05"><span class="sn-num">05</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-06"><span class="sn-num">06</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-07"><span class="sn-num">07</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-08"><span class="sn-num">08</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-09"><span class="sn-num">09</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-10"><span class="sn-num">10</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-11"><span class="sn-num">11</span>[Section title]</a></li>
-      <li><a data-jump="s-m5-12"><span class="sn-num">12</span>Assessment</a></li>
+      <li><a data-jump="s-m5-00"><span class="sn-num">00</span>Programme Overview</a></li>
+      <li><a data-jump="s-m5-01"><span class="sn-num">01</span>Your Role as a Finance Manager</a></li>
+      <li><a data-jump="s-m5-02"><span class="sn-num">02</span>Understanding the Business Model</a></li>
+      <li><a data-jump="s-m5-03"><span class="sn-num">03</span>Asset Management</a></li>
+      <li><a data-jump="s-m5-04"><span class="sn-num">04</span>Transaction Management</a></li>
+      <li><a data-jump="s-m5-05"><span class="sn-num">05</span>Budget Management</a></li>
+      <li><a data-jump="s-m5-06"><span class="sn-num">06</span>Assessment</a></li>
     </ol>
   </nav>
 
-  <section class="m-section" id="s-m5-00"><h2 class="m-section-title">General Structure and Instructions</h2><div class="sub-section"><div class="sub-section-h">How to use this module</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-01"><h2 class="m-section-title">01. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-02"><h2 class="m-section-title">02. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-03"><h2 class="m-section-title">03. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-04"><h2 class="m-section-title">04. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-05"><h2 class="m-section-title">05. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-06"><h2 class="m-section-title">06. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-07"><h2 class="m-section-title">07. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-08"><h2 class="m-section-title">08. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-09"><h2 class="m-section-title">09. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-10"><h2 class="m-section-title">10. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
-  <section class="m-section" id="s-m5-11"><h2 class="m-section-title">11. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m5-00"><h2 class="m-section-title">00. Programme Overview</h2><div class="sub-section"><div class="sub-section-h">Overview</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m5-01"><h2 class="m-section-title">01. Your Role as a Finance Manager</h2><div class="sub-section"><div class="sub-section-h">Overview</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
 
-  <section class="m-section" id="s-m5-12">
-    <h2 class="m-section-title">12. Assessment</h2>
+  <section class="m-section" id="s-m5-02">
+    <h2 class="m-section-title">02. Understanding the Business Model</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">The Dairy Value Chain: Buy, Aggregate, Sell</div>
+      <div class="sub-section-body">
+        <p>Songa, through its operating company (OpCo), buys milk from farmers at <strong>41.00 KES/litre</strong> and sells it to the processor (e.g. New KCC) at <strong>47.00 KES/litre</strong>, a gross spread of <strong>6.00 KES/litre</strong>. The margin between the farm-gate price and the offtake price is held constant even as prices move, which keeps the system predictable for everyone in the chain.</p>
+        <p>After milk losses of up to 1% (=<strong>0.47 KES/litre</strong>), the net gross commission is <strong>5.53 KES/litre</strong>. This is the pool that funds the whole system, and it is shared across the four roles that keep milk moving from farm to processor.</p>
+      </div>
+    </div>
+
+    <figure class="doc-screenshot" style="margin:8px 0 24px">
+      <img src="img/songa_unit_economics_milk.png" alt="Songa unit economics per litre of milk — gross spread, net commission pool, and how net margin is split across Driver, OpCo, AssetCo and Platform" style="width:100%;max-width:960px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+      <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Songa unit economics, per litre of milk — illustrative working-model figures (BP&nbsp;–&nbsp;SONGA 2026), Kilgoris dairy value chain, in KES.</figcaption>
+    </figure>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Headline Economics (per litre of milk)</div>
+      <div class="sub-section-body">
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-num"><small>KES</small> 41.00</div><div class="stat-label">Farm-gate price paid to farmers</div></div>
+          <div class="stat-card"><div class="stat-num"><small>KES</small> 47.00</div><div class="stat-label">Offtake price paid by the processor</div></div>
+          <div class="stat-card"><div class="stat-num"><small>KES</small> 6.00</div><div class="stat-label">Gross spread per litre</div></div>
+          <div class="stat-card gold"><div class="stat-num"><small>KES</small> 5.53</div><div class="stat-label">Net commission pool after ~1% losses (0.47)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">How the Commission Pool Is Split</div>
+      <div class="sub-section-body">
+        <p>The 5.53 KES/litre commission — plus the payments the driver makes back to the hub — is split across four roles: the driver, the operating company (OpCo), the battery asset company (AssetCo), and the platform (PlatformCo&nbsp;/&nbsp;Songa).</p>
+        <div class="feature-grid">
+          <div class="feature-card"><div class="fc-icon">🛺</div><h4>Driver — net 0.85 → 1.74</h4><p>Receives a commission of 2.80 KES/litre, out of which the driver covers their own vehicle and energy costs: trike lease repayment 0.90, maintenance 0.15, insurance 0.10, and battery + energy (swap tariff) 0.81 — about 1.95 in total. That leaves a net 0.85 KES/litre during lease repayment, rising to 1.74 once the trike is paid off.</p></div>
+          <div class="feature-card"><div class="fc-icon">🏢</div><h4>OpCo — net 1.00</h4><p>Keeps the milk commission (5.53) plus the driver's maintenance and battery-swap payments (~0.96), and pays out driver commission (2.80), spare parts (0.03), hub OPEX (0.64), hub repayment (0.69) and hub maintenance (0.07). That nets a gross 2.25, and after paying AssetCo and PlatformCo, a net ~1.00 KES/litre during hub repayment.</p></div>
+          <div class="feature-card"><div class="fc-icon">🔋</div><h4>AssetCo — 0.26</h4><p>The battery asset company earns the battery-cycle cost of ~0.26 KES/litre, covering swap leasing and financing of the battery fleet.</p></div>
+          <div class="feature-card"><div class="fc-icon">📲</div><h4>Platform / Songa — 1.00</h4><p>PlatformCo charges a platform licensing fee of 1.00 KES/litre. This is Songa's clean platform-layer take.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">From Litre to Hub: Scaling the Numbers</div>
+      <div class="sub-section-body">
+        <p>Each driver collects up to <strong>500 litres/day</strong>, so the driver earns roughly <strong>423 KES/day (≈ 12,688 KES/month)</strong> during repayment, and <strong>871 KES/day (≈ 26,132 KES/month)</strong> once the trike is paid off.</p>
+        <p>A hub runs <strong>20 trikes ≈ 10,000 litres/day</strong>, serving roughly <strong>3,000 farms / 21,000 people</strong>. At that volume:</p>
+        <ul>
+          <li><strong>OpCo net:</strong> ~9,960 KES/day (~298,800 KES/month) during hub repayment, rising to ~16,830 KES/day (~504,900 KES/month) after.</li>
+          <li><strong>Songa / Platform net:</strong> 10,000 KES/day (~300,000 KES/month) per hub, from the 1 KES/litre licensing fee.</li>
+        </ul>
+        <div class="nb-note"><strong>N/B:</strong> These figures are specific to the dairy value chain in Kilgoris (in partnership with New KCC). Read them as <strong>illustrative</strong> rather than as the rate card for all other partners within and outside Kenya.</div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Upfront CAPEX and How It Is Recovered</div>
+      <div class="sub-section-body">
+        <p>Songa's upfront CAPEX has three components, all recovered through the commission over time:</p>
+        <ul>
+          <li><strong>Hub:</strong> solar generation + battery-swap / charging infrastructure — the largest fixed cost, shared across the fleet on a route cluster.</li>
+          <li><strong>Platform:</strong> the Songa tech platform — onboarded per hub, with low marginal cost per additional vehicle, and the layer that generates the operating data.</li>
+          <li><strong>Vehicles:</strong> the eTrike fleet, financed on lease-to-own so the capital sits against a contracted offtake rather than against the farmer.</li>
+        </ul>
+        <p>Breakeven is reached at roughly <strong>50% of capacity / utilisation</strong>.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>Songa buys milk at 41 KES/L and sells at 47 KES/L — a gross spread of 6 KES/L; the farm-gate-to-offtake margin is held constant even as prices move.</li>
+          <li>After ~1% losses (0.47 KES/L), the net commission pool is 5.53 KES/L — this single pool funds the whole system.</li>
+          <li>The pool (plus the driver's payments back to the hub) is split four ways: Driver, OpCo, AssetCo, and PlatformCo / Songa.</li>
+          <li>The driver nets 0.85 KES/L during lease repayment and 1.74 KES/L after the trike is paid off (≈ 12,688 → 26,132 KES/month at 500 L/day).</li>
+          <li>OpCo nets ~1.00 KES/L; AssetCo earns ~0.26 KES/L for battery cycles; PlatformCo takes a clean 1.00 KES/L licensing fee.</li>
+          <li>A 20-trike hub moves ~10,000 L/day, serving ~3,000 farms / ~21,000 people; OpCo nets ~298,800 → 504,900 KES/month and Songa ~300,000 KES/month per hub.</li>
+          <li>CAPEX (Hub, Platform, Vehicles) is recovered through the commission over time; breakeven is roughly 50% utilisation.</li>
+          <li>All figures are illustrative for the Kilgoris dairy chain (New KCC) — not a universal rate card for every partner or value chain.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m5-03"><h2 class="m-section-title">03. Asset Management</h2><div class="sub-section"><div class="sub-section-h">Overview</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m5-04"><h2 class="m-section-title">04. Transaction Management</h2><div class="sub-section"><div class="sub-section-h">Overview</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m5-05"><h2 class="m-section-title">05. Budget Management</h2><div class="sub-section"><div class="sub-section-h">Overview</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+
+  <section class="m-section" id="s-m5-06">
+    <h2 class="m-section-title">06. Assessment</h2>
     <section class="quiz" id="quiz-m5">
       <div class="quiz-head"><h2>Module Assessment</h2><span class="quiz-tag">Quiz</span></div>
       <p class="quiz-intro">Answer all 4 questions. Pass mark: 95% — required for a Certificate of Completion.</p>
@@ -4695,13 +4804,79 @@
   </section>
 </div>
 
+<!-- ========================================================== -->
+<!-- M7: AGRICULTURE                                             -->
+<!-- ========================================================== -->
+<div class="module-page" id="page-m7">
+  <div class="breadcrumb"><a onclick="showPage('home',null)">Home</a> › Module 7 · Agricultural and Extension Managers</div>
+  <div class="module-hero">
+    <div class="module-tag" data-mod-tag="m7">Module 07</div>
+    <h1>Agricultural and Extension Managers</h1>
+    <p class="lead">[Lead paragraph — what agriculture managers learn: farmer onboarding &amp; relations, value-chain &amp; crop coordination, aggregation quality, agronomy support, and field data.]</p>
+    <div class="module-status" data-status="m7"></div>
+    <div class="read-progress">
+      <div class="read-progress-label"><span>Reading progress</span><span class="pct" data-readpct="m7">0%</span></div>
+      <div class="read-progress-bar"><div class="read-progress-fill" data-readfill="m7"></div></div>
+    </div>
+  </div>
+
+  <nav class="section-nav" aria-label="Sections in this module">
+    <div class="section-nav-head">Sections in this module (13)</div>
+    <ol class="section-nav-list">
+      <li><a data-jump="s-m7-00"><span class="sn-num">00</span>General Structure and Instructions</a></li>
+      <li><a data-jump="s-m7-01"><span class="sn-num">01</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-02"><span class="sn-num">02</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-03"><span class="sn-num">03</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-04"><span class="sn-num">04</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-05"><span class="sn-num">05</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-06"><span class="sn-num">06</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-07"><span class="sn-num">07</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-08"><span class="sn-num">08</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-09"><span class="sn-num">09</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-10"><span class="sn-num">10</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-11"><span class="sn-num">11</span>[Section title]</a></li>
+      <li><a data-jump="s-m7-12"><span class="sn-num">12</span>Assessment</a></li>
+    </ol>
+  </nav>
+
+  <section class="m-section" id="s-m7-00"><h2 class="m-section-title">General Structure and Instructions</h2><div class="sub-section"><div class="sub-section-h">How to use this module</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-01"><h2 class="m-section-title">01. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-02"><h2 class="m-section-title">02. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-03"><h2 class="m-section-title">03. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-04"><h2 class="m-section-title">04. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-05"><h2 class="m-section-title">05. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-06"><h2 class="m-section-title">06. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-07"><h2 class="m-section-title">07. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-08"><h2 class="m-section-title">08. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-09"><h2 class="m-section-title">09. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-10"><h2 class="m-section-title">10. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+  <section class="m-section" id="s-m7-11"><h2 class="m-section-title">11. [Section title]</h2><div class="sub-section"><div class="sub-section-h">[Sub-section title]</div><div class="sub-section-body"><p class="placeholder-body">[Placeholder body.]</p></div></div></section>
+
+  <section class="m-section" id="s-m7-12">
+    <h2 class="m-section-title">12. Assessment</h2>
+    <section class="quiz" id="quiz-m7">
+      <div class="quiz-head"><h2>Module Assessment</h2><span class="quiz-tag">Quiz</span></div>
+      <p class="quiz-intro">Answer all 4 questions. Pass mark: 95% — required for a Certificate of Completion.</p>
+      <ol class="quiz-questions">
+        <li class="quiz-q" data-answer="a"><div class="quiz-q-text"><span class="quiz-q-num">1</span>[Placeholder question 1 about agriculture?]</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m7-q1" value="a"> Option A (correct)</label><label class="quiz-option"><input type="radio" name="m7-q1" value="b"> Option B</label><label class="quiz-option"><input type="radio" name="m7-q1" value="c"> Option C</label><label class="quiz-option"><input type="radio" name="m7-q1" value="d"> Option D</label></div></li>
+        <li class="quiz-q" data-answer="c"><div class="quiz-q-text"><span class="quiz-q-num">2</span>[Placeholder question 2 about agriculture?]</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m7-q2" value="a"> Option A</label><label class="quiz-option"><input type="radio" name="m7-q2" value="b"> Option B</label><label class="quiz-option"><input type="radio" name="m7-q2" value="c"> Option C (correct)</label><label class="quiz-option"><input type="radio" name="m7-q2" value="d"> Option D</label></div></li>
+        <li class="quiz-q" data-answer="b"><div class="quiz-q-text"><span class="quiz-q-num">3</span>[Placeholder question 3 about agriculture?]</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m7-q3" value="a"> Option A</label><label class="quiz-option"><input type="radio" name="m7-q3" value="b"> Option B (correct)</label><label class="quiz-option"><input type="radio" name="m7-q3" value="c"> Option C</label><label class="quiz-option"><input type="radio" name="m7-q3" value="d"> Option D</label></div></li>
+        <li class="quiz-q" data-answer="d"><div class="quiz-q-text"><span class="quiz-q-num">4</span>[Placeholder question 4 about agriculture?]</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m7-q4" value="a"> Option A</label><label class="quiz-option"><input type="radio" name="m7-q4" value="b"> Option B</label><label class="quiz-option"><input type="radio" name="m7-q4" value="c"> Option C</label><label class="quiz-option"><input type="radio" name="m7-q4" value="d"> Option D (correct)</label></div></li>
+      </ol>
+      <div class="quiz-actions"><button class="btn btn-primary" onclick="submitQuiz('m7')">Submit Answers</button><button class="btn btn-secondary" onclick="retakeQuiz('m7')">Retake</button></div>
+      <div class="quiz-result" id="quiz-result-m7"></div>
+    </section>
+    <div id="cert-m7"></div>
+  </section>
+</div>
+
   </div><!-- /content -->
 </div><!-- /main -->
 </div><!-- /app -->
 
 <script>
-const MODULE_IDS = ['m1','m2','m3','m4','m5','m6'];
-const MODULE_TITLES = {m1:'Drivers', m2:'Hub Managers', m3:'Battery Agents / Technicians', m4:'Data & Innovation Managers', m5:'Finance Managers', m6:'HR Managers'};
+const MODULE_IDS = ['m1','m2','m3','m4','m5','m6','m7'];
+const MODULE_TITLES = {m1:'Drivers', m2:'Hub Managers', m3:'Battery Agents / Technicians', m4:'Data & Innovation Managers', m5:'Finance Managers', m6:'HR Managers', m7:'Agricultural and Extension Managers'};
 const PASS_MARK = 95;
 // Per-module pass marks override the default (the Hub Manager assessment is graded at its documented 70%)
 const PASS_MARKS = {m2: 70};
