@@ -289,6 +289,29 @@
   .sub-section.key-points .sub-section-body ul{list-style:none;padding-left:0;margin:8px 0 0}
   .sub-section.key-points .sub-section-body ul li{position:relative;padding-left:26px;margin-bottom:9px}
   .sub-section.key-points .sub-section-body ul li::before{content:"•";position:absolute;left:0;top:1px;color:var(--teal-mid);font-weight:800;font-size:13px}
+  /* === Driver Compliance Highlights === */
+  .compliance-banner{background:linear-gradient(135deg,#3d0a0a 0%,#6b1515 60%,#7a1a1a 100%);border-radius:14px;padding:28px 32px;margin:28px 0 10px;color:#fff;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(100,0,0,0.18)}
+  .compliance-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#ff4c4c,#ff9800);border-radius:12px 12px 0 0}
+  .compliance-banner::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(255,80,80,0.10),transparent 65%);pointer-events:none}
+  .compliance-banner .cb-eyebrow{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#ff9800;margin-bottom:10px}
+  .compliance-banner h3{font-family:var(--font-ui);font-size:20px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.3}
+  .compliance-banner p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.82);margin:0;max-width:680px}
+  .compliance-section{border:2px solid #e53935;border-radius:12px;margin:20px 0;overflow:hidden}
+  .compliance-section-head{background:linear-gradient(90deg,#e53935,#b71c1c);padding:10px 18px;display:flex;align-items:center;gap:10px}
+  .compliance-section-head .cs-icon{font-size:16px}
+  .compliance-section-head .cs-label{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#fff}
+  .compliance-section-body{padding:16px 20px 18px;background:rgba(229,57,53,0.04)}
+  .compliance-section-body p{font-family:var(--font-ui);font-size:15px;line-height:1.65;color:var(--text);margin-bottom:10px}
+  .compliance-section-body p:last-child{margin-bottom:0}
+  .compliance-section-body ul{list-style:none;padding:0;margin:8px 0 0}
+  .compliance-section-body ul li{font-family:var(--font-ui);font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:7px}
+  .compliance-section-body ul li::before{content:"";position:absolute;left:0;top:0.6em;width:8px;height:8px;border-radius:50%;background:#e53935}
+  .compliance-must-box{background:linear-gradient(135deg,#fff8e1,#fff3e0);border:2px solid #ff9800;border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--font-ui)}
+  .compliance-must-box .cmb-label{font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#e65100;margin-bottom:6px}
+  .compliance-must-box p{font-size:14.5px;line-height:1.6;color:var(--text);margin:0}
+  .compliance-must-box ul{list-style:none;padding:0;margin:6px 0 0}
+  .compliance-must-box ul li{font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:6px}
+  .compliance-must-box ul li::before{content:"✓";position:absolute;left:0;top:0;color:#e65100;font-weight:800;font-size:13px}
   /* Icon accents on callout boxes */
   .info-box{position:relative;padding-left:46px}
   .info-box::before{content:"i";position:absolute;left:16px;top:14px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;font-style:normal;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui)}
@@ -1003,6 +1026,21 @@
         <div class="nb-note"><strong>N/B:</strong> Only Hub Managers are authorised to reassign or reissue receipts. Drivers are responsible for submitting receipts only.</div>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🎯</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <p>You are the direct link between the farmer and the market. <strong>If you do not show up, their milk does not move. Their income for the day is lost.</strong></p>
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Show up on time, every day — a missed day costs a farmer their daily income</li>
+          <li>Handle every collection accurately — the record is your word</li>
+          <li>Represent SONGA professionally at all times — your conduct is the brand</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m1-02">
@@ -1098,6 +1136,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🦺</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <p><strong>No PPE, no dispatch. Enforced every morning without exception.</strong></p>
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Helmet, reflector jacket, safety boots, gloves, and chest guard are required at all times on the trike and at the hub</li>
+          <li>E-trikes must have functioning lights, reflectors, and mirrors confirmed before departure</li>
+          <li>If any PPE item is missing or damaged, report it to the Hub Manager <strong>before</strong> the morning briefing — not at dispatch time</li>
+          <li>PPE non-compliance is logged and treated as a violation every time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m1-04">
@@ -1163,6 +1217,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">⚡</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Check battery SOC before every departure — <strong>minimum 20%</strong>. Do not leave the hub below this level</li>
+          <li>Never force a battery connection or attempt to charge or repair the battery yourself</li>
+          <li>If the battery is sluggish, drains unusually fast, or feels hot — stop and report immediately</li>
+          <li>Clean the trike after every trip before handing it back. Failure or repeated refusal is treated as non-compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m1-05">
@@ -1220,6 +1289,23 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔍</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <p><strong>Every driver must complete all 14 inspection items before every departure. No exceptions.</strong></p>
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Battery SOC must be checked in the Songa App and must be at least 20% before departure</li>
+          <li>Anderson connector must be pushed in until it clicks — a loose connection causes heat damage</li>
+          <li>Cargo area must be clean and all straps and securing tools must be functional</li>
+          <li>Signing the dispatch log confirms all 14 items are checked. This is your personal accountability — <strong>every trip, every time</strong></li>
+          <li>Skipping the pre-trip inspection is treated as non-compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m1-06">
@@ -1267,6 +1353,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🚦</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>Maximum 40 km/h</strong> general · <strong>below 30 km/h</strong> on corners and muddy roads · <strong>below 20 km/h</strong> in heavy rain</li>
+          <li>Overspeeding is monitored electronically via Traccar — three events in 30 days results in a final written warning and compulsory refresher training</li>
+          <li>Mobile phone use while driving is <strong>strictly prohibited</strong></li>
+          <li>Driving under the influence of alcohol, drugs, or impairing medication is <strong>grounds for immediate termination</strong></li>
+          <li>The trike must have a valid insurance sticker and county stickers for all operating areas before dispatch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m1-07">
@@ -1337,6 +1439,23 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🥛</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>Never estimate quantities</strong> — use the calibrated measure at every collection point without exception</li>
+          <li>Record data in the Songa App <strong>at the farm gate</strong>, not later at the hub</li>
+          <li>Milk loss must remain <strong>below 1%</strong> — loss above this threshold may result in a salary deduction</li>
+          <li>Trike must return to hub <strong>within 4 hours of release</strong> for milk aggregation runs</li>
+          <li>Three late submissions in one month triggers a formal review</li>
+          <li>Treat every farmer with respect and courtesy — listen to concerns and respond professionally at all times</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m1-08">
@@ -2066,6 +2185,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🏠</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>The hub operates <strong>05:00 to 18:00</strong>. You are the custodian of all hub operations until 18:00 — this is non-negotiable</li>
+          <li>All four handover checkpoints must be documented and signed: <strong>05:00</strong> dispatch · <strong>14:00</strong> tech-to-BA · <strong>17:30</strong> BA-to-HM · <strong>18:00</strong> security</li>
+          <li>Verbal handovers are never permitted — every transition must be recorded in the physical Handover Register</li>
+          <li>All vehicles must be properly checked in and out daily; quality issues must be reported to the Hub Coordinator <strong>immediately</strong></li>
+          <li>Route expansion is an active responsibility — identify underserved areas and plan integration into existing routes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-03">
@@ -2145,6 +2280,23 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">👥</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Driver attendance, punctuality, and six-day work week compliance must be actively monitored — not just recorded</li>
+          <li>Morning briefings must include PPE checks, route assignments, and safety reminders. <strong>No PPE, no dispatch</strong> — enforce it daily</li>
+          <li>Trikes must be returned within <strong>4 hours of release</strong> for milk aggregation and by <strong>17:00</strong> for all other activities</li>
+          <li>All corrective action must follow HR disciplinary procedures — three-strike for non-gross, immediate action for gross misconduct</li>
+          <li>Driver payroll data must be cross-checked against attendance and trip logs before submission — never approve unverified figures</li>
+          <li>Performance reviews and grievance processes must be documented, fair, and strictly confidential</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-04">
@@ -2222,6 +2374,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">💼</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Every Kilikawi rental must have a <strong>signed agreement, a usage log signed at pickup AND return, and a receipt</strong> — no exceptions</li>
+          <li>Rental dispatch forms must be updated <strong>daily</strong> — this is a daily recurring task, not a weekly one</li>
+          <li>Animal feed stock and waste management records must be updated daily</li>
+          <li>All revenue and transactions must be recorded with traceable documentation — no verbal or informal arrangements</li>
+          <li>Regular reports on hub commercial performance must be submitted on schedule</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-05">
@@ -2329,6 +2497,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🚛</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Review trike and battery status in the Songa platform <strong>every morning</strong> — check charge levels, swap requests, and flag discrepancies</li>
+          <li>All trikes must return to the hub by <strong>5:00 PM</strong>; milk aggregation trikes within <strong>4 hours of release</strong>. Late returns must be documented and reported</li>
+          <li>Keep milk loss <strong>below 1%</strong> — losses above this threshold may result in deduction from the responsible driver's salary. Investigate any spike immediately</li>
+          <li>All aggregation data must be submitted within <strong>4 hours of collection</strong>. Three late submissions by any driver triggers a formal review</li>
+          <li>Trike rentals must include proper documentation, signed agreements, receipts, and usage logs for every rental</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-06">
@@ -2383,6 +2567,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🌾</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Register new farmers on the Songa platform and issue farmer cards <strong>within 24 hours</strong> of registration — delays lead to disengagement</li>
+          <li>All farmer complaints must be logged in the designated system and resolved within <strong>24 hours</strong> where possible</li>
+          <li>Verify complaint details, coordinate resolution with relevant teams, and <strong>follow up with the farmer</strong> to confirm closure — do not close tickets without confirmation</li>
+          <li>Farmer engagement is a daily activity — attend to walk-in farmers and conduct regular one-on-one visits and group discussions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-07">
@@ -2485,6 +2684,23 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📊</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>The Hub Manager is the <strong>final quality gate for all data leaving the hub</strong> — never approve or submit unverified data</li>
+          <li>Songa data cleaning must be done <strong>daily</strong>: cross-check app records against receipts, dispatch logs, and handover reports</li>
+          <li>Dairy aggregation data must be reviewed daily and all discrepancies tracked and resolved through the dairy data ticket tracker</li>
+          <li>ERP Next must be used for all purchase orders, material issuance, sales invoices, and purchase receipts — no off-system procurement</li>
+          <li>Reporting cadence is mandatory: <strong>daily</strong> operational reports · <strong>weekly</strong> fleet/compliance/commercial · <strong>monthly</strong> comprehensive hub report</li>
+          <li>Traccar must be reviewed daily for overspeeding and route compliance — log and act on every case found</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-08">
@@ -2558,6 +2774,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">⚠️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>No PPE, no dispatch</strong> — enforce this at every morning briefing without exception</li>
+          <li>SONGA speed limits apply to all drivers: <strong>40 km/h</strong> general · <strong>below 30 km/h</strong> on corners and muddy roads. Review Traccar reports daily</li>
+          <li>Every incident — accident, overspeeding, unsafe driving — must be reported to the Hub Coordinator and Operations leadership immediately. Never manage incidents silently</li>
+          <li>All trikes, equipment, and drivers must have valid <strong>NTSA, county, licence, insurance, PDL, and safety documentation</strong> at all times</li>
+          <li>Repeated overspeeding is treated as gross misconduct. Apply the three-strike process consistently and without favouritism</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-09">
@@ -2604,6 +2836,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📚</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>100% of drivers must be trained or refreshed quarterly</strong> — attendance registers and signed acknowledgements are mandatory, not optional</li>
+          <li>Training assessments must be used to identify skill gaps. Below-50% scores require individual coaching and re-assessment before the driver returns to full operations</li>
+          <li>Training records must be maintained and available for review at any time</li>
+          <li>The Hub Manager is responsible for ensuring training actually improves performance — not just that it happened</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-10">
@@ -2726,6 +2973,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔒</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>The Hub Asset Register must be <strong>maintained and up to date at all times</strong> — this is a core in-scope duty, not a background task</li>
+          <li>Weekly asset spot-checks must be conducted and findings submitted through the Asset Inventory Template</li>
+          <li>Any asset loss, damage, or misuse must be reported to HR and the Hub Coordinator <strong>within 24 hours</strong> — never write off assets without investigation</li>
+          <li>All asset issuances, returns, and movements between hubs must be recorded and signed</li>
+          <li>Unauthorised use of company assets or allowing unauthorised persons to operate SONGA trikes is treated as serious misconduct</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-12">
@@ -2791,6 +3054,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">💰</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Expense variance must stay <strong>at or below 2%</strong> of budget — flag deviations immediately, do not wait for month-end</li>
+          <li>Invoices must be submitted through the Smartsheet budget tracker and must match actual expenditure — no retroactive adjustments without documented justification</li>
+          <li>The requisition planner must be updated <strong>daily</strong> to reflect current and upcoming needs</li>
+          <li>Daily reconciliations must be verified and submitted on time — incomplete or late reconciliations are a compliance failure</li>
+          <li>Payment complaints from farmers must be resolved within <strong>48 hours</strong> of being logged. The KPI target is ≥95% resolved within this window</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m2-13">
@@ -3418,6 +3697,21 @@
         <div class="feature-card"><div class="fc-icon">L3</div><h4>Senior Technician</h4><p>Handles complex and unusual cases, supports engineering with field data, owns overall technical quality at the hub. <em>Not covered in this module — addressed in an advanced module.</em></p></div>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">⚡</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Every driver must receive a <strong>fully charged, safe battery</strong> when they need it — a missing battery breaks the entire collection chain</li>
+          <li>During every swap, visually inspect the battery and connector. If anything looks wrong, <strong>flag it immediately</strong> — do not pass a suspect battery to a driver</li>
+          <li>Your attention to detail during each swap protects the driver, the vehicle, and the community. Ignoring a damaged connector or swollen pack is a safety failure</li>
+          <li>Everything you record feeds into operations, engineering, and management decisions — accurate documentation is part of the job, not extra work</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m3-02">
@@ -3501,6 +3795,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔋</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>Never bypass the BMS</strong> — if it has shut a battery down, find out why before doing anything else. Bypassing it can cause a fire</li>
+          <li>Lithium fires <strong>cannot be put out with water</strong>. Damaged, wet, or swollen batteries must never be charged under any circumstances</li>
+          <li>A battery that is hot must be allowed to cool before charging — charging a hot battery causes permanent internal damage</li>
+          <li>All battery activity must be logged in <strong>ERPNext</strong>: which battery was removed, which installed, trike ID, time, and any observations</li>
+          <li>Never drop, drag, or stack batteries — impact stress weakens internal cell connections even when there is no visible damage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m3-03">
@@ -3575,6 +3885,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔄</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Confirm the trike is <strong>powered off and the key is removed</strong> before touching any battery — never disconnect while the system is active</li>
+          <li>Inspect every battery you remove for visible damage, unusual heat, or swelling — if anything is abnormal, <strong>set it aside and report it immediately</strong></li>
+          <li>Inspect connectors on both the battery and the trike before installing — check for bent pins, corrosion, dirt, or moisture</li>
+          <li>The battery must be seated firmly and the connection fully secured — a loose connection generates heat and causes damage over time</li>
+          <li>Record every swap in ERPNext with battery ID, trike ID, time, and observations — no swap is complete until it is logged</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m3-04">
@@ -3645,6 +3971,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔧</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Do not attempt Level 2 or Level 3 work until you have fully demonstrated mastery of Level 0 and Level 1 — <strong>you cannot skip levels</strong></li>
+          <li>Preventive maintenance tasks must be completed on schedule — never wait for a fault to appear before acting</li>
+          <li>All maintenance work must be documented in ERPNext with a job card — work that is not recorded did not happen for operational purposes</li>
+          <li>Escalate faults that exceed your current authorisation level to a Certified Technician immediately — do not attempt repairs beyond your tier</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m3-05">
@@ -3733,6 +4074,22 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🛠️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Independent diagnostics requires full mastery of Levels 0 and 1 — do not operate at Level 2 without confirmed certification</li>
+          <li>Read fault codes and BMS data carefully before deciding on repair, rest, or replace — never guess on battery disposition</li>
+          <li>Know when a BMS shutdown is protection and when it indicates a deeper fault. <strong>Never force a battery back into service after a protective shutdown without proper assessment</strong></li>
+          <li>As a Level 2 technician you are responsible for mentoring Level 0 and Level 1 staff — your standard-setting directly affects hub safety</li>
+          <li>All diagnostic findings, decisions, and outcomes must be documented in ERPNext with full detail</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m3-06">
@@ -3963,6 +4320,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📱</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>You are the <strong>guardian of data integrity</strong> across the entire platform — inaccurate data flows downstream and affects farmer payments, route decisions, and management reporting</li>
+          <li>All systems (Songa App, ERPNext, Smartsheet, Traccar, Zoho) must be kept up to date — you are the owner of the digital ecosystem, not just a user of it</li>
+          <li>Data privacy and protection obligations are your responsibility. Never share farmer or operational data outside authorised channels</li>
+          <li>Cross-team support is part of the role — hub managers and field staff depend on you to resolve system issues quickly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-02">
@@ -4005,6 +4377,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🗄️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Every tool in the digital ecosystem has a defined purpose — never allow parallel informal systems (WhatsApp lists, personal spreadsheets) to replace official records</li>
+          <li>System access must be managed strictly: grant only what is needed, revoke access immediately when staff leave or change roles</li>
+          <li>You are responsible for ensuring field staff can use the tools correctly — training and support are part of your mandate, not optional extras</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-03">
@@ -4059,6 +4445,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">✅</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>Data cleaning must happen daily</strong> — cross-check Songa App submissions against physical receipts, dispatch logs, and handover reports before approving records</li>
+          <li>Never accept data at face value — discrepancies between app data and physical records must be investigated and resolved the same day</li>
+          <li>Drivers logging data at the hub instead of the farm gate, or estimating instead of measuring, are SOP violations — flag and correct them immediately</li>
+          <li>You are the last line of quality assurance before data enters management reports — your sign-off matters</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-04">
@@ -4115,6 +4516,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📈</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Dashboard anomalies must be followed up the same day — do not let unexplained figures sit unresolved until the next reporting cycle</li>
+          <li>KPIs must reflect operational reality. If a metric looks too good or too bad, investigate before reporting — <strong>never present data you cannot explain</strong></li>
+          <li>Performance monitoring is not passive — use what you see to proactively flag risks to management before they become operational problems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-05">
@@ -4172,6 +4587,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔧</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Product changes and platform updates must be tested before deployment — never push untested changes to production systems used by field staff</li>
+          <li>User feedback from hub managers and drivers is operational intelligence — log it, prioritise it, and act on it systematically</li>
+          <li>Any feature that affects farmer data, payment flows, or dispatch records requires sign-off before go-live</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-06">
@@ -4229,6 +4658,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔐</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>User access permissions must be reviewed regularly — no staff member should retain access to systems beyond what their role requires</li>
+          <li>Access must be revoked <strong>immediately</strong> when a staff member leaves or changes role — do not wait for the next review cycle</li>
+          <li>All data governance decisions must be documented. Verbal authorisations for system access or data sharing are not acceptable</li>
+          <li>Data privacy regulations are a legal obligation — breaches must be reported to management without delay</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-07">
@@ -4285,6 +4729,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📡</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Telematics data (Traccar speed, GPS routes) must be reviewed daily and overspeeding cases logged and actioned — this data is evidence, treat it as such</li>
+          <li>Remote payment systems must be reconciled regularly against ERP records — discrepancies are a compliance risk, not just a reporting issue</li>
+          <li>Innovation pilots must have defined success metrics, timelines, and exit criteria before launch — do not run open-ended pilots without a review gate</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-08">
@@ -4341,6 +4799,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📖</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Grant reporting data must be accurate and traceable — every figure submitted to a funder must be supported by records in the system</li>
+          <li>Knowledge documentation is an operational responsibility — lessons learned, process changes, and pilot outcomes must be recorded while they are fresh</li>
+          <li>Research outputs belong to the organisation — personal notes and informal summaries do not replace formal knowledge management entries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-09">
@@ -4401,6 +4873,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🤝</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>When supporting other teams, respond to system issues and data requests within agreed SLAs — delays in your response create operational delays for others</li>
+          <li>Capacity building sessions must be documented with attendance records and follow-up assessments</li>
+          <li>Do not resolve cross-team issues informally — log every support request and its resolution so patterns can be identified and addressed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-10">
@@ -4459,6 +4945,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">⚖️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>Data privacy is non-negotiable</strong> — farmer data, financial data, and staff data must be stored, accessed, and shared only in compliance with applicable law and company policy</li>
+          <li>Any suspected data breach or unauthorised access must be reported to management <strong>immediately</strong> — do not investigate alone or delay notification</li>
+          <li>Risk register entries must be kept current — identified risks that are not tracked are risks that are not managed</li>
+          <li>Compliance with data governance SOPs is mandatory for all staff who use digital systems — enforce this, document exceptions, and escalate non-compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-11">
@@ -4522,6 +5023,21 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📋</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Reporting deadlines are commitments, not targets — <strong>daily, weekly, and monthly reports must be submitted on schedule without exception</strong></li>
+          <li>Partial reports submitted on time with a clear explanatory note are always preferable to late complete ones</li>
+          <li>Communication to management must be accurate and free of unverified figures — flag uncertainty explicitly rather than presenting estimates as facts</li>
+          <li>All reports must be retained and accessible for audit or review — do not delete or overwrite previous versions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m4-12">
@@ -5423,6 +5939,21 @@
         <p>When you encounter a situation not covered by existing procedures, you document it, handle it to the best of your judgment, and escalate to central HR for a policy update. You do not create local workarounds that diverge from the standard.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">👔</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>HR is the custodian of staff trust and organisational integrity — every decision you make sets a precedent and shapes the culture</li>
+          <li>Confidentiality is a professional obligation: <strong>all HR matters, disciplinary cases, personal information, and grievances must be handled in strict confidence</strong></li>
+          <li>Consistency is the foundation of fairness — policies must be applied equally to all staff regardless of performance, seniority, or relationship</li>
+          <li>You are the system that protects both the organisation and its people — never prioritise one at the expense of the other</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-02">
@@ -5460,6 +5991,20 @@
         <p>This applies to all categories: staff replacements, new positions due to scaling, and temporary hires. <strong>No one at the hub has the authority to informally bring someone on, even on a trial basis, without going through you first.</strong></p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🏗️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Reporting lines must be clearly communicated to all staff — ambiguity about who reports to whom creates accountability gaps</li>
+          <li>Org structure changes must be documented and communicated formally — verbal restructuring is not restructuring</li>
+          <li>Every role must have a clear job description on file — staff cannot be held accountable for responsibilities that were never defined</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-03">
@@ -5508,6 +6053,21 @@
         <p>Compliance with organisational health and safety policies is monitored through regular spot checks. You coordinate with the Hub Manager to conduct at least one safety walkthrough per month and document findings.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📜</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>All HR policies must be signed and acknowledged by every staff member — a policy that has not been communicated cannot be enforced</li>
+          <li>Kenyan employment law requirements are a baseline, not a ceiling — SONGA's own standards must also be met</li>
+          <li><strong>Disciplinary action must follow the documented procedure every time</strong> — skipping steps, even for minor cases, creates legal exposure</li>
+          <li>Policy breaches identified by any staff member must be logged and addressed — do not allow known violations to go undocumented</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-04">
@@ -5546,6 +6106,21 @@
         <p>If a check reveals a discrepancy (such as a claimed qualification that cannot be verified), the offer is paused and you escalate to your reporting line for a decision. You do not proceed with onboarding while checks are outstanding.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🔍</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Every recruitment decision must be documented with the criteria used and the evidence reviewed — subjective hiring without a paper trail is a compliance risk</li>
+          <li>Reference and background checks must be completed before a contract is issued — not after</li>
+          <li>Shortlisting criteria must be applied consistently to all candidates — deviations must be justified and documented</li>
+          <li>Recruitment for roles involving children, vulnerable persons, or financial responsibilities requires additional due diligence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-05">
@@ -5584,6 +6159,21 @@
         <p>Key areas that vary by jurisdiction include: minimum wage, working hour limits, leave entitlements, termination notice periods, and severance obligations. You are not expected to be a legal expert, but you are expected to flag anything that looks non-compliant and escalate before acting.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📄</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li><strong>Every staff member must have a signed contract before they begin work</strong> — verbal agreements are not contracts</li>
+          <li>Contract terms must comply with Kenyan employment law — any deviations require documented legal justification</li>
+          <li>Contract renewals, amendments, and terminations must be processed in writing with the required notice periods observed</li>
+          <li>Probationary periods must be actively managed — performance must be reviewed and documented before the probation end date</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-06">
@@ -5637,6 +6227,21 @@
         <p>Both are accountable. If a new hire reaches the end of their probation without having completed onboarding, both you and the line manager need to explain why.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🎓</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Every new staff member must receive a formal induction before commencing operational duties — sending someone to the field without onboarding is a safety and compliance risk</li>
+          <li>Onboarding checklists must be completed and signed by both the staff member and their line manager</li>
+          <li>All required SOPs must be read and signed during onboarding — this is not optional and must be verified, not assumed</li>
+          <li>Onboarding records must be filed and retained — they are evidence of compliance in the event of a dispute</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-07">
@@ -5669,6 +6274,21 @@
         <p>You do not supervise drivers daily — that is the Hub Manager's job. But you are responsible for ensuring the disciplinary process is followed when a driver breaches standards, and you maintain the documentation trail.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🚗</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>No driver may be deployed before completing the <strong>mandatory 21-day training programme</strong> and passing both the Day 16 and Day 21 assessments</li>
+          <li>All required documents (National ID, A3 licence, Certificate of Good Conduct, food handling certificate) must be verified and filed before the driver begins work</li>
+          <li>Driver SOPs must be signed during onboarding — the signature is the driver's acknowledgement of the standards they are held to</li>
+          <li>Driver screening, CRB checks, and licence verification are not administrative formalities — they are safety obligations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-08">
@@ -5701,6 +6321,20 @@
         <p>You ensure this code is communicated clearly during onboarding and that it is applied consistently. If a farmer is suspended or exited, the process must be documented and follow the defined procedure. Ad hoc exclusions without documentation are not acceptable.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🌾</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Farmer onboarding must result in a complete and accurate record in the Songa platform — incomplete registrations create payment and traceability problems downstream</li>
+          <li>Farmer cards must be issued within <strong>24 hours</strong> of registration — delays in onboarding lead to disengagement and lost collections</li>
+          <li>Farmer consent for data collection must be obtained and documented — you cannot register a farmer without their informed agreement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-09">
@@ -5735,6 +6369,21 @@
         <p>You document the improvement plan. The supervisor delivers it. You follow up at the defined intervals to check progress. If the improvement plan is not met, you initiate the appropriate next step (which may be a further plan, a formal warning, or termination, depending on severity and history).</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📊</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Performance reviews must be conducted on schedule and documented — informal feedback does not replace a formal review</li>
+          <li>PIPs (Performance Improvement Plans) must have clear, measurable targets, defined timelines, and regular check-ins — a PIP without follow-through is not a PIP</li>
+          <li>Performance documentation must be objective and evidence-based — opinions and impressions are not performance records</li>
+          <li><strong>Both strong and poor performance must be formally documented</strong> — only logging negatives creates a one-sided personnel file</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-10">
@@ -5768,6 +6417,21 @@
         <p>You maintain a training log for the hub. This log must be available for audit at any time. If an auditor asks whether a specific driver completed their safety training, you must be able to answer with documentation, not memory.</p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">📚</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Training attendance must be recorded with signatures — attendance without documentation is attendance that cannot be proven</li>
+          <li><strong>100% of required staff must complete mandatory training</strong> — partial compliance is non-compliance</li>
+          <li>Training effectiveness must be assessed — completion of a session does not mean the content was understood or retained</li>
+          <li>Training records must be retained and available for audit at any time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-11">
@@ -5795,6 +6459,21 @@
         <p>Zero tolerance means that the normal progressive disciplinary process may be bypassed. When a zero-tolerance violation is reported, you initiate an immediate investigation, suspend the individual pending investigation if necessary, and escalate to your reporting line. <strong>You do not wait. You do not handle it informally.</strong></p>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">⛑️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Safety non-compliance observed by HR must be reported and escalated — <strong>seeing a violation and not acting is itself a compliance failure</strong></li>
+          <li>Conduct investigations must be completed within the timelines set by policy — delayed investigations compromise fairness and evidence integrity</li>
+          <li>All health and safety incidents must be logged regardless of severity — near-misses are as important as actual incidents</li>
+          <li>PPE compliance is a shared responsibility — HR must reinforce it alongside hub managers and operations leadership</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-12">
@@ -5820,6 +6499,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">⏱️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>HR SLAs are commitments to staff and the organisation — <strong>response times for recruitment, contracts, and grievances must be met consistently</strong></li>
+          <li>Missed SLAs must be logged and explained — a pattern of SLA breaches signals a capacity or process problem that must be escalated</li>
+          <li>Staff must know what to expect from HR and when — communicate timelines proactively, not after being chased</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-13">
@@ -5856,6 +6549,20 @@
         </ul>
       </div>
     </div>
+  <div class="compliance-section">
+    <div class="compliance-section-head"><span class="cs-icon">🗺️</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+    <div class="compliance-section-body">
+      <div class="compliance-must-box">
+        <div class="cmb-label">Must be fully respected</div>
+        <ul>
+          <li>Replication documentation must be accurate and complete — another organisation or location must be able to follow it without additional guidance</li>
+          <li>HR processes being prepared for replication must first be proven to work consistently at the current location — do not document aspirational processes as established ones</li>
+          <li>All replication materials must be reviewed and approved before being shared externally</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   </section>
 
   <section class="m-section" id="s-m6-14">
