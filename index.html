@@ -50,6 +50,12 @@
   .search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.32);font-size:13px;pointer-events:none}
   #nav{padding:8px 0 24px;flex:1}
   .nav-section-label{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px}
+  .nav-group-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:transparent;border:none;cursor:pointer;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px;text-align:left}
+  .nav-group-toggle:hover{color:#fff}
+  .nav-group-toggle .ngt-caret{font-size:11px;line-height:1;transition:transform 0.18s ease}
+  .nav-group-toggle[aria-expanded="true"] .ngt-caret{transform:rotate(90deg)}
+  .nav-group-items{display:none}
+  .nav-group-items.open{display:block}
   .nav-item{display:flex;align-items:center;gap:8px;padding:7px 20px;font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.12s;border-left:2px solid transparent;text-decoration:none;line-height:1.4}
   .nav-item:hover{color:#fff;background:rgba(255,255,255,0.05)}
   .nav-item.active{color:#fff;border-left-color:var(--yellow);background:rgba(41,202,121,0.12)}
@@ -288,7 +294,7 @@
   .sub-section.key-points > .sub-section-h::before{display:flex;content:"✓";color:#fff;background:var(--teal-mid);width:22px;height:22px;border-radius:50%;font-size:12px;align-items:center;justify-content:center;padding:0;font-weight:800;flex-shrink:0}
   .sub-section.key-points .sub-section-body ul{list-style:none;padding-left:0;margin:8px 0 0}
   .sub-section.key-points .sub-section-body ul li{position:relative;padding-left:26px;margin-bottom:9px}
-  .sub-section.key-points .sub-section-body ul li::before{content:"•";position:absolute;left:0;top:1px;color:var(--teal-mid);font-weight:800;font-size:13px}
+  .sub-section.key-points .sub-section-body ul li::before{content:"";position:absolute;left:0;top:0.58em;width:8px;height:8px;border-radius:50%;background:var(--teal-mid);opacity:0.9}
   /* === Driver Compliance Highlights === */
   .compliance-banner{background:linear-gradient(135deg,#3d0a0a 0%,#6b1515 60%,#7a1a1a 100%);border-radius:14px;padding:28px 32px;margin:28px 0 10px;color:#fff;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(100,0,0,0.18)}
   .compliance-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#ff4c4c,#ff9800);border-radius:12px 12px 0 0}
@@ -311,7 +317,7 @@
   .compliance-must-box p{font-size:14.5px;line-height:1.6;color:var(--text);margin:0}
   .compliance-must-box ul{list-style:none;padding:0;margin:6px 0 0}
   .compliance-must-box ul li{font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:6px}
-  .compliance-must-box ul li::before{content:"✓";position:absolute;left:0;top:0;color:#e65100;font-weight:800;font-size:13px}
+  .compliance-must-box ul li::before{content:"";position:absolute;left:0;top:0.55em;width:8px;height:8px;border-radius:50%;background:#e53935}
   /* === Escalation / data table === */
   .esc-table-wrap{overflow-x:auto;margin:8px 0 4px}
   table.esc-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:14px;min-width:640px}
@@ -342,6 +348,12 @@
   .warn-box{position:relative;padding-left:46px}
   .warn-box::before{content:"!";position:absolute;left:16px;top:14px;width:18px;height:18px;border-radius:50%;background:var(--yellow-deep);color:var(--navy);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui)}
   .nb-note{position:relative}
+
+  /* === Centre content photos (figures and standalone images) === */
+  .doc-screenshot{text-align:center}
+  .doc-screenshot img{margin-left:auto;margin-right:auto}
+  .doc-screenshot figcaption{text-align:center}
+  .fit-picture{display:block;margin:12px auto;max-width:100%;height:auto;border-radius:8px}
 
   /* === Full assessment components (module groups, explanations, discussion) === */
   .assess-meta{display:flex;gap:12px;flex-wrap:wrap;margin:4px 0 18px}
@@ -439,10 +451,13 @@
     <a class="nav-item" data-page="m1" onclick="showPage('m1',this)"><span class="nav-icon"><img src="img/2.svg" alt=""></span><span class="label">Drivers</span><span class="nav-score" data-score="m1">—</span></a>
     <a class="nav-item" data-page="m2" onclick="showPage('m2',this)"><span class="nav-icon"><img src="img/1.svg" alt=""></span><span class="label">Hub Managers</span><span class="nav-score" data-score="m2">—</span></a>
     <a class="nav-item" data-page="m3" onclick="showPage('m3',this)"><span class="nav-icon"><img src="img/3.svg" alt=""></span><span class="label">Battery Agents / Technicians</span><span class="nav-score" data-score="m3">—</span></a>
-    <a class="nav-item" data-page="m4" onclick="showPage('m4',this)"><span class="nav-icon"><img src="img/data_innovations_manager.png" alt=""></span><span class="label">Data &amp; Innovation Managers</span><span class="nav-score" data-score="m4">—</span></a>
-    <a class="nav-item" data-page="m5" onclick="showPage('m5',this)"><span class="nav-icon"><img src="img/finance_manager.png" alt=""></span><span class="label">Finance Managers</span><span class="nav-score" data-score="m5">—</span></a>
-    <a class="nav-item" data-page="m6" onclick="showPage('m6',this)"><span class="nav-icon"><img src="img/hr_manager.png" alt=""></span><span class="label">HR Managers</span><span class="nav-score" data-score="m6">—</span></a>
-    <a class="nav-item" data-page="m7" onclick="showPage('m7',this)"><span class="nav-icon"><img src="img/agriculture_manager.png" alt=""></span><span class="label">Agricultural and Extension Managers</span><span class="nav-score" data-score="m7">—</span></a>
+    <button class="nav-group-toggle" id="other-roles-toggle" aria-expanded="false" aria-controls="other-roles-group" onclick="toggleNavGroup(this)"><span class="ngt-label">Other Roles</span><span class="ngt-caret">▸</span></button>
+    <div class="nav-group-items" id="other-roles-group">
+      <a class="nav-item" data-page="m4" onclick="showPage('m4',this)"><span class="nav-icon"><img src="img/data_innovations_manager.png" alt=""></span><span class="label">Data &amp; Innovation Managers</span><span class="nav-score" data-score="m4">—</span></a>
+      <a class="nav-item" data-page="m5" onclick="showPage('m5',this)"><span class="nav-icon"><img src="img/finance_manager.png" alt=""></span><span class="label">Finance Managers</span><span class="nav-score" data-score="m5">—</span></a>
+      <a class="nav-item" data-page="m6" onclick="showPage('m6',this)"><span class="nav-icon"><img src="img/hr_manager.png" alt=""></span><span class="label">HR Managers</span><span class="nav-score" data-score="m6">—</span></a>
+      <a class="nav-item" data-page="m7" onclick="showPage('m7',this)"><span class="nav-icon"><img src="img/agriculture_manager.png" alt=""></span><span class="label">Agricultural and Extension Managers</span><span class="nav-score" data-score="m7">—</span></a>
+    </div>
   </div>
 </nav>
 <div id="main">
@@ -975,7 +990,7 @@
 <div class="sub-section">
       <div class="sub-section-h">Your Mission as a Driver</div>
       <div class="sub-section-body">
-        <p>As a Driver, you are the direct link between the farmer and the market. Every morning, when you ride your trike to collect milk, you are the person the farmer depends on. If you do not show up, their milk does not move. Their income for the day is lost.<p>
+        <p>As a driver, you are the direct link between the farmer and the market. Every morning, when you ride your trike to collect milk, you are the person the farmer depends on. If you do not show up, their milk does not move. Their income for the day is lost.<p>
 
         <p>Your mission is to complete your collection route reliably, safely, and with respect for every farmer and community member you interact with. You are not just transporting milk. You are delivering a promise that SONGA made to these farmers: that their product will reach the market, every day, without fail.<p>
       </div>
@@ -2100,7 +2115,7 @@
 
     <figure class="doc-screenshot" style="margin:8px 0 24px">
       <img src="img/SONGA_MOBILITY_Day_2-83.jpg" alt="A Driver Collecting Milk" style="width:100%;max-width:500px;display:block;border-radius:8px"/>
-      <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">A driver collecting milk during aggregation.</figcaption>
+      <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Banana Aggregation.</figcaption>
     </figure>
 
     <div class="sub-section">
@@ -4579,7 +4594,7 @@
       <div class="sub-section-h">Verification and cleaning workflow</div>
       <div class="sub-section-body">
         <ul>
-          <li>Compare platform records against receipts, dispatch logs, trip logs, handover registers, GPS traces and physical observations.</li>
+          <li>Compare platform records against receipts and MPesa messages, dispatch logs, trip logs, handover registers, aggregation against delivery records, GPS traces and physical observations.</li>
           <li>Flag missing values, duplicate entries, unusual quantities, impossible timestamps, incorrect GPS tags and inconsistent asset IDs.</li>
           <li>Return unclear records to the responsible team for correction instead of guessing.</li>
           <li>Maintain a cleaning log showing the original issue, correction made, responsible person and date of correction.</li>
@@ -7536,12 +7551,26 @@ function getState(){
 }
 function setState(s){ localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
 
+function toggleNavGroup(btn){
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!expanded));
+  const items = document.getElementById(btn.getAttribute('aria-controls'));
+  if(items) items.classList.toggle('open', !expanded);
+}
+
 function showPage(id, el){
   Object.values(pages).forEach(p => p && p.classList.remove('active'));
   if(pages[id]) pages[id].classList.add('active');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   if(el){ el.classList.add('active'); }
   else { const m = document.querySelector('.nav-item[data-page="'+id+'"]'); if(m) m.classList.add('active'); }
+  // If the active role lives inside the collapsible "Other Roles" group, open it so the highlight is visible
+  const group = document.getElementById('other-roles-group');
+  const toggle = document.getElementById('other-roles-toggle');
+  if(group && toggle && group.querySelector('.nav-item[data-page="'+id+'"]')){
+    group.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+  }
   const rail = document.getElementById('reading-rail');
   // Reading rail only applies to module pages, not to home or the profile page
   rail.classList.toggle('show', id !== 'home' && id !== 'profile');
