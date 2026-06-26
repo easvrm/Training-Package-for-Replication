@@ -341,7 +341,11 @@
   .hr-voice .hv-skill p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:var(--text);margin:0}
   .hr-voice .hv-skill p .hv-eg{color:var(--teal-mid);font-style:italic;font-weight:600}
   .hr-voice .hv-close{font-family:var(--font-ui);font-size:15.5px;line-height:1.7;color:var(--text);margin-top:20px;position:relative;z-index:1;max-width:760px}
+  #s-m2-voice .hv-skill{display:flex;gap:16px;align-items:center}
+  #s-m2-voice .hv-skill .hv-photo{width:150px;flex-shrink:0;height:auto;border-radius:8px;display:block}
+  #s-m2-voice .hv-skill .hv-skill-text{flex:1;min-width:0}
   @media(max-width:760px){.hr-voice{padding:26px 22px 30px}.hr-voice h3{font-size:20px}}
+  @media(max-width:560px){#s-m2-voice .hv-skill{flex-direction:column}#s-m2-voice .hv-skill .hv-photo{width:100%;max-width:240px}}
   /* Icon accents on callout boxes */
   .info-box{position:relative;padding-left:46px}
   .info-box::before{content:"i";position:absolute;left:16px;top:14px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;font-style:normal;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui)}
@@ -2640,16 +2644,25 @@
     <p class="hv-intro">Three Hub Managers share the skills they rely on most — attention to detail and accountability, people management and policy enforcement, and communication when things go wrong.</p>
 
     <div class="hv-skill">
-      <h4>Hub Manager A — Attention to detail, accountability &amp; integrity</h4>
-      <p>I think being a Hub Manager requires strong attention to detail, accountability, and integrity. <span class="hv-eg">For example,</span> I am responsible for ensuring that daily trip logs, milk data, ERPNext entries, hub expenses, and trike rental transactions are recorded accurately. This information feeds into dashboards and management reports, so even a small error can affect payments, operational decisions, or performance tracking. I must also ensure that every expense and rental transaction is supported by transparent and traceable documentation. As Hub Manager, I am accountable for what happens at the hub, even when a task has been delegated to someone else.</p>
+      <img class="hv-photo" src="img/Hub_Manager_A.png" alt="Hub Manager A"/>
+      <div class="hv-skill-text">
+        <h4>Hub Manager A — Attention to detail, accountability &amp; integrity</h4>
+        <p>I think being a Hub Manager requires strong attention to detail, accountability, and integrity. <span class="hv-eg">For example,</span> I am responsible for ensuring that daily trip logs, milk data, ERPNext entries, hub expenses, and trike rental transactions are recorded accurately. This information feeds into dashboards and management reports, so even a small error can affect payments, operational decisions, or performance tracking. I must also ensure that every expense and rental transaction is supported by transparent and traceable documentation. As Hub Manager, I am accountable for what happens at the hub, even when a task has been delegated to someone else.</p>
+      </div>
     </div>
     <div class="hv-skill">
-      <h4>Hub Manager B — People management &amp; policy enforcement</h4>
-      <p>For me, people-management and policy-enforcement skills are crucial to running a hub. <span class="hv-eg">For example,</span> I have to delegate duties clearly to technicians, battery agents, drivers, and support staff, while ensuring that everyone understands their responsibilities and deadlines. At the same time, I must enforce SONGA's policies consistently. This includes checking that drivers wear the required PPE, ensuring that workshop and charging areas are safe and orderly, and confirming that all staff follow the relevant SOPs. I must be firm about the standards while still supporting the team to perform well.</p>
+      <img class="hv-photo" src="img/Hub_Manager_B.png" alt="Hub Manager B"/>
+      <div class="hv-skill-text">
+        <h4>Hub Manager B — People management &amp; policy enforcement</h4>
+        <p>For me, people-management and policy-enforcement skills are crucial to running a hub. <span class="hv-eg">For example,</span> I have to delegate duties clearly to technicians, battery agents, drivers, and support staff, while ensuring that everyone understands their responsibilities and deadlines. At the same time, I must enforce SONGA's policies consistently. This includes checking that drivers wear the required PPE, ensuring that workshop and charging areas are safe and orderly, and confirming that all staff follow the relevant SOPs. I must be firm about the standards while still supporting the team to perform well.</p>
+      </div>
     </div>
     <div class="hv-skill">
-      <h4>Hub Manager C — Communication &amp; interpersonal skills</h4>
-      <p>When a trike breakdown delayed operations and created disagreement between a driver and a technician, I recognised the importance of strong communication and interpersonal skills. I had to listen to both sides, clarify what had happened, and communicate the next steps calmly. I also needed to inform the relevant teams about the operational delay and agree on a practical solution. Daily debriefs are important because they allow the team to discuss trike, data, and staff-related challenges openly, identify solutions, and prevent the same issues from happening again.</p>
+      <img class="hv-photo" src="img/Hub_Manager_C.png" alt="Hub Manager C"/>
+      <div class="hv-skill-text">
+        <h4>Hub Manager C — Communication &amp; interpersonal skills</h4>
+        <p>When a trike breakdown delayed operations and created disagreement between a driver and a technician, I recognised the importance of strong communication and interpersonal skills. I had to listen to both sides, clarify what had happened, and communicate the next steps calmly. I also needed to inform the relevant teams about the operational delay and agree on a practical solution. Daily debriefs are important because they allow the team to discuss trike, data, and staff-related challenges openly, identify solutions, and prevent the same issues from happening again.</p>
+      </div>
     </div>
 
     <p class="hv-close">Across all three, the through-line is the same: a hub runs on accurate records, consistent standards, and calm communication — and the Hub Manager is accountable for all three, every day.</p>
