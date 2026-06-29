@@ -126,10 +126,12 @@
   /* Sections & sub-sections */
   .m-section{margin:48px 0;padding-top:8px;scroll-margin-top:80px}
   .m-section:first-of-type{margin-top:16px}
-  .m-section-title{font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);border-bottom:2px solid var(--teal);padding-bottom:10px;margin-bottom:24px;line-height:1.3}
+  .m-section-title{font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);position:relative;padding-bottom:15px;margin-bottom:26px;line-height:1.3;letter-spacing:-0.01em}
+  .m-section-title::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--border)}
+  .m-section-title::before{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green-2),var(--yellow-deep));z-index:1}
   .sub-section{margin:22px 0 28px}
-  .sub-section-h{font-family:var(--font-ui);display:block;font-size:17px;font-weight:700;color:var(--navy);margin:26px 0 14px;line-height:1.4;padding:9px 16px;border-left:3px solid var(--teal);background:linear-gradient(90deg,var(--teal-light) 0%,rgba(232,248,239,0) 72%);border-radius:0 8px 8px 0}
-  .sub-section-h::before{display:none}
+  .sub-section-h{font-family:var(--font-ui);display:block;position:relative;font-size:16.5px;font-weight:700;color:var(--navy);margin:26px 0 14px;line-height:1.4;padding:8px 16px 8px 18px;background:linear-gradient(90deg,rgba(232,248,239,0.75) 0%,rgba(232,248,239,0) 60%);border-radius:0 6px 6px 0;letter-spacing:0.005em}
+  .sub-section-h::before{content:"";display:block;position:absolute;left:0;top:7px;bottom:7px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--green-2),var(--yellow-deep))}
   .sub-section-body p{margin-bottom:13px;font-size:15.5px;line-height:1.65;color:var(--text)}
   .sub-section-body p:last-child{margin-bottom:0}
   .num-list{counter-reset:numlist;list-style:none;padding:0;margin:12px 0 18px}
@@ -282,7 +284,7 @@
 
   /* === Cross-module visual enhancements (applied to all role modules) === */
   .m-section-title{display:flex;align-items:center;gap:12px}
-  .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 9px;border-radius:9px;background:linear-gradient(135deg,var(--navy),var(--teal-mid));color:#fff;font-size:15px;font-weight:800}
+  .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 9px;border-radius:8px;background:linear-gradient(140deg,var(--navy),var(--green-2));color:#fff;font-size:14px;font-weight:700;letter-spacing:0.02em;box-shadow:0 2px 8px rgba(7,81,85,0.22)}
   .sec-title-text{flex:1}
   /* Polished numbered-step lists */
   .num-list{counter-reset:numlist;list-style:none;padding:0;margin:14px 0 18px}
@@ -291,7 +293,7 @@
   /* Key Points cards (class injected by JS for any sub-section titled "Key Points") */
   .sub-section.key-points{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid var(--teal);border-radius:12px;padding:18px 22px 20px;margin-top:32px}
   .sub-section.key-points > .sub-section-h{display:flex;align-items:center;gap:10px;margin-top:0;color:var(--teal-mid);background:none;border-left:none;padding:0;font-size:16px;border-radius:0}
-  .sub-section.key-points > .sub-section-h::before{display:flex;content:"✓";color:#fff;background:var(--teal-mid);width:22px;height:22px;border-radius:50%;font-size:12px;align-items:center;justify-content:center;padding:0;font-weight:800;flex-shrink:0}
+  .sub-section.key-points > .sub-section-h::before{position:static;top:auto;bottom:auto;left:auto;display:flex;content:"✓";color:#fff;background:var(--teal-mid);width:22px;height:22px;border-radius:50%;font-size:12px;align-items:center;justify-content:center;padding:0;font-weight:800;flex-shrink:0}
   .sub-section.key-points .sub-section-body ul{list-style:none;padding-left:0;margin:8px 0 0}
   .sub-section.key-points .sub-section-body ul li{position:relative;padding-left:26px;margin-bottom:9px}
   .sub-section.key-points .sub-section-body ul li::before{content:"";position:absolute;left:0;top:0.58em;width:8px;height:8px;border-radius:50%;background:var(--teal-mid);opacity:0.9}
@@ -413,8 +415,11 @@
   @media(max-width:900px){:root{--sidebar-w:240px}#content{padding:32px 24px 64px}#topbar{padding:0 24px}.module-hero h1{font-size:26px}.setup-grid{grid-template-columns:1fr}}
 
   /* === Crucial-to-remember badge beside section heading === */
-  .m-sec-head{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--teal);margin-bottom:24px;padding-bottom:10px}
-  .m-sec-head .m-section-title{flex:0 1 auto;border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .m-sec-head{display:flex;align-items:center;gap:14px;position:relative;margin-bottom:24px;padding-bottom:15px}
+  .m-sec-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--border)}
+  .m-sec-head::before{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green-2),var(--yellow-deep));z-index:1}
+  .m-sec-head .m-section-title{flex:0 1 auto;margin-bottom:0;padding-bottom:0}
+  .m-sec-head .m-section-title::before,.m-sec-head .m-section-title::after{display:none}
   .crucial-badge{height:101px;width:auto;flex:0 0 auto;align-self:center;margin-top:-46px;margin-bottom:-46px;background:var(--bg)}
   @media(max-width:680px){.crucial-badge{height:70px;margin-top:-30px;margin-bottom:-30px}}
 
