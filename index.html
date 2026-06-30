@@ -286,6 +286,12 @@
   .m-section-title{display:flex;align-items:center;gap:12px}
   .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 9px;border-radius:8px;background:linear-gradient(140deg,var(--navy),var(--green-2));color:#fff;font-size:14px;font-weight:700;letter-spacing:0.02em;box-shadow:0 2px 8px rgba(7,81,85,0.22)}
   .sec-title-text{flex:1}
+  /* === Collapsible sections (all modules except Mission/Foundation) === */
+  .m-section.collapsible > .m-section-title,
+  .m-section.collapsible > .m-sec-head{cursor:pointer;user-select:none}
+  .sec-toggle{flex-shrink:0;width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent var(--yellow-deep);transition:transform 0.18s ease;margin-right:4px}
+  .m-section.collapsible:not(.collapsed) .sec-toggle{transform:rotate(90deg)}
+  .m-section.collapsed > :not(.m-section-title):not(.m-sec-head){display:none}
   /* Polished numbered-step lists */
   .num-list{counter-reset:numlist;list-style:none;padding:0;margin:14px 0 18px}
   .num-list>li{counter-increment:numlist;position:relative;padding-left:42px;margin-bottom:11px;font-size:15px;line-height:1.6;font-family:var(--font-ui);min-height:28px}
@@ -7605,6 +7611,12 @@ document.addEventListener('click', function(e){
   e.preventDefault();
   const target = document.getElementById(a.dataset.jump);
   if(target){
+    // If the target is a collapsed section, open it first so its content is visible
+    if(target.classList && target.classList.contains('collapsible')){
+      target.classList.remove('collapsed');
+      const head = target.querySelector('.m-sec-head') || target.querySelector('.m-section-title');
+      if(head) head.setAttribute('aria-expanded','true');
+    }
     const y = target.getBoundingClientRect().top + window.scrollY - 70;
     window.scrollTo({top:y, behavior:'smooth'});
   }
@@ -8035,6 +8047,31 @@ function enhanceModuleVisuals(){
   document.querySelectorAll('.sub-section').forEach(ss => {
     const h = ss.querySelector('.sub-section-h');
     if(h && h.textContent.trim() === 'Key Points') ss.classList.add('key-points');
+  });
+  // Make each section collapsible (every module except Mission, Impact & Values — m0)
+  document.querySelectorAll('.module-page').forEach(page => {
+    if(page.id === 'page-m0') return;
+    page.querySelectorAll('.m-section').forEach(sec => {
+      if(sec.dataset.collapsible) return;
+      const title = sec.querySelector('.m-section-title');
+      if(!title) return;
+      sec.classList.add('collapsible','collapsed');
+      const tri = document.createElement('span');
+      tri.className = 'sec-toggle';
+      tri.setAttribute('aria-hidden','true');
+      title.insertBefore(tri, title.firstChild);
+      const head = title.closest('.m-sec-head') || title;
+      head.setAttribute('role','button');
+      head.setAttribute('tabindex','0');
+      head.setAttribute('aria-expanded','false');
+      const toggle = () => {
+        const open = !sec.classList.toggle('collapsed');
+        head.setAttribute('aria-expanded', String(open));
+      };
+      head.addEventListener('click', toggle);
+      head.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+      sec.dataset.collapsible = '1';
+    });
   });
 }
 
