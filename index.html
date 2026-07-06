@@ -352,8 +352,12 @@
   #s-m2-voice .hv-skill{display:flex;gap:16px;align-items:center}
   #s-m2-voice .hv-skill .hv-photo{width:150px;flex-shrink:0;height:auto;border-radius:8px;display:block}
   #s-m2-voice .hv-skill .hv-skill-text{flex:1;min-width:0}
+  #s-m6-voice .hv-intro-row{display:flex;gap:16px;align-items:center;margin-bottom:4px}
+  #s-m6-voice .hv-intro-row .hv-photo{width:150px;aspect-ratio:1/1;object-fit:cover;flex-shrink:0;border-radius:8px;display:block}
+  #s-m6-voice .hv-intro-row .hv-intro-text{flex:1;min-width:0}
+  #s-m6-voice .hv-intro-row .hv-byline{margin-bottom:10px}
   @media(max-width:760px){.hr-voice{padding:26px 22px 30px}.hr-voice h3{font-size:20px}}
-  @media(max-width:560px){#s-m2-voice .hv-skill{flex-direction:column}#s-m2-voice .hv-skill .hv-photo{width:100%;max-width:240px}}
+  @media(max-width:560px){#s-m2-voice .hv-skill{flex-direction:column}#s-m2-voice .hv-skill .hv-photo{width:100%;max-width:240px}#s-m6-voice .hv-intro-row{flex-direction:column}#s-m6-voice .hv-intro-row .hv-photo{width:100%;max-width:240px}}
   /* Icon accents on callout boxes */
   .info-box{position:relative;padding-left:46px}
   .info-box::before{content:"i";position:absolute;left:16px;top:14px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;font-style:normal;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui)}
@@ -6646,9 +6650,13 @@
   <aside class="hr-voice" id="s-m6-voice" aria-label="People skills — in the words of an HR Manager">
     <div class="hv-eyebrow"><span class="hv-dot"></span>Sidebar · In the words of an HR Manager</div>
     <h3>People Skills in SONGA's System</h3>
-    <div class="hv-byline">The reflections below come directly from a practising SONGA HR Manager, in their own words — what these skills look like on the ground.</div>
-
-    <p class="hv-intro">Generally, an effective HR Manager requires strong soft skills, also known as people skills. These include interpersonal relationship skills, communication skills, attention to detail, conflict-resolution skills, problem-solving skills, and negotiation skills. So what do these skills mean in SONGA's context?</p>
+    <div class="hv-intro-row">
+      <img class="hv-photo" src="img/hr_manager_sidebar.png" alt="An HR Manager at SONGA"/>
+      <div class="hv-intro-text">
+        <div class="hv-byline">The reflections below come directly from a practising SONGA HR Manager, in their own words — what these skills look like on the ground.</div>
+        <p class="hv-intro">Generally, an effective HR Manager requires strong soft skills, also known as people skills. These include interpersonal relationship skills, communication skills, attention to detail, conflict-resolution skills, problem-solving skills, and negotiation skills. So what do these skills mean in SONGA's context?</p>
+      </div>
+    </div>
 
     <div class="hv-skill">
       <h4>Interpersonal relationship skills</h4>
