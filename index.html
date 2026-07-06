@@ -10,8 +10,8 @@
 <style>
   :root {
     --navy: #075155;
-    --teal: #29ca79;
-    --teal-mid: #0f7b57;
+    --teal: #34ab6b;
+    --teal-mid: #075155;
     --teal-light: #E8F8EF;
     --green-2: #34ab6b;
     --yellow: #ffd415;
@@ -22,7 +22,7 @@
     --bg: #F7F9FC;
     --bg-card: #FFFFFF;
     --border: #E2E8EF;
-    --sidebar-w: 280px;
+    --sidebar-w: 300px;
     --font-ui: 'Roboto',-apple-system,'Segoe UI',sans-serif;
     --font-mono: 'Menlo',monospace;
   }
@@ -50,21 +50,21 @@
   .search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.32);font-size:13px;pointer-events:none}
   #nav{padding:8px 0 24px;flex:1}
   .nav-section-label{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px}
-  .nav-group-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:transparent;border:none;cursor:pointer;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px;text-align:left}
+  .nav-group-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:transparent;border:none;cursor:pointer;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px;text-align:left;max-width:268px}
   .nav-group-toggle:hover{color:#fff}
   .nav-group-toggle .ngt-caret{font-size:11px;line-height:1;transition:transform 0.18s ease}
   .nav-group-toggle[aria-expanded="true"] .ngt-caret{transform:rotate(90deg)}
   .nav-group-items{display:none}
   .nav-group-items.open{display:block}
-  .nav-item{display:flex;align-items:center;gap:8px;padding:7px 20px;font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.12s;border-left:2px solid transparent;text-decoration:none;line-height:1.4}
+  .nav-item{display:flex;align-items:center;gap:8px;padding:7px 20px;max-width:268px;border-radius:0 12px 12px 0;font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.12s;border-left:2px solid transparent;text-decoration:none;line-height:1.4}
   .nav-item:hover{color:#fff;background:rgba(255,255,255,0.05)}
-  .nav-item.active{color:#fff;border-left-color:var(--yellow);background:rgba(41,202,121,0.12)}
+  .nav-item.active{color:#fff;border-left-color:var(--yellow);background:rgba(52,171,107,0.12)}
   .nav-item .num{font-size:10px;font-weight:600;color:rgba(255,255,255,0.32);min-width:18px;text-align:right;flex-shrink:0}
   .nav-item.active .num{color:var(--yellow)}
   .nav-item .label{flex:1;font-weight:700}
   .nav-item.assigned .label::after{content:" ★";color:var(--yellow);font-size:10px}
   .nav-score{font-family:var(--font-ui);font-size:10px;font-weight:700;padding:2px 6px;border-radius:10px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7)}
-  .nav-score.passed{background:rgba(41,202,121,0.2);color:var(--teal)}
+  .nav-score.passed{background:rgba(52,171,107,0.2);color:var(--teal)}
   .nav-score.try{background:rgba(255,212,21,0.18);color:var(--yellow)}
   #main{margin-left:var(--sidebar-w);flex:1;min-height:100vh;transition:margin-left 0.25s ease}
   #sidebar-toggle{background:transparent;border:1px solid var(--border);color:var(--navy);font-size:18px;cursor:pointer;padding:6px 11px;border-radius:7px;transition:all 0.12s;line-height:1;font-family:var(--font-ui);margin-right:4px;flex-shrink:0}
@@ -72,7 +72,7 @@
   #topbar{background:var(--bg-card);border-bottom:1px solid var(--border);padding:0 48px;height:56px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(7,81,85,0.04)}
   #topbar-search{flex:1;max-width:480px;position:relative}
   #topbar-search input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--font-ui);font-size:14px;padding:8px 12px 8px 34px;outline:none;color:var(--text);transition:border-color 0.15s,box-shadow 0.15s}
-  #topbar-search input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(41,202,121,0.14)}
+  #topbar-search input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,171,107,0.14)}
   #topbar-search input::placeholder{color:var(--text-light)}
   .topbar-search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--text-light);font-size:14px;pointer-events:none}
   #search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 32px rgba(7,81,85,0.12);max-height:420px;overflow-y:auto;display:none;z-index:200}
@@ -126,10 +126,12 @@
   /* Sections & sub-sections */
   .m-section{margin:48px 0;padding-top:8px;scroll-margin-top:80px}
   .m-section:first-of-type{margin-top:16px}
-  .m-section-title{font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);border-bottom:2px solid var(--teal);padding-bottom:10px;margin-bottom:24px;line-height:1.3}
+  .m-section-title{font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);position:relative;padding-bottom:15px;margin-bottom:26px;line-height:1.3;letter-spacing:-0.01em}
+  .m-section-title::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--border)}
+  .m-section-title::before{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green-2),var(--yellow-deep));z-index:1}
   .sub-section{margin:22px 0 28px}
-  .sub-section-h{font-family:var(--font-ui);display:block;font-size:17px;font-weight:700;color:var(--navy);margin:26px 0 14px;line-height:1.4;padding:9px 16px;border-left:3px solid var(--teal);background:linear-gradient(90deg,var(--teal-light) 0%,rgba(232,248,239,0) 72%);border-radius:0 8px 8px 0}
-  .sub-section-h::before{display:none}
+  .sub-section-h{font-family:var(--font-ui);display:block;position:relative;font-size:16.5px;font-weight:700;color:var(--navy);margin:26px 0 14px;line-height:1.4;padding:8px 16px 8px 18px;background:linear-gradient(90deg,rgba(232,248,239,0.75) 0%,rgba(232,248,239,0) 60%);border-radius:0 6px 6px 0;letter-spacing:0.005em}
+  .sub-section-h::before{content:"";display:block;position:absolute;left:0;top:7px;bottom:7px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--green-2),var(--yellow-deep))}
   .sub-section-body p{margin-bottom:13px;font-size:15.5px;line-height:1.65;color:var(--text)}
   .sub-section-body p:last-child{margin-bottom:0}
   .num-list{counter-reset:numlist;list-style:none;padding:0;margin:12px 0 18px}
@@ -166,7 +168,7 @@
   .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
   .setup-grid label{font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;display:block}
   .setup-grid input,.setup-grid select{display:block;width:100%;margin-top:5px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--font-ui);font-size:14px;padding:9px 12px;color:var(--text);outline:none;text-transform:none;letter-spacing:0;font-weight:400}
-  .setup-grid input:focus,.setup-grid select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(41,202,121,0.14)}
+  .setup-grid input:focus,.setup-grid select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,171,107,0.14)}
   .setup-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   .trainee-banner{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid var(--teal);border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .trainee-banner .tb-info{flex:1;min-width:220px}
@@ -209,7 +211,7 @@
   .quiz-option:hover{border-color:var(--teal);background:var(--teal-light)}
   .quiz-option input{accent-color:var(--teal-mid);cursor:pointer}
   .quiz-option.correct{background:var(--teal-light);border-color:var(--teal);color:var(--teal-mid);font-weight:600}
-  .quiz-option.wrong{background:#FFEAEA;border-color:#D86A6A;color:#991F1F;font-weight:600}
+  .quiz-option.wrong{background:#FFF8DC;border-color:var(--yellow-deep);color:#8A5A00;font-weight:600}
   .quiz-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   .quiz-result{margin-top:14px;padding:14px 16px;border-radius:8px;font-family:var(--font-ui);font-size:14px;display:none}
   .quiz-result.show{display:block}
@@ -282,8 +284,14 @@
 
   /* === Cross-module visual enhancements (applied to all role modules) === */
   .m-section-title{display:flex;align-items:center;gap:12px}
-  .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 9px;border-radius:9px;background:linear-gradient(135deg,var(--navy),var(--teal-mid));color:#fff;font-size:15px;font-weight:800}
+  .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 9px;border-radius:8px;background:linear-gradient(140deg,var(--navy),var(--green-2));color:#fff;font-size:14px;font-weight:700;letter-spacing:0.02em;box-shadow:0 2px 8px rgba(7,81,85,0.22)}
   .sec-title-text{flex:1}
+  /* === Collapsible sections (all modules except Mission/Foundation) === */
+  .m-section.collapsible > .m-section-title,
+  .m-section.collapsible > .m-sec-head{cursor:pointer;user-select:none}
+  .sec-toggle{flex-shrink:0;width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent var(--yellow-deep);transition:transform 0.18s ease;margin-right:4px}
+  .m-section.collapsible:not(.collapsed) .sec-toggle{transform:rotate(90deg)}
+  .m-section.collapsed > :not(.m-section-title):not(.m-sec-head){display:none}
   /* Polished numbered-step lists */
   .num-list{counter-reset:numlist;list-style:none;padding:0;margin:14px 0 18px}
   .num-list>li{counter-increment:numlist;position:relative;padding-left:42px;margin-bottom:11px;font-size:15px;line-height:1.6;font-family:var(--font-ui);min-height:28px}
@@ -291,33 +299,33 @@
   /* Key Points cards (class injected by JS for any sub-section titled "Key Points") */
   .sub-section.key-points{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid var(--teal);border-radius:12px;padding:18px 22px 20px;margin-top:32px}
   .sub-section.key-points > .sub-section-h{display:flex;align-items:center;gap:10px;margin-top:0;color:var(--teal-mid);background:none;border-left:none;padding:0;font-size:16px;border-radius:0}
-  .sub-section.key-points > .sub-section-h::before{display:flex;content:"✓";color:#fff;background:var(--teal-mid);width:22px;height:22px;border-radius:50%;font-size:12px;align-items:center;justify-content:center;padding:0;font-weight:800;flex-shrink:0}
+  .sub-section.key-points > .sub-section-h::before{position:static;top:auto;bottom:auto;left:auto;display:flex;content:"✓";color:#fff;background:var(--teal-mid);width:22px;height:22px;border-radius:50%;font-size:12px;align-items:center;justify-content:center;padding:0;font-weight:800;flex-shrink:0}
   .sub-section.key-points .sub-section-body ul{list-style:none;padding-left:0;margin:8px 0 0}
   .sub-section.key-points .sub-section-body ul li{position:relative;padding-left:26px;margin-bottom:9px}
   .sub-section.key-points .sub-section-body ul li::before{content:"";position:absolute;left:0;top:0.58em;width:8px;height:8px;border-radius:50%;background:var(--teal-mid);opacity:0.9}
   /* === Driver Compliance Highlights === */
-  .compliance-banner{background:linear-gradient(135deg,#3d0a0a 0%,#6b1515 60%,#7a1a1a 100%);border-radius:14px;padding:28px 32px;margin:28px 0 10px;color:#fff;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(100,0,0,0.18)}
-  .compliance-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#ff4c4c,#ff9800);border-radius:12px 12px 0 0}
-  .compliance-banner::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(255,80,80,0.10),transparent 65%);pointer-events:none}
-  .compliance-banner .cb-eyebrow{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#ff9800;margin-bottom:10px}
-  .compliance-banner h3{font-family:var(--font-ui);font-size:20px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.3}
-  .compliance-banner p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.82);margin:0;max-width:680px}
-  .compliance-section{border:2px solid #e53935;border-radius:12px;margin:20px 0;overflow:hidden}
-  .compliance-section-head{background:linear-gradient(90deg,#e53935,#b71c1c);padding:10px 18px;display:flex;align-items:center;gap:10px}
+  .compliance-banner{background:linear-gradient(135deg,#ffd415 0%,#ffc700 100%);border-radius:14px;padding:28px 32px;margin:28px 0 10px;color:var(--navy);position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12)}
+  .compliance-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--navy);border-radius:12px 12px 0 0}
+  .compliance-banner::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(255,199,0,0.25),transparent 65%);pointer-events:none}
+  .compliance-banner .cb-eyebrow{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+  .compliance-banner h3{font-family:var(--font-ui);font-size:20px;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.3}
+  .compliance-banner p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:rgba(7,81,85,0.85);margin:0;max-width:680px}
+  .compliance-section{border:2px solid #ffd415;border-radius:12px;margin:20px 0;overflow:hidden}
+  .compliance-section-head{background:linear-gradient(90deg,#ffd415,#ffc700);padding:10px 18px;display:flex;align-items:center;gap:10px}
   .compliance-section-head .cs-icon{font-size:16px}
-  .compliance-section-head .cs-label{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#fff}
-  .compliance-section-body{padding:16px 20px 18px;background:rgba(229,57,53,0.04)}
+  .compliance-section-head .cs-label{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy)}
+  .compliance-section-body{padding:16px 20px 18px;background:rgba(255,212,21,0.08)}
   .compliance-section-body p{font-family:var(--font-ui);font-size:15px;line-height:1.65;color:var(--text);margin-bottom:10px}
   .compliance-section-body p:last-child{margin-bottom:0}
   .compliance-section-body ul{list-style:none;padding:0;margin:8px 0 0}
   .compliance-section-body ul li{font-family:var(--font-ui);font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:7px}
-  .compliance-section-body ul li::before{content:"";position:absolute;left:0;top:0.6em;width:8px;height:8px;border-radius:50%;background:#e53935}
+  .compliance-section-body ul li::before{content:"";position:absolute;left:0;top:0.6em;width:8px;height:8px;border-radius:50%;background:#ffc700}
   .compliance-must-box{background:linear-gradient(135deg,#fff8e1,#fff3e0);border:2px solid #ff9800;border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--font-ui)}
   .compliance-must-box .cmb-label{font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#e65100;margin-bottom:6px}
   .compliance-must-box p{font-size:14.5px;line-height:1.6;color:var(--text);margin:0}
   .compliance-must-box ul{list-style:none;padding:0;margin:6px 0 0}
   .compliance-must-box ul li{font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:6px}
-  .compliance-must-box ul li::before{content:"";position:absolute;left:0;top:0.55em;width:8px;height:8px;border-radius:50%;background:#e53935}
+  .compliance-must-box ul li::before{content:"";position:absolute;left:0;top:0.55em;width:8px;height:8px;border-radius:50%;background:#ffc700}
   /* === Escalation / data table === */
   .esc-table-wrap{overflow-x:auto;margin:8px 0 4px}
   table.esc-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:14px;min-width:640px}
@@ -327,21 +335,29 @@
   table.esc-table td .esc-level{display:inline-block;font-weight:700;font-size:12px;color:var(--teal-mid);white-space:nowrap}
   table.esc-table td.esc-fault{font-weight:600;color:var(--navy)}
   /* === HR Manager "voice" sidebar — first-person account from a real HR Manager === */
-  .hr-voice{position:relative;background:linear-gradient(135deg,#1e1b4b 0%,#3730a3 55%,#4f46e5 100%);border-radius:16px;padding:34px 38px 38px;margin:36px 0 14px;color:#fff;overflow:hidden;box-shadow:0 8px 32px rgba(49,46,129,0.28)}
-  .hr-voice::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#a78bfa,#f0abfc,#a78bfa)}
-  .hr-voice::after{content:"\201C";position:absolute;top:6px;right:26px;font-family:Georgia,serif;font-size:160px;line-height:1;color:rgba(255,255,255,0.08);pointer-events:none}
-  .hr-voice .hv-eyebrow{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#e9d5ff;margin-bottom:10px;display:flex;align-items:center;gap:9px}
-  .hr-voice .hv-eyebrow .hv-dot{width:8px;height:8px;border-radius:50%;background:#f0abfc;box-shadow:0 0 0 4px rgba(240,171,252,0.25)}
-  .hr-voice h3{font-family:var(--font-ui);font-size:23px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.25}
-  .hr-voice .hv-byline{font-family:var(--font-ui);font-size:13.5px;font-style:italic;color:rgba(255,255,255,0.78);margin-bottom:20px}
-  .hr-voice .hv-intro{font-family:var(--font-ui);font-size:16px;line-height:1.7;color:rgba(255,255,255,0.92);margin-bottom:22px;max-width:760px;position:relative;z-index:1}
-  .hr-voice .hv-skill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-left:3px solid #c4b5fd;border-radius:10px;padding:15px 18px;margin-bottom:13px;position:relative;z-index:1}
+  .hr-voice{position:relative;background:linear-gradient(135deg,#ffd415 0%,#ffc700 100%);border-radius:16px;padding:34px 38px 38px;margin:36px 0 14px;color:var(--navy);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.12)}
+  .hr-voice::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--green-2),var(--navy))}
+  .hr-voice::after{content:"\201C";position:absolute;top:6px;right:26px;font-family:Georgia,serif;font-size:160px;line-height:1;color:rgba(7,81,85,0.10);pointer-events:none}
+  .hr-voice .hv-eyebrow{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:9px}
+  .hr-voice .hv-eyebrow .hv-dot{width:8px;height:8px;border-radius:50%;background:var(--navy);box-shadow:0 0 0 4px rgba(7,81,85,0.18)}
+  .hr-voice h3{font-family:var(--font-ui);font-size:23px;font-weight:700;color:var(--navy);margin:0 0 6px;line-height:1.25}
+  .hr-voice .hv-byline{font-family:var(--font-ui);font-size:13.5px;font-style:italic;color:rgba(7,81,85,0.85);margin-bottom:20px}
+  .hr-voice .hv-intro{font-family:var(--font-ui);font-size:16px;line-height:1.7;color:var(--text);margin-bottom:22px;max-width:760px;position:relative;z-index:1}
+  .hr-voice .hv-skill{background:rgba(255,255,255,0.5);border:1px solid rgba(7,81,85,0.12);border-left:3px solid var(--navy);border-radius:10px;padding:15px 18px;margin-bottom:13px;position:relative;z-index:1}
   .hr-voice .hv-skill:last-child{margin-bottom:0}
-  .hr-voice .hv-skill h4{font-family:var(--font-ui);font-size:15px;font-weight:700;color:#f5f3ff;margin:0 0 5px}
-  .hr-voice .hv-skill p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:rgba(255,255,255,0.86);margin:0}
-  .hr-voice .hv-skill p .hv-eg{color:#e9d5ff;font-style:italic;font-weight:600}
-  .hr-voice .hv-close{font-family:var(--font-ui);font-size:15.5px;line-height:1.7;color:rgba(255,255,255,0.92);margin-top:20px;position:relative;z-index:1;max-width:760px}
+  .hr-voice .hv-skill h4{font-family:var(--font-ui);font-size:15px;font-weight:700;color:var(--navy);margin:0 0 5px}
+  .hr-voice .hv-skill p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:var(--text);margin:0}
+  .hr-voice .hv-skill p .hv-eg{color:var(--teal-mid);font-style:italic;font-weight:600}
+  .hr-voice .hv-close{font-family:var(--font-ui);font-size:15.5px;line-height:1.7;color:var(--text);margin-top:20px;position:relative;z-index:1;max-width:760px}
+  #s-m2-voice .hv-skill{display:flex;gap:16px;align-items:center}
+  #s-m2-voice .hv-skill .hv-photo{width:150px;flex-shrink:0;height:auto;border-radius:8px;display:block}
+  #s-m2-voice .hv-skill .hv-skill-text{flex:1;min-width:0}
+  #s-m6-voice .hv-intro-row{display:flex;gap:16px;align-items:center;margin-bottom:4px}
+  #s-m6-voice .hv-intro-row .hv-photo{width:150px;aspect-ratio:1/1;object-fit:cover;flex-shrink:0;border-radius:8px;display:block}
+  #s-m6-voice .hv-intro-row .hv-intro-text{flex:1;min-width:0}
+  #s-m6-voice .hv-intro-row .hv-byline{margin-bottom:10px}
   @media(max-width:760px){.hr-voice{padding:26px 22px 30px}.hr-voice h3{font-size:20px}}
+  @media(max-width:560px){#s-m2-voice .hv-skill{flex-direction:column}#s-m2-voice .hv-skill .hv-photo{width:100%;max-width:240px}#s-m6-voice .hv-intro-row{flex-direction:column}#s-m6-voice .hv-intro-row .hv-photo{width:100%;max-width:240px}}
   /* Icon accents on callout boxes */
   .info-box{position:relative;padding-left:46px}
   .info-box::before{content:"i";position:absolute;left:16px;top:14px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;font-style:normal;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui)}
@@ -388,7 +404,7 @@
   .profile-card h3{font-family:var(--font-ui);font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px}
   .profile-form label{display:block;font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px}
   .profile-form input,.profile-form select{display:block;width:100%;margin-top:5px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--font-ui);font-size:14px;padding:10px 12px;color:var(--text);outline:none;text-transform:none;letter-spacing:0;font-weight:400}
-  .profile-form input:focus,.profile-form select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(41,202,121,0.14)}
+  .profile-form input:focus,.profile-form select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,171,107,0.14)}
   .profile-actions{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
   .profile-stat-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-family:var(--font-ui);font-size:14px;color:var(--text);gap:12px}
   .profile-stat-row:last-child{border-bottom:none}
@@ -409,8 +425,11 @@
   @media(max-width:900px){:root{--sidebar-w:240px}#content{padding:32px 24px 64px}#topbar{padding:0 24px}.module-hero h1{font-size:26px}.setup-grid{grid-template-columns:1fr}}
 
   /* === Crucial-to-remember badge beside section heading === */
-  .m-sec-head{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--teal);margin-bottom:24px;padding-bottom:10px}
-  .m-sec-head .m-section-title{flex:0 1 auto;border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .m-sec-head{display:flex;align-items:center;gap:14px;position:relative;margin-bottom:24px;padding-bottom:15px}
+  .m-sec-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--border)}
+  .m-sec-head::before{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green-2),var(--yellow-deep));z-index:1}
+  .m-sec-head .m-section-title{flex:0 1 auto;margin-bottom:0;padding-bottom:0}
+  .m-sec-head .m-section-title::before,.m-sec-head .m-section-title::after{display:none}
   .crucial-badge{height:101px;width:auto;flex:0 0 auto;align-self:center;margin-top:-46px;margin-bottom:-46px;background:var(--bg)}
   @media(max-width:680px){.crucial-badge{height:70px;margin-top:-30px;margin-bottom:-30px}}
 
@@ -447,6 +466,8 @@
     <a class="nav-item" data-page="profile" onclick="showPage('profile',this)"><span class="label">My Profile</span></a>
     <div class="nav-section-label">Foundation · All Roles</div>
     <a class="nav-item foundation" data-page="m0" onclick="showPage('m0',this)"><span class="label">Mission, Impact &amp; Values</span></a>
+    <div class="nav-section-label">Platform · All Roles</div>
+    <a class="nav-item" data-page="m8" onclick="showPage('m8',this)"><span class="label">SONGA App</span><span class="nav-score" data-score="m8">—</span></a>
     <div class="nav-section-label">Role Modules</div>
     <a class="nav-item" data-page="m1" onclick="showPage('m1',this)"><span class="nav-icon"><img src="img/2.svg" alt=""></span><span class="label">Drivers</span><span class="nav-score" data-score="m1">—</span></a>
     <a class="nav-item" data-page="m2" onclick="showPage('m2',this)"><span class="nav-icon"><img src="img/1.svg" alt=""></span><span class="label">Hub Managers</span><span class="nav-score" data-score="m2">—</span></a>
@@ -456,7 +477,7 @@
       <a class="nav-item" data-page="m4" onclick="showPage('m4',this)"><span class="nav-icon"><img src="img/data_innovations_manager.png" alt=""></span><span class="label">Data &amp; Innovation Managers</span><span class="nav-score" data-score="m4">—</span></a>
       <a class="nav-item" data-page="m5" onclick="showPage('m5',this)"><span class="nav-icon"><img src="img/finance_manager.png" alt=""></span><span class="label">Finance Managers</span><span class="nav-score" data-score="m5">—</span></a>
       <a class="nav-item" data-page="m6" onclick="showPage('m6',this)"><span class="nav-icon"><img src="img/hr_manager.png" alt=""></span><span class="label">HR Managers</span><span class="nav-score" data-score="m6">—</span></a>
-      <a class="nav-item" data-page="m7" onclick="showPage('m7',this)"><span class="nav-icon"><img src="img/agriculture_manager.png" alt=""></span><span class="label">Agricultural and Extension Managers</span><span class="nav-score" data-score="m7">—</span></a>
+      <a class="nav-item" data-page="m7" onclick="showPage('m7',this)"><span class="nav-icon"><img src="img/agriculture_manager.png" alt=""></span><span class="label">Agriculture and Extension Managers</span><span class="nav-score" data-score="m7">—</span></a>
     </div>
   </div>
 </nav>
@@ -504,7 +525,8 @@
       <a class="role-tile" onclick="showPage('m4',null)"><span><span class="rt-num">04</span>Data &amp; Innovation Managers</span><span>→</span></a>
       <a class="role-tile" onclick="showPage('m5',null)"><span><span class="rt-num">05</span>Finance Managers</span><span>→</span></a>
       <a class="role-tile" onclick="showPage('m6',null)"><span><span class="rt-num">06</span>HR Managers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m7',null)"><span><span class="rt-num">07</span>Agricultural and Extension Managers</span><span>→</span></a>
+      <a class="role-tile" onclick="showPage('m7',null)"><span><span class="rt-num">07</span>Agriculture and Extension Managers</span><span>→</span></a>
+      <a class="role-tile" onclick="showPage('m8',null)"><span><span class="rt-num">08</span>SONGA App</span><span>→</span></a>
     </div>
   </div>
 </div>
@@ -533,7 +555,7 @@
           <option value="m4">Data &amp; Innovation Managers</option>
           <option value="m5">Finance Managers</option>
           <option value="m6">HR Managers</option>
-          <option value="m7">Agricultural and Extension Managers</option>
+          <option value="m7">Agriculture and Extension Managers</option>
         </select></label>
         <label>Hub Station<input type="text" id="profile-hub" autocomplete="off" placeholder="e.g. Kisii"/></label>
         <label>Email (optional)<input type="email" id="profile-email" autocomplete="off" placeholder="you@songa.mobi"/></label>
@@ -567,12 +589,6 @@
       <div class="read-progress-label"><span>Reading progress</span><span class="pct" data-readpct="m0">0%</span></div>
       <div class="read-progress-bar"><div class="read-progress-fill" data-readfill="m0"></div></div>
     </div>
-  </div>
-
-  <div class="values-hero">
-    <div class="vh-eyebrow">Why we are here</div>
-    <h2>Every task you do connects to a farmer who depends on this system to make a living.</h2>
-    <p>From swapping a battery to managing a hub, your work keeps milk moving, incomes flowing, and communities growing.</p>
   </div>
 
   <figure class="intro-video" style="margin:28px auto;width:70%;aspect-ratio:1920/1080">
@@ -2646,16 +2662,25 @@
     <p class="hv-intro">Three Hub Managers share the skills they rely on most — attention to detail and accountability, people management and policy enforcement, and communication when things go wrong.</p>
 
     <div class="hv-skill">
-      <h4>Hub Manager A — Attention to detail, accountability &amp; integrity</h4>
-      <p>I think being a Hub Manager requires strong attention to detail, accountability, and integrity. <span class="hv-eg">For example,</span> I am responsible for ensuring that daily trip logs, milk data, ERPNext entries, hub expenses, and trike rental transactions are recorded accurately. This information feeds into dashboards and management reports, so even a small error can affect payments, operational decisions, or performance tracking. I must also ensure that every expense and rental transaction is supported by transparent and traceable documentation. As Hub Manager, I am accountable for what happens at the hub, even when a task has been delegated to someone else.</p>
+      <img class="hv-photo" src="img/Hub_Manager_A.png" alt="Hub Manager A"/>
+      <div class="hv-skill-text">
+        <h4>Hub Manager A — Attention to detail, accountability &amp; integrity</h4>
+        <p>I think being a Hub Manager requires strong attention to detail, accountability, and integrity. <span class="hv-eg">For example,</span> I am responsible for ensuring that daily trip logs, milk data, ERPNext entries, hub expenses, and trike rental transactions are recorded accurately. This information feeds into dashboards and management reports, so even a small error can affect payments, operational decisions, or performance tracking. I must also ensure that every expense and rental transaction is supported by transparent and traceable documentation. As Hub Manager, I am accountable for what happens at the hub, even when a task has been delegated to someone else.</p>
+      </div>
     </div>
     <div class="hv-skill">
-      <h4>Hub Manager B — People management &amp; policy enforcement</h4>
-      <p>For me, people-management and policy-enforcement skills are crucial to running a hub. <span class="hv-eg">For example,</span> I have to delegate duties clearly to technicians, battery agents, drivers, and support staff, while ensuring that everyone understands their responsibilities and deadlines. At the same time, I must enforce SONGA's policies consistently. This includes checking that drivers wear the required PPE, ensuring that workshop and charging areas are safe and orderly, and confirming that all staff follow the relevant SOPs. I must be firm about the standards while still supporting the team to perform well.</p>
+      <img class="hv-photo" src="img/Hub_Manager_B.png" alt="Hub Manager B"/>
+      <div class="hv-skill-text">
+        <h4>Hub Manager B — People management &amp; policy enforcement</h4>
+        <p>For me, people-management and policy-enforcement skills are crucial to running a hub. <span class="hv-eg">For example,</span> I have to delegate duties clearly to technicians, battery agents, drivers, and support staff, while ensuring that everyone understands their responsibilities and deadlines. At the same time, I must enforce SONGA's policies consistently. This includes checking that drivers wear the required PPE, ensuring that workshop and charging areas are safe and orderly, and confirming that all staff follow the relevant SOPs. I must be firm about the standards while still supporting the team to perform well.</p>
+      </div>
     </div>
     <div class="hv-skill">
-      <h4>Hub Manager C — Communication &amp; interpersonal skills</h4>
-      <p>When a trike breakdown delayed operations and created disagreement between a driver and a technician, I recognised the importance of strong communication and interpersonal skills. I had to listen to both sides, clarify what had happened, and communicate the next steps calmly. I also needed to inform the relevant teams about the operational delay and agree on a practical solution. Daily debriefs are important because they allow the team to discuss trike, data, and staff-related challenges openly, identify solutions, and prevent the same issues from happening again.</p>
+      <img class="hv-photo" src="img/Hub_Manager_C.png" alt="Hub Manager C"/>
+      <div class="hv-skill-text">
+        <h4>Hub Manager C — Communication &amp; interpersonal skills</h4>
+        <p>When a trike breakdown delayed operations and created disagreement between a driver and a technician, I recognised the importance of strong communication and interpersonal skills. I had to listen to both sides, clarify what had happened, and communicate the next steps calmly. I also needed to inform the relevant teams about the operational delay and agree on a practical solution. Daily debriefs are important because they allow the team to discuss trike, data, and staff-related challenges openly, identify solutions, and prevent the same issues from happening again.</p>
+      </div>
     </div>
 
     <p class="hv-close">Across all three, the through-line is the same: a hub runs on accurate records, consistent standards, and calm communication — and the Hub Manager is accountable for all three, every day.</p>
@@ -6640,9 +6665,13 @@
   <aside class="hr-voice" id="s-m6-voice" aria-label="People skills — in the words of an HR Manager">
     <div class="hv-eyebrow"><span class="hv-dot"></span>Sidebar · In the words of an HR Manager</div>
     <h3>People Skills in SONGA's System</h3>
-    <div class="hv-byline">The reflections below come directly from a practising SONGA HR Manager, in their own words — what these skills look like on the ground.</div>
-
-    <p class="hv-intro">Generally, an effective HR Manager requires strong soft skills, also known as people skills. These include interpersonal relationship skills, communication skills, attention to detail, conflict-resolution skills, problem-solving skills, and negotiation skills. So what do these skills mean in SONGA's context?</p>
+    <div class="hv-intro-row">
+      <img class="hv-photo" src="img/hr_manager_sidebar.png" alt="An HR Manager at SONGA"/>
+      <div class="hv-intro-text">
+        <div class="hv-byline">The reflections below come directly from a practising SONGA HR Manager, in their own words — what these skills look like on the ground.</div>
+        <p class="hv-intro">Generally, an effective HR Manager requires strong soft skills, also known as people skills. These include interpersonal relationship skills, communication skills, attention to detail, conflict-resolution skills, problem-solving skills, and negotiation skills. So what do these skills mean in SONGA's context?</p>
+      </div>
+    </div>
 
     <div class="hv-skill">
       <h4>Interpersonal relationship skills</h4>
@@ -6834,16 +6863,21 @@
 <!-- M7: AGRICULTURE                                             -->
 <!-- ========================================================== -->
 <div class="module-page" id="page-m7">
-  <div class="breadcrumb"><a onclick="showPage('home',null)">Home</a> › Module 7 · Agricultural and Extension Managers</div>
+  <div class="breadcrumb"><a onclick="showPage('home',null)">Home</a> › Module 7 · Agriculture and Extension Managers</div>
   <div class="module-hero">
     <div class="module-tag" data-mod-tag="m7">Module 07</div>
-    <h1>Agricultural and Extension Managers</h1>
+    <h1>Agriculture and Extension Managers</h1>
     <p class="lead">Field-facing training for SONGA Agriculture &amp; Extension Managers — covering SHEP Dairy implementation, farmer registration and group formation, extension services, monitoring, agrilogistics and market access, cooperative capacity building, climate-smart agriculture, team leadership, and KPIs.</p>
     <div class="module-status" data-status="m7"></div>
     <div class="read-progress">
       <div class="read-progress-label"><span>Reading progress</span><span class="pct" data-readpct="m7">0%</span></div>
       <div class="read-progress-bar"><div class="read-progress-fill" data-readfill="m7"></div></div>
     </div>
+  </div>
+
+  <div style="display:flex;gap:14px;margin:0 0 28px;flex-wrap:wrap;align-items:flex-start">
+    <img src="img/talking_to_farmers.png" alt="SONGA Agriculture &amp; Extension Manager talking to farmers" style="flex:1 1 0;min-width:240px;width:100%;aspect-ratio:2048/1365;object-fit:cover;border-radius:10px;display:block"/>
+    <img src="img/shep_1.png" alt="SHEP Dairy programme in the field" style="flex:1 1 0;min-width:240px;width:100%;aspect-ratio:2048/1365;object-fit:cover;border-radius:10px;display:block"/>
   </div>
 
   <nav class="section-nav" aria-label="Sections in this module">
@@ -6915,10 +6949,6 @@
   <section class="m-section" id="s-m7-01">
     <h2 class="m-section-title">01. Your Role as an Agriculture &amp; Extension Manager</h2>
 
-    <figure class="doc-screenshot" style="margin:8px 0 24px">
-      <img src="img/Agriculture_Manager.png" alt="The Agriculture &amp; Extension Manager — leading farmer-facing agricultural interventions in the SONGA/KSC ecosystem" style="width:100%;max-width:960px;display:block;border-radius:8px;border:1px solid var(--border)"/>
-    </figure>
-
     <div class="sub-section">
       <div class="sub-section-h">What does being an Agriculture &amp; Extension Manager mean within SONGA's system?</div>
       <div class="sub-section-body">
@@ -6945,7 +6975,7 @@
           <li><strong>Agrilogistics &amp; Market Access Coordination:</strong> Liaise between farmers, rural SMEs, and the platform to streamline first-mile produce collection and last-mile input/service delivery. Identify and address logistical gaps affecting smallholder access to markets, processing, and farm inputs. Support partnerships that enhance supply chain efficiency and inclusivity.</li>
           <li><strong>Cooperative &amp; SME Capacity Building:</strong> Strengthen farmer groups, cooperatives, and agroprocessors through training on governance, quality standards, financial inclusion, and youth and female inclusion. Support SMEs in adopting platform-enabled services for cold-storage, transport, and market access. Facilitate the formation of farmer producer groups and link them to financial services. Advise farmers and farm managers on techniques for improving crop production and alternative agricultural options.</li>
           <li><strong>Monitoring, Evaluation &amp; Climate-Smart Agriculture:</strong> Design and implement agroforestry programmes integrating tree planting, soil conservation, and sustainable land use. Facilitate farmer training on carbon-smart techniques. Monitor and document carbon abatement impacts. Advocate for policies and incentives that reward climate-positive farming.</li>
-          <li><strong>Team Leadership &amp; Management:</strong> Supervise and guide SHEP Facilitators and Agri-E-Hub Associates, develop work plans and performance targets, provide mentorship, and ensure accurate and timely reporting (detailed in Section 13).</li>
+          <li><strong>Team Leadership &amp; Management:</strong> Supervise and guide the Agri-Economy Associate, the Business Development and Extension Associate, and Agri-Associates; develop work plans and performance targets, provide mentorship, and ensure accurate and timely reporting (detailed in Section 13).</li>
         </ul>
       </div>
     </div>
@@ -6953,7 +6983,7 @@
     <div class="sub-section">
       <div class="sub-section-h">Working Relationships</div>
       <div class="sub-section-body">
-        <p><strong>Reports to:</strong> Head of Growth &amp; Field Operations. <strong>Direct Reports:</strong> Agri-E-Hub Associates, SHEP Facilitators.</p>
+        <p><strong>Reports to:</strong> Head of Growth &amp; Field Operations. <strong>Direct Reports:</strong> Agri-Economy Associate, Business Development and Extension Associate, and Agri-Associates.</p>
         <ul>
           <li><strong>Internal relationships:</strong> You are directly accountable to the Head of Growth &amp; Field Operations, and required to work with the Product, Mobility, Finance, Business Development, Projects, Data &amp; Innovation, SHEP, and Hub Operations teams for the business unit.</li>
           <li><strong>External relationships:</strong> Off-takers, institutions, distributors, outgrower schemes, e-commerce aggregators, and dedicated &amp; on-demand transport accounts.</li>
@@ -7031,9 +7061,10 @@
       <div class="sub-section-h">Accountability Structure</div>
       <div class="sub-section-body">
         <ul>
-          <li><strong>Agricultural and Extension Manager:</strong> Sets Key Performance Indicators (KPIs) for SHEP, manages the team, engages with partners (JICA — SHEP Biz office), and reports to senior management and directors on SHEP implementation.</li>
-          <li><strong>SHEP Team Lead:</strong> Overall programme coordinator — responsible for planning weekly team activities, budgeting for SHEP consumables and training materials, and reporting on the overall programme activities.</li>
-          <li><strong>SHEP Facilitators:</strong> Directly accountable to the SHEP Team Lead; must provide weekly updates on their dairy farmer groups.</li>
+          <li><strong>Agriculture and Extension Manager:</strong> Sets Key Performance Indicators (KPIs) for SHEP, manages the team, engages with partners (JICA — SHEP Biz office), and reports to senior management and directors on SHEP implementation.</li>
+          <li><strong>Business Development and Extension Associate:</strong> Overall programme coordinator (SHEP Horticulture) — responsible for planning weekly team activities, budgeting for SHEP consumables and training materials, and reporting on the overall programme activities.</li>
+          <li><strong>Agri-Economy Associate:</strong> Overall programme coordinator (SHEP Dairy) — responsible for planning weekly team activities, budgeting for SHEP consumables and training materials, and reporting on the overall programme activities.</li>
+          <li><strong>Agri-Associates / SHEP Facilitators:</strong> Directly accountable to the Agri-Economy and Business Development and Extension Associates; must provide weekly updates on their dairy farmer groups.</li>
         </ul>
       </div>
     </div>
@@ -7059,7 +7090,7 @@
           <li>The process begins with farmer selection and vision sharing.</li>
           <li>Farmers make their own decisions based on their resources and goals.</li>
           <li>Monitoring tracks whether farmers are improving production, income and reinvestment.</li>
-          <li>The Agriculture &amp; Extension Manager sets the KPIs, the SHEP Team Lead coordinates the programme, and SHEP Facilitators report weekly on their dairy farmer groups.</li>
+          <li>The Agriculture &amp; Extension Manager sets the KPIs, the Agri-Economy Associate coordinates the SHEP Dairy programme, and Agri-Associates report weekly on their dairy farmer groups.</li>
         </ul>
       </div>
     </div>
@@ -7079,6 +7110,9 @@
       <div class="sub-section-h">Farmer Onboarding</div>
       <div class="sub-section-body">
         <p>Farmer onboarding includes identifying eligible farmers, registering them on the system, and linking them to milk collection points. The Agriculture &amp; Extension Manager oversees this process and the agricultural data collection that supports it.</p>
+        <figure style="margin:16px auto 4px;width:70%">
+          <img src="img/farmers_1.png" alt="Smallholder farmers in the SONGA programme" style="width:100%;height:auto;object-fit:contain;border-radius:10px;display:block"/>
+        </figure>
       </div>
     </div>
 
@@ -7246,7 +7280,7 @@
     </div>
 
     <div class="sub-section">
-      <div class="sub-section-h">Core Training Topics (delivered by trained SHEP Facilitators)</div>
+      <div class="sub-section-h">Core Training Topics (delivered by trained Agri-Associates)</div>
       <div class="sub-section-body">
         <ul>
           <li><strong>Feed and Nutrition Management:</strong> Balanced diet, supplementation, and clean water supply.</li>
@@ -7281,7 +7315,7 @@
         <ul>
           <li>Technical training should respond to farmers' chosen priorities.</li>
           <li>Core topics include feed and nutrition, breeding, milk hygiene, animal health, record keeping, housing and welfare, sustainable practices, and farmer collaboration.</li>
-          <li>Core topics are delivered by trained SHEP Facilitators; specialised topics (feed ration formulation, advanced breeding, drug prescriptions) are delivered with veterinary partners.</li>
+          <li>Core topics are delivered by trained Agri-Associates; specialised topics (feed ration formulation, advanced breeding, drug prescriptions) are delivered with veterinary partners.</li>
           <li>Farmer groups are supported to register with the Directorate of Social Services to access banking, insurance, and other group-level services.</li>
         </ul>
       </div>
@@ -7446,7 +7480,7 @@
     <div class="sub-section">
       <div class="sub-section-h">Accountability Structure</div>
       <div class="sub-section-body">
-        <p>The Agriculture &amp; Extension Manager sets KPIs for SHEP, manages the team, engages with partners (JICA — SHEP Biz office), and reports to senior management and directors on SHEP implementation. The SHEP Team Lead coordinates the programme day to day, and SHEP Facilitators report weekly on their dairy farmer groups.</p>
+        <p>The Agriculture &amp; Extension Manager sets KPIs for SHEP, manages the team, engages with partners (JICA — SHEP Biz office), and reports to senior management and directors on SHEP implementation. The Agri-Economy Associate coordinates the programme day to day, and Agri-Associates / SHEP Facilitators report weekly on their dairy farmer groups.</p>
       </div>
     </div>
 
@@ -7454,10 +7488,10 @@
       <div class="sub-section-h">Leading the Team</div>
       <div class="sub-section-body">
         <ul>
-          <li>Supervise and guide SHEP Facilitators and Agri-E-Hub Associates, ensuring alignment of their activities with organisational goals and value chain strategies.</li>
+          <li>Supervise and guide the Agri-Economy Associate, the Business Development and Extension Associate, and Agri-Associates, ensuring alignment of their activities with organisational goals and value chain strategies.</li>
           <li>Develop work plans and set performance targets for facilitators and associates, tracking progress through regular review meetings and field supervision.</li>
-          <li>Facilitate joint planning sessions with SHEP Facilitators and Agribusiness Associates to harmonise farmer outreach, value chain development, and extension services.</li>
-          <li>Strengthen linkages between SHEP Facilitators and agribusiness associates to improve farmer mobilisation, data collection, and adoption of agrilogistics tools.</li>
+          <li>Facilitate joint planning sessions with the Agri-Economy Associate, the Business Development and Extension Associate, and Agri-Associates to harmonise farmer outreach, value chain development, and extension services.</li>
+          <li>Strengthen linkages between the Agri-Economy Associate, the Business Development and Extension Associate, and Agri-Associates to improve farmer mobilisation, data collection, and adoption of agrilogistics tools.</li>
           <li>Provide technical backstopping and mentorship to staff on extension methodologies, cooperative strengthening, and climate-smart agriculture.</li>
           <li>Coordinate training and capacity building programmes for facilitators and associates on value chain development, farmer engagement, and digital extension.</li>
           <li>Ensure accurate and timely reporting by SHEP Facilitators and agribusiness associates, consolidating field data and insights for decision-making.</li>
@@ -7509,7 +7543,7 @@
           <li><strong>Value Chain Strengthening &amp; Market Access:</strong> % improvement in dairy and targeted value chain output (e.g. milk quality, yield, or aggregation volumes); number/value of new market linkages or partnerships established with cooperatives, processors, or buyers.</li>
           <li><strong>Agrovet &amp; Input Services Integration:</strong> % reduction in input delivery / first-mile and last-mile logistics gaps through the platform; level of alignment between agrovet services and the agrilogistics platform (measured via farmer satisfaction and delivery efficiency).</li>
           <li><strong>Climate-Smart Agriculture &amp; Impact:</strong> Number of farmers trained and actively implementing climate-smart/agroforestry practices; documented climate/soil conservation impact (trees planted, carbon abatement, PES participation).</li>
-          <li><strong>Team Leadership &amp; Capacity Building:</strong> % of SHEP Facilitators / Agri-E-Hub Associates meeting their performance targets; staff development tracked (trainings held, upward mobility into higher roles).</li>
+          <li><strong>Team Leadership &amp; Capacity Building:</strong> % of Agri-Associates / Agri-E-Hub Associates meeting their performance targets; staff development tracked (trainings held, upward mobility into higher roles).</li>
         </ul>
       </div>
     </div>
@@ -7552,14 +7586,847 @@
     <div id="cert-m7"></div>
   </section>
 </div>
+<!-- ========================================================== -->
+<!-- M8: SONGA APP — PLATFORM TRAINING (ALL ROLES)               -->
+<!-- ========================================================== -->
+<div class="module-page" id="page-m8">
+  <div class="breadcrumb"><a onclick="showPage('home',null)">Home</a> › Module 8 · SONGA App</div>
+  <div class="module-hero">
+    <div class="module-tag" data-mod-tag="m8">Module 08</div>
+    <h1>SONGA App</h1>
+    <p class="lead">Platform training for every SONGA role — how Drivers, Hub Managers, and Battery Agents / Technicians use the Songa Web App and Mobile App, end to end, to run trips, sessions, batteries, and rentals.</p>
+    <div class="module-status" data-status="m8"></div>
+    <div class="read-progress">
+      <div class="read-progress-label"><span>Reading progress</span><span class="pct" data-readpct="m8">0%</span></div>
+      <div class="read-progress-bar"><div class="read-progress-fill" data-readfill="m8"></div></div>
+    </div>
+  </div>
+
+  <nav class="section-nav" aria-label="Sections in this module">
+    <div class="section-nav-head">Sections in this module (12)</div>
+    <ol class="section-nav-list">
+      <li><a data-jump="s-m8-00"><span class="sn-num">00</span>Programme Overview</a></li>
+      <li><a data-jump="s-m8-01"><span class="sn-num">01</span>Platform Foundations (All Roles)</a></li>
+      <li><a data-jump="s-m8-02"><span class="sn-num">02</span>Getting Started: Invitations, Login &amp; Access</a></li>
+      <li><a data-jump="s-m8-03"><span class="sn-num">03</span>Drivers — Aggregation Trip: Start to Stop</a></li>
+      <li><a data-jump="s-m8-04"><span class="sn-num">04</span>Drivers — SOS, Kilikawi Sessions, Wallet &amp; Rentals</a></li>
+      <li><a data-jump="s-m8-05"><span class="sn-num">05</span>Hub Managers — Operations Command Centre</a></li>
+      <li><a data-jump="s-m8-06"><span class="sn-num">06</span>Hub Managers — Energy, Batteries &amp; Chargers</a></li>
+      <li><a data-jump="s-m8-07"><span class="sn-num">07</span>Hub Managers — People, Requests, Finance &amp; Settings</a></li>
+      <li><a data-jump="s-m8-08"><span class="sn-num">08</span>Battery Agents &amp; Technicians — Managing Batteries on Mobile</a></li>
+      <li><a data-jump="s-m8-09"><span class="sn-num">09</span>How a Trip Becomes a Payment</a></li>
+      <li><a data-jump="s-m8-10"><span class="sn-num">10</span>Glossary &amp; Quick Reference</a></li>
+      <li><a data-jump="s-m8-11"><span class="sn-num">11</span>Assessment</a></li>
+    </ol>
+  </nav>
+
+  <section class="m-section" id="s-m8-00">
+    <h2 class="m-section-title">00. Programme Overview</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">The Goal of This Programme</div>
+      <div class="sub-section-body">
+        <p>Every SONGA role depends on the same underlying software platform. Drivers run trips and sessions from the Mobile App. Hub Managers plan, monitor, and approve from the Web App. Battery Agents and Technicians keep the energy supply moving through the Battery Agent / Hub Manager mobile app. This programme is not organised by module or feature — it is organised by <strong>what each role actually needs to do</strong>, in the order they need to do it.</p>
+        <p>Because the platform connects everyone, understanding the pieces you don't personally operate still matters: a driver who understands what a Hub Manager sees on the receipt-verification screen files cleaner receipts; a Hub Manager who understands the offline-first nature of the driver app plans routes with fewer surprises; a Battery Agent who understands how a driver's SOS request appears in the transfer queue reacts faster.</p>
+        <div class="nb-note"><strong>N/B:</strong> We advise you to go through the Key Points of each section before you go through the full content.</div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Programme Structure</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>00. Programme Overview</li>
+          <li>01. Platform Foundations (All Roles)</li>
+          <li>02. Getting Started: Invitations, Login &amp; Access</li>
+          <li>03. Drivers — Aggregation Trip: Start to Stop</li>
+          <li>04. Drivers — SOS, Kilikawi Sessions, Wallet &amp; Rentals</li>
+          <li>05. Hub Managers — Operations Command Centre</li>
+          <li>06. Hub Managers — Energy, Batteries &amp; Chargers</li>
+          <li>07. Hub Managers — People, Requests, Finance &amp; Settings</li>
+          <li>08. Battery Agents &amp; Technicians — Managing Batteries on Mobile</li>
+          <li>09. How a Trip Becomes a Payment</li>
+          <li>10. Glossary &amp; Quick Reference</li>
+          <li>11. Assessment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">What you will learn in one sight</div>
+      <div class="sub-section-body">
+        <p>By the end of this module you will be able to explain what the Songa platform is and how its three layers (Web App, Mobile App, IoT) fit together; log in and understand the invite-only access model; and — for your own role — operate every screen you touch every day. Drivers will be able to run a complete aggregation trip, a Kilikawi session, and a rental from start to finish. Hub Managers will be able to plan trips and sessions, monitor the live map, manage batteries and energy, and process payments. Battery Agents and Technicians will be able to charge, check, and transfer batteries with full traceability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-01">
+    <h2 class="m-section-title">01. Platform Foundations (All Roles)</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">What Songa's Software Platform Is</div>
+      <div class="sub-section-body">
+        <p>Songa Mobility runs on a single connected platform that manages the fleet of electric trikes, agri-tech equipment, battery assets, and the drivers and agents who operate them. The platform is built around one principle: <strong>every operational event — a trip completed, a battery charged, a session conducted — generates structured data that flows into financial calculations.</strong> Physical events become digital records, and digital records drive payments, commissions, and reporting.</p>
+        <figure class="doc-screenshot" style="margin:12px 0 24px">
+          <img src="img/app_web_home_dashboard.png" alt="The Songa Web App home dashboard, showing live KPI cards, a map of tracked trikes, and a trike quick-list" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">The Web App's Home page — a live, real-time mirror of what is happening on the ground.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">The Three Layers</div>
+      <div class="sub-section-body">
+        <p>The platform has three layers that work together:</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="fc-icon">🖥️</div><h4>Web Application</h4><p>The management interface used by Hub Managers, Fleet Managers, and administrators. This is where trips are planned, assets are tracked, revenue is managed, and operations are monitored in real time. Reached at <strong>fleet.songa.mobi</strong>.</p></div>
+        <div class="feature-card"><div class="fc-icon">📱</div><h4>Mobile Application</h4><p>Used by Drivers and Battery Agents to execute trips, sessions, rentals, and battery movements in the field. Two variants exist: the Driver app and the Battery Agent / Hub Manager app.</p></div>
+        <div class="feature-card"><div class="fc-icon">📡</div><h4>IoT Integration</h4><p>The platform connects to physical hardware — trikes, batteries, chargers, and hub energy systems — making the web interface a live mirror of what is happening on the ground rather than a manual record.</p></div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Core Entities You'll See Everywhere</div>
+      <div class="sub-section-body">
+        <p>A defined set of entities recur across every module and every role. Understanding them makes every screen easier to read.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="fc-icon">🏠</div><h4>Hubs</h4><p>The physical centres of operations. Every asset is assigned to a hub as its permanent home. Trips start and end at hubs; batteries are charged at hubs; sessions are dispatched from hubs.</p></div>
+        <div class="feature-card"><div class="fc-icon">🛺</div><h4>Trikes (Vehicles)</h4><p>Electric cargo three-wheelers — the primary transport asset. Assigned to hubs, associated with batteries for power, and linked to drivers when on trips or rentals.</p></div>
+        <div class="feature-card"><div class="fc-icon">🔋</div><h4>Batteries</h4><p>Smart battery packs owned entirely by Songa — the primary revenue-generating asset. Every trip, session, and rental generates an energy charge based on kWh consumed.</p></div>
+        <div class="feature-card"><div class="fc-icon">🔌</div><h4>Chargers</h4><p>IoT-connected charging units at hub stations. Two types: Canbus (full two-way battery data) and Non-Canbus (charging only, limited data).</p></div>
+        <div class="feature-card"><div class="fc-icon">🧑‍✈️</div><h4>Drivers</h4><p>Registered users of the Mobile App. Drivers conduct aggregation trips, operate agri-tech assets in sessions, and can rent trikes. They earn commission and are charged for energy consumed.</p></div>
+        <div class="feature-card"><div class="fc-icon">🌾</div><h4>Farmers &amp; Off-Takers</h4><p>Farmers are registered smallholder producers who supply produce; off-takers are the buyers (dairies, processors) who receive it. Both are managed as "Partners" on the platform.</p></div>
+        <div class="feature-card"><div class="fc-icon">🥛</div><h4>Containers</h4><p>Canisters and crates used to collect and transport produce. Each is registered as a Songa asset with its own QR code, enabling per-farmer traceability.</p></div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Multi-Tenant Platform &amp; Access Tiers</div>
+      <div class="sub-section-body">
+        <p>Songa Mobility is a multi-tenant platform — multiple organisations ("tenants") can operate within the same system, each with a completely isolated environment. Access is governed by three tiers:</p>
+        <ol class="num-list">
+          <li><strong>Songa Admin Team (Admin Panel)</strong> — configures each client organisation: which modules are active, what permissions apply, and which roles exist.</li>
+          <li><strong>Super Admin (Web App)</strong> — the organisation's first and highest-access user; sets up the organisation's users and assigns roles.</li>
+          <li><strong>Roles (Hub Manager / Fleet Manager / Operator on Web; Driver and Battery Agent on Mobile)</strong> — govern exactly what each individual user can see and do.</li>
+        </ol>
+        <div class="warn-box"><strong>Access is invite-only throughout.</strong> No one can self-register on the Songa platform — not a Super Admin, not a Hub Manager, not a driver. Every account starts with an invitation.</div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>Every operational event — a trip, a session, a battery charge — becomes structured data that drives payments, commissions, and reporting.</li>
+          <li>The platform has three layers: the Web App (management), the Mobile App (field execution), and IoT (the hardware link that keeps the web interface a live mirror of the ground).</li>
+          <li>Core entities recur everywhere: hubs, trikes, batteries, chargers, drivers, farmers/off-takers, and containers.</li>
+          <li>Access is invite-only and three-tiered: Songa Admin Team → Super Admin → role-based users (Hub Manager/Fleet Manager on web, Driver/Battery Agent on mobile).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-02">
+    <h2 class="m-section-title">02. Getting Started: Invitations, Login &amp; Access</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Everything Is Invite-Only</div>
+      <div class="sub-section-body">
+        <p>There is no open sign-up flow anywhere on the Songa platform. Every user — whatever their role — enters through an email invitation containing a one-time link, valid for <strong>24 hours</strong>. If the link expires, whoever added the user (a Super Admin or Hub Manager) simply resends the invite from the relevant listing.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="fc-icon">🖥️</div><h4>Web App users (Super Admin, Hub Manager, Fleet Manager)</h4>
+          <ol class="num-list">
+            <li>Open the invitation email and click the OTP link.</li>
+            <li>Confirm the pre-filled name and email; set a password.</li>
+            <li>Complete a short onboarding wizard (organisation details for a Super Admin; nothing further for other web roles).</li>
+            <li>Land on a fresh dashboard, ready to work.</li>
+          </ol>
+        </div>
+        <div class="feature-card"><div class="fc-icon">📱</div><h4>Mobile App users (Driver, Battery Agent)</h4>
+          <ol class="num-list">
+            <li>A Hub Manager adds the user on the Web App and enters their email.</li>
+            <li>The one-time invitation link is emailed, valid for 24 hours.</li>
+            <li>Tapping the link redirects from the browser to the app.</li>
+            <li>Name and email are pre-filled; the user sets a password and lands on the login screen.</li>
+          </ol>
+        </div>
+      </div>
+      <p>Every login — web or mobile — is protected by <strong>OTP-based two-factor authentication</strong>, required on each session. There is no separate username/password creation step: the OTP-based flow is the sole entry point.</p>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">"Login As" (Drivers Only)</div>
+      <div class="sub-section-body">
+        <p>After a driver logs in, they choose <strong>Login As — Aggregation, Kilikawi, or Rental</strong>. This is a convenience setting only: it decides which homepage the driver lands on first. It does <strong>not</strong> restrict access to any other function — a driver who logs in as "Aggregation" can still start a Kilikawi session or a rental from the relevant tab.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>No one can self-register. Every account begins with an email invitation and a 24-hour one-time link.</li>
+          <li>Web roles set a password and complete a short onboarding wizard; mobile roles are added by a Hub Manager first.</li>
+          <li>Every login requires OTP-based two-factor authentication.</li>
+          <li>A driver's "Login As" choice (Aggregation / Kilikawi / Rental) only sets their default homepage — it never restricts what they can do.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-03">
+    <h2 class="m-section-title">03. Drivers — Aggregation Trip: Start to Stop</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-body">
+        <p>The aggregation trip is the primary field operation for most drivers: collecting produce from farmers across multiple stops and delivering it to off-takers. Every trip starts and ends at the hub's parking lot. <strong>Steps are strictly sequential — each one unlocks only after the previous is complete.</strong></p>
+        <div class="info-box"><strong>Offline first.</strong> Before leaving the hub, the whole trip downloads over hub Wi-Fi and runs entirely offline. On return, a mandatory sync pushes all data to the platform before the trip can be ended.</div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Before You Leave the Hub</div>
+      <div class="sub-section-body">
+        <p>On the Trips tab, the <strong>Up Next</strong> card highlights your most imminent trip with a Start Trip button. Tapping it begins a fixed sequence:</p>
+        <ol class="num-list">
+          <li><strong>Verify the trike</strong> — scan its QR code, or search and select it manually if the assigned trike is unavailable.</li>
+          <li><strong>Complete the safety checklist</strong> — items are configured by your Hub Manager; every mandatory item (marked *) must pass.</li>
+          <li><strong>Scan containers</strong> — every canister or crate assigned to the trip must be scanned by QR before you can proceed; extras can be scanned if needed.</li>
+          <li><strong>Pre-departure collection (optional)</strong> — if produce must go from the parking lot to farmers en route (e.g. feed), enter the type and weight.</li>
+        </ol>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:16px 0 24px">
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_trike_qr_scan.png" alt="Driver app screen: scanning a trike's QR code to verify it before starting a trip" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Trike verification by QR scan.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_safety_checklist_pass.png" alt="Driver app screen confirming the trike is safe to drive after the safety checklist passes" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">"Trike is safe to drive" — checklist passed.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_container_scan.png" alt="Driver app screen tracking canisters and crates scanned against the assigned count for the trip" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Scanning containers against the assigned count.</figcaption>
+        </figure>
+      </div>
+      <div class="compliance-section">
+        <div class="compliance-section-head"><span class="cs-icon">✅</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+        <div class="compliance-section-body">
+          <div class="compliance-must-box">
+            <div class="cmb-label">Must be fully respected</div>
+            <ul>
+              <li>If a mandatory checklist item fails, the app shows <strong>"TRIKE IS NOT SAFE TO DRIVE"</strong> — never attempt to force past this. Inform the Fleet Manager or scan another trike.</li>
+              <li>Every canister and crate assigned to the trip must be scanned before departure — this is what makes per-farmer traceability possible later.</li>
+              <li>A trip is not "started" until the checklist and container scan are both complete — do not skip steps to save time.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">At Each Stop</div>
+      <div class="sub-section-body">
+        <p>For every stop on the route, the app shows the stop name, address, a <strong>Navigate</strong> button, and an <strong>I Have Arrived</strong> button (which checks a 200-metre geofence). At each stop, for each farmer:</p>
+        <ol class="num-list">
+          <li><strong>Choose how to interact</strong> — Scan &amp; Add (existing farmer), New Entry (registers a new farmer, logged as Approval Pending until the Hub Manager verifies), or No Show.</li>
+          <li><strong>Verify the farmer</strong> — scanning their QR shows a VERIFIED FARMER banner with name, phone, and home stop.</li>
+          <li><strong>Record the activity</strong> — Collection (enter produce type and weight; for milk, also scan the specific canister used) or Delivery (enter weight, then upload a receipt with a Receipt ID and photo).</li>
+          <li><strong>Report spoilt milk</strong> where relevant — weight plus mandatory remarks describing the cause.</li>
+        </ol>
+        <p>Before moving on, the app checks for any missed farmers scheduled at that stop and lets you call or serve them before confirming and proceeding.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:16px 0 24px">
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_farmer_verification.png" alt="Driver app screen showing a VERIFIED FARMER banner with the farmer's name, phone number, and home stop" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Verified farmer, ready to record an activity.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_collection_activity.png" alt="Driver app collection form with produce type, weight, and scan-canister fields" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Collection activity — canister scan links milk to this farmer.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_delivery_receipt.png" alt="Driver app delivery form requiring a Receipt ID and a photo of the physical receipt" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Delivery activity — Receipt ID and photo are both required.</figcaption>
+        </figure>
+      </div>
+      <div class="nb-note"><strong>N/B:</strong> A farmer from a different stop can be served at any stop within the same hub — the app flags this clearly, so don't assume a scan has failed if the listed home stop differs.</div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Back at the Hub</div>
+      <div class="sub-section-body">
+        <p>On returning to the parking lot, three items must be completed before <strong>End Trip</strong> becomes active: <strong>Add Delivery</strong> (for any produce delivered at the hub itself), <strong>Record Battery Energy</strong> (post-trip energy per battery), and <strong>Upload Missing Receipts</strong> (any not captured at the delivery stops).</p>
+        <p>After the trip ends, you see a full <strong>Trip Summary</strong> with tabs for Overall (stops, distance, weight), Trike (registration, odometer, speed), Battery (per-battery energy consumed), Stops (per-farmer breakdown), and Commission (what you earned).</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_driver_trip_summary.png" alt="Driver app trip summary screen with tabs for overall, trike, battery, stops, and commission" style="width:100%;max-width:260px;display:block;border-radius:10px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Trip Summary — everything the trip generated, in one place.</figcaption>
+      </figure>
+      <div class="warn-box"><strong>The trip isn't financially "clean" yet.</strong> Every uploaded receipt must still be verified by the Hub Manager on the web before the trip reaches Completed status and farmer payments and your commission are released (see Section 09).</div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>The trip downloads fully before departure and runs offline; a mandatory sync on return pushes all data to the platform.</li>
+          <li>Steps are strictly sequential: trike verification → safety checklist → container scan → (optional pre-departure collection) → stops → return to hub.</li>
+          <li>A failed mandatory safety item blocks the trip — inform the Fleet Manager or scan a different trike.</li>
+          <li>Milk collection always requires scanning the specific canister used, for per-farmer traceability.</li>
+          <li>Delivery activities require a Receipt ID and a photo — the trip cannot reach clean Completed status without them being verified.</li>
+          <li>Three items are mandatory at the parking lot before End Trip activates: Add Delivery, Record Battery Energy, Upload Missing Receipts.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-04">
+    <h2 class="m-section-title">04. Drivers — SOS, Kilikawi Sessions, Wallet &amp; Rentals</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">SOS: Mid-Trip Emergencies</div>
+      <div class="sub-section-body">
+        <p>The SOS button appears in the top bar of every active trip screen, letting you raise an emergency without ending the trip. Three options are available:</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="fc-icon">🚧</div><h4>Trike Break Down</h4><p>Select one or more reasons (punctured tyre, engine fault, brake failure, accident). The Hub Manager is notified immediately on the web app.</p></div>
+        <div class="feature-card"><div class="fc-icon">🔄</div><h4>Swap Batteries</h4><p>Visit the swap point, hand over depleted batteries, and scan each charged replacement to check it in. The hub side must also swap-in the batteries you handed over.</p></div>
+        <div class="feature-card"><div class="fc-icon">➕</div><h4>Transfer Batteries</h4><p>Request additional charged batteries brought to your location without handing any back. Scan each received battery to check it in.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:16px 0 4px">
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_sos_menu.png" alt="Driver app SOS menu with Trike Break Down, Swap Batteries, and Transfer Batteries options" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">SOS — available from any active trip screen.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_swap_batteries.png" alt="Driver app screen scanning replacement batteries to check them in during a mid-trip swap" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Scanning each charged replacement to check it in.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Kilikawi Sessions</div>
+      <div class="sub-section-body">
+        <p>A Kilikawi session is a single-farmer, single-asset agri-tech service event (tilling, milling, threshing, grinding, chaff cutting, water pumping, or ploughing). Unlike aggregation trips, sessions are <strong>not</strong> pre-downloaded — they require live connectivity to end.</p>
+        <ol class="num-list">
+          <li>From the Kilikawi homepage, tap <strong>Start Session</strong> on the day of the session.</li>
+          <li>Select the agri-tech asset (the list is filtered to match the session type).</li>
+          <li>Complete that asset's own safety checklist, configured independently from the trike checklist.</li>
+          <li>Log the battery start energy.</li>
+          <li>Scan the farmer's QR code to confirm a VERIFIED FARMER match, then start the session.</li>
+          <li>For tilling and ploughing only, walk the field perimeter tapping <strong>Mark Point</strong> at each corner to measure the actual area.</li>
+          <li>Tap <strong>End Session</strong> and complete the wizard: GPS, batteries used, actual area/weight/volume, actual cost, and the farmer's <strong>M-Pesa reference</strong> (mandatory).</li>
+        </ol>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:16px 0 4px">
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_kilikawi_asset_verify.png" alt="Driver app screen confirming the selected agri-tech asset is verified and ready for the session" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Asset selection is filtered by session type.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_land_area_measurement.png" alt="Driver app screen showing a live GPS map for measuring field area by marking boundary points, used for tilling and ploughing sessions" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Land area measurement — tilling and ploughing only.</figcaption>
+        </figure>
+      </div>
+      <div class="info-box">If connectivity drops mid-session, data is stored locally. A "You're back online" screen appears once connectivity returns — the session can only close once that sync succeeds.</div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Driver Wallet</div>
+      <div class="sub-section-body">
+        <p>Your wallet tracks three balances: <strong>KSH commission</strong> (earned from trips and sessions), <strong>kWh energy</strong> (credits for rentals), and a <strong>rental count</strong>. Commission can be used four ways — two are managed entirely on the finance system (trike lease payments, cash encashment), and two are triggered from the app but need approval before the balance updates: purchasing rentals and purchasing energy.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_driver_wallet.png" alt="Driver app wallet screen showing KSH commission, kWh energy balance, and rental count" style="width:100%;max-width:260px;display:block;border-radius:10px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">My Wallet — commission, energy, and rentals in one view.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Booking &amp; Running a Rental</div>
+      <div class="sub-section-body">
+        <p>Registered drivers can rent a trike for independent use. Two wallet gates apply: you need <strong>at least 1 rental</strong> in your wallet before you can submit a booking, and <strong>sufficient kWh energy</strong> before the trip can start. Book from the Rentals tab (pickup hub, date/time, expected run); the request goes to the Hub Manager and moves through Pending Approval → Trip Confirmed (or Rejected).</p>
+        <p>Starting a confirmed rental follows the same pre-trip verification as an aggregation trip (trike scan, safety checklist, battery start energy). To end it, a designated hub receiver must physically inspect the trike and complete a <strong>Digital Signature</strong> before the trip can close.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:16px 0 4px">
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_book_rental.png" alt="Driver app rental booking form with pickup hub, date, time, and expected run distance" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Booking a rental — pricing shown before you send.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 200px">
+          <img src="img/app_driver_digital_signature.png" alt="Driver app digital signature screen where a hub receiver confirms the trike's condition at rental end" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Digital signature — the hub receiver's sign-off ends the rental.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Time-Off</div>
+      <div class="sub-section-body">
+        <p>Submit a new time-off request under Profile &gt; My Time-Offs, with start/end dates and an optional note. It appears on the Hub Manager's Driver Calendar as a pending request — the Hub Manager must reassign any conflicting trips before they can approve it.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>SOS offers three options: Trike Break Down, Swap Batteries, and Transfer Batteries — none of them end the trip.</li>
+          <li>A battery swap always needs a matching hub-side swap-in of the batteries the driver handed over.</li>
+          <li>Kilikawi sessions require live connectivity to end, and the farmer's M-Pesa reference is mandatory at session end.</li>
+          <li>The wallet tracks commission, energy, and rentals — two commission uses (rentals, energy) require approval before the balance updates.</li>
+          <li>A rental booking needs at least 1 rental in the wallet; starting the trip needs sufficient kWh energy.</li>
+          <li>A rental can only end once a hub receiver has physically inspected the trike and signed off.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-05">
+    <h2 class="m-section-title">05. Hub Managers — Operations Command Centre</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-body">
+        <p>Hub Managers, Fleet Managers, and Operators work from the Web App at <strong>fleet.songa.mobi</strong>. A Hub Manager covers one hub; a Fleet Manager can span several; a Super Admin covers all of them. Every login requires OTP two-factor authentication, landing you on <strong>Home</strong> — the live operational command centre.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Home: Your Command Centre</div>
+      <div class="sub-section-body">
+        <p>Six KPI cards summarise the whole operation — All Assets, All Trips, All Sessions, Total Milk Delivered, Batteries, and Drivers/Partners — each linking to its module. A full-panel interactive map shows the real-time location of every trackable asset, filterable by Hub Stations, Farms, or Trikes; clicking a pin shows asset ID, status, driver, speed, payload, and battery. A searchable trike quick-list lets you jump straight to any trike by registration number or driver name.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Managing Assets: Vehicles &amp; Agri-Tech</div>
+      <div class="sub-section-body">
+        <p>The Assets module covers two tabs. <strong>Vehicles (Trikes)</strong> lists registration, hub, driver, battery pack (colour-coded — red below 25%, yellow 25–50%, green above 50%), speed, and status (On Trip, Dispatched, Hub Station, Out of Geofence, Service). Two IoT controls sit on every row: <strong>Mobilise / Immobilise</strong> (cuts or restores the trike's electrical connection to its battery in real time) and the <strong>GPS Source Toggle</strong> (switches between TCU-based IoT GPS and the driver's phone GPS). <strong>Agri-Tech</strong> assets (tillers, millers, threshers, grinders, chaff cutters, water pumps) follow a simpler status set: In Session, Hub Station, or Service.</p>
+        <p>Each trike or asset type has its own configurable safety checklist — the same checklist a driver completes before every trip or session. A failed mandatory item on mobile shows "NOT SAFE" and blocks the driver until resolved.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_vehicles_listing.png" alt="Songa Web App Assets — Vehicles tab showing trikes with battery colour-coding, IoT mobilise/immobilise controls, and status badges" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Vehicles listing — live battery colour-coding and per-row IoT controls.</figcaption>
+      </figure>
+      <div class="compliance-section">
+        <div class="compliance-section-head"><span class="cs-icon">⚡</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+        <div class="compliance-section-body">
+          <div class="compliance-must-box">
+            <div class="cmb-label">Must be fully respected</div>
+            <ul>
+              <li><strong>Immobilise is a real-time, physical action</strong> — cutting a trike's power wherever it is currently located. Use it deliberately, never casually.</li>
+              <li>Safety checklists must be kept current and honest — a checklist with no meaningful mandatory items defeats its purpose.</li>
+              <li>Out-of-Geofence alerts must be investigated promptly — this status change is designed to surface a real deviation, not to be dismissed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Planning &amp; Running Trips</div>
+      <div class="sub-section-body">
+        <p>A trip moves through Upcoming → Ongoing → Completed. A trip that has been physically executed but has unverified delivery receipts shows as <strong>Completed ⚠</strong> — pending your verification.</p>
+        <p>Trips are created via a wizard: <strong>Step 1 — Stops</strong> (location, activity, commodity per stop; route rules enforce that collection must precede delivery, and an Optimise Route option finds the lowest-distance valid sequence); <strong>Step 2 — Schedule</strong> (date, time slot, optional recurrence); <strong>Step 3 — Driver</strong>; <strong>Step 4 — Trike</strong> (optional); <strong>Step 5 — Batteries</strong> (optional, with a system recommendation based on distance and expected weight). Trike and batteries are optional at creation but required before the trip can run — the platform schedules reminders so nothing is missed.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 24px">
+        <img src="img/app_web_trips_listing.png" alt="Songa Web App Trips listing with KPI cards, trip statuses, and IoT tracker toggles" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Trips listing — Completed shows as a verified/total fraction.</figcaption>
+      </figure>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin:0 0 4px">
+        <figure class="doc-screenshot" style="margin:0;flex:1 1 380px">
+          <img src="img/app_web_create_trip_stops.png" alt="Create Trip wizard, Step 1: selecting stops with drag-to-reorder and an Optimise Route option" style="width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--border)"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Step 1 — building the route.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:1 1 380px">
+          <img src="img/app_web_create_trip_batteries.png" alt="Create Trip wizard, final step: selecting batteries, with a system-recommended battery count banner" style="width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--border)"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Final step — the recommended battery count is calculated for you.</figcaption>
+        </figure>
+      </div>
+      <div class="compliance-section">
+        <div class="compliance-section-head"><span class="cs-icon">🧾</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+        <div class="compliance-section-body">
+          <div class="compliance-must-box">
+            <div class="cmb-label">Must be fully respected</div>
+            <ul>
+              <li>Every uploaded delivery receipt must be reviewed against its photo and ID before you mark it verified — this is a deliberate financial gate, not a formality.</li>
+              <li>Farmer payments and driver commission do <strong>not</strong> flow until every receipt on a trip is verified — delaying verification directly delays people's income.</li>
+              <li>Trike and battery assignment reminders exist because a trip cannot run without both — act on them before the scheduled departure, not after.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Planning &amp; Running Sessions</div>
+      <div class="sub-section-body">
+        <p>Sessions are simpler than trips — one farmer, one asset, one event — but follow the same discipline of estimated versus actual figures. Listings label upcoming quantity and cost as "Estimated" so they are never mistaken for confirmed outcomes. Creation is a three-step wizard: schedule (farmer, location, date, activity type with dynamic fields — area for tilling, weight for milling, volume for water pumping), assign an agent and a matching asset, then optionally associate batteries.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_sessions_listing.png" alt="Songa Web App Sessions listing with colour-coded session type badges and estimated-versus-actual labelling" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Sessions listing — "Estimated" is shown explicitly for upcoming rows.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Handling Rentals</div>
+      <div class="sub-section-body">
+        <p>Driver rental requests arrive through the Requests module. You review the request, then accept or reject it. On acceptance you assign a specific trike and log battery start energy; the driver is notified by SMS and in-app with the trike and pricing details. Rental cost is a standard daily rate plus an energy consumption charge — drivers on leased trikes are charged for energy only, not the daily rate.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>Home is a genuine command centre: six KPI cards, a live map, and a searchable trike quick-list, all clickable through to detail.</li>
+          <li>Mobilise/Immobilise and the GPS toggle are real-time IoT actions on every trike row.</li>
+          <li>Trip creation is a 4–5 step wizard; route rules (collection before delivery, no duplicate stops) are enforced automatically, and Optimise Route finds the lowest-distance valid sequence.</li>
+          <li>Receipt verification is the financial gate — nothing pays out until every delivery receipt on a trip is confirmed.</li>
+          <li>Session listings distinguish "Estimated" from actual figures explicitly, at every stage.</li>
+          <li>Leased-trike drivers pay energy only on rentals; owned-trike drivers pay the standard daily rate plus energy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-06">
+    <h2 class="m-section-title">06. Hub Managers — Energy, Batteries &amp; Chargers</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Hub Energy Management</div>
+      <div class="sub-section-body">
+        <p>Every hub has a solar installation connected to a smart inverter, tracked in real time — there are no manual data entries in this module. The hub detail page shows four headline cards: <strong>Energy Production</strong> (today's total kWh, solar status), <strong>Energy Storage</strong> (kWh stored, Solar vs Grid split), <strong>Energy Prediction</strong> (energy and batteries needed for upcoming trips and sessions), and <strong>Energy Consumption</strong> (source breakdown — Solar, Storage, Grid). Below these, individual sub-station cards (Cold Store, Charging Station, and others as configured) show consumption and source split per section, and an Energy Distribution graph plots Solar and Storage over the day in 30-minute intervals.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 24px">
+        <img src="img/app_web_hub_energy.png" alt="Songa Web App Hub Energy Management dashboard showing production, storage, prediction, and consumption cards with sub-station breakdowns" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Hub Energy Management — production, storage, prediction, and consumption at a glance.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Supply Control Panel</div>
+      <div class="sub-section-body">
+        <p>Opened via the Manage button on the Storage or Consumption cards, the Supply Control Panel lets you configure how energy reaches each sub-station: an ON/OFF toggle, an Energy Requirement input, checkboxes for which sources (Solar / Storage / Grid) that sub-station should draw from, and sliders setting the percentage split between them.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Batteries: Songa's Most Valuable Asset</div>
+      <div class="sub-section-body">
+        <p>Batteries generate more revenue than any other asset and carry the richest live data. The listing distinguishes <strong>Current Hub</strong> from <strong>Permanent Hub</strong> — a battery can temporarily sit at a different hub while in transit. Statuses: Hub Station, On A Trip, Dispatched, In Service, In Transit. <strong>Add Battery</strong> registers a new pack (IoT Device ID, Charger Type, Battery Type, Hub Station). <strong>Request Batteries</strong> starts an inter-hub transfer — either a <strong>Direct Handover</strong> (one-way) or a <strong>Swap</strong> (both hubs must complete their side before the transfer closes).</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_batteries_listing.png" alt="Songa Web App Batteries listing showing KPI cards, current versus permanent hub columns, and status badges" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Batteries listing — Current Hub vs Permanent Hub is the key to the transfer flow.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Chargers &amp; the IoT Platform</div>
+      <div class="sub-section-body">
+        <p>Chargers are either <strong>Canbus</strong> (full two-way battery telemetry) or <strong>Non-Canbus</strong> (charging only). On the underlying IoT platform, chargers appear as "Nodes." Each hub's node dashboard shows every charger slot as green (active), dark (inactive), or red (error). Drilling into a node surfaces the critical field: <strong>BMS Serial Number</strong> — the identifier that links a physical battery to its correct record on Songa. Key telemetry includes Battery SOC (charge %), Battery SOH (health), Battery Cycles, and Cell Difference (a growing spread signals imbalance).</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_iot_node.png" alt="Songa IoT platform node detail view showing live battery telemetry including BMS Serial Number, SOC, SOH, and charger state" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">IoT node detail — the BMS Serial Number links this charger to the correct battery record.</figcaption>
+      </figure>
+      <div class="nb-note"><strong>N/B:</strong> All state changes on the IoT platform reflect on Songa in real time. If a battery disconnects from a charger, its status updates immediately — there is no lag to plan around.</div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>Hub energy data is entirely hardware-sourced — production, storage, prediction, and consumption all update automatically.</li>
+          <li>The Supply Control Panel is the manual override for how energy reaches each sub-station, until full automation is rolled out.</li>
+          <li>Current Hub vs Permanent Hub distinguishes a battery's temporary location from its registered home.</li>
+          <li>A battery transfer is a Direct Handover (one-way) or a Swap (both sides must complete before it closes).</li>
+          <li>BMS Serial Number is the field that links a physical battery, via its charger node, to the correct Songa record.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-07">
+    <h2 class="m-section-title">07. Hub Managers — People, Requests, Finance &amp; Settings</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Managing Drivers &amp; Partners</div>
+      <div class="sub-section-body">
+        <p>The Drivers listing shows hub, licence validity (green tick / amber clock / red triangle), current trike, and trip count. Three-dot actions include Driver Feedback (a star rating, at least once per week is mandatory), Suspend, and Delete. The driver detail drawer shows general info, wallet balance, licence, performance rating, and time-off status. <strong>Partners</strong> covers farmers and off-takers — every new partner receives a QR code on creation, and farmers registered by drivers in the field arrive as <strong>Approval Pending</strong> until you verify and complete their record.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_drivers_listing.png" alt="Songa Web App Drivers listing showing licence validity status, trip counts, and current trike association" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Drivers listing — licence status at a glance.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Driver Calendar &amp; Time-Off</div>
+      <div class="sub-section-body">
+        <p>The Driver Calendar shows a full week view — every driver as a row, every day as a column — with trip counts, session counts, and pending time-off requests highlighted. Approving a leave request that conflicts with an assigned trip triggers a mandatory <strong>Re-assign Items</strong> step: you must select a replacement driver before the approval is confirmed, so coverage is never left with a gap.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Requests: The Inbox</div>
+      <div class="sub-section-body">
+        <p>The Requests module is the inbox for everything arriving from outside the platform. The USSD service (<strong>*384*385#</strong>) lets anyone request Transport (on-demand trike logistics), a Kilikawi Session, or a Purchase (feed, fertiliser) — each reviewed and accepted or rejected from its own detail drawer. A separate Rentals tab holds driver-submitted rental requests.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_requests_listing.png" alt="Songa Web App Requests module showing USSD Transport, Session, and Purchase request types" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Requests inbox — USSD requests can come from anyone, registered or not.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Locations, Containers &amp; Service</div>
+      <div class="sub-section-body">
+        <p><strong>Locations</strong> is foundational — every hub, farm, collection point, and delivery point is a named location nested under a hub. <strong>Containers</strong> registers canisters and crates with their own QR codes; scanning the correct one per farmer during milk collection is what makes spoilage attribution possible later. <strong>Service</strong> tracks maintenance across trikes, batteries, and agri-tech equipment — Songa initiates and displays service records, while the finance/ERP system owns the cost and completion data and returns it once the repair is done.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Rates Manager &amp; Revenue Manager</div>
+      <div class="sub-section-body">
+        <p><strong>Rates Manager</strong> is the financial configuration backbone — three tabs: <strong>Commodity</strong> (payment rate to farmers, collection rate from off-takers, commission rate to drivers, all per hub), <strong>Energy</strong> (KSH per kWh by battery type, hub, and operation type), and <strong>Agri-Tech</strong> (hourly commission for Kilikawi agents, per hub). <strong>Revenue Manager</strong> turns activity into money: the <strong>Payments</strong> tab shows amounts due to farmers and drivers with a weekly cycle (data pushed every Wednesday), and the <strong>Collections</strong> tab tracks what off-takers owe for delivered produce.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_web_rates_manager.png" alt="Songa Web App Rates Manager showing commodity payment, collection, and commission rates per hub" style="width:100%;max-width:900px;display:block;border-radius:8px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Rates Manager — every driver charge and farmer payment traces back to a rate set here.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Settings</div>
+      <div class="sub-section-body">
+        <p>The <strong>General</strong> tab covers your own account details and organisation branding (logo, theme colour). <strong>System Users</strong> lists everyone in your organisation with their role and hub access — hub access is not binary, it can span one hub (Hub Manager) or several (Fleet Manager) or all of them (Super Admin). New users are created here and receive their own OTP invitation.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>Driver feedback (a rating) is mandatory at least once per week, even if no complaint has arisen.</li>
+          <li>Mobile-registered farmers land as Approval Pending — only approved partners are usable in future trips and sessions.</li>
+          <li>Approving driver leave that conflicts with assigned trips requires reassigning those trips first — there is no way to skip this.</li>
+          <li>USSD (*384*385#) is open to anyone, registered or not — Transport, Session, and Purchase requests all land in the same inbox.</li>
+          <li>Every driver charge and farmer/off-taker payment traces back to a rate configured in the Rates Manager.</li>
+          <li>Farmer and driver payments run on a weekly cycle — pushed to the finance system every Wednesday.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-08">
+    <h2 class="m-section-title">08. Battery Agents &amp; Technicians — Managing Batteries on Mobile</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-body">
+        <p>The Battery Agent / Hub Manager app is a dedicated mobile interface for managing batteries at hub stations, distinct from the Driver app. Navigation is three tabs: <strong>Hubs</strong> (battery management and charging), <strong>Transfer Requests</strong> (battery movement), and <strong>Kilikawi</strong>.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Hubs Tab: Home &amp; Battery Listing</div>
+      <div class="sub-section-body">
+        <p>The home screen opens with an Asset Overview (total batteries and trikes across all hubs), a <strong>My Hubs</strong> section for your assigned hubs, and an <strong>All Hubs</strong> section for visibility across the network. Each hub card shows today's batteries, trikes, and trips scheduled, with a <strong>View All Batteries</strong> link. The battery listing shows registration number, charge percentage, and status (Charging / Available), searchable by Battery ID with a QR scan option.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:16px 0 4px">
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 220px">
+          <img src="img/app_battery_agent_home.png" alt="Battery Agent app home screen showing an asset overview and My Hubs / All Hubs sections" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Home — asset overview across all assigned hubs.</figcaption>
+        </figure>
+        <figure class="doc-screenshot" style="margin:0;flex:0 1 220px">
+          <img src="img/app_battery_agent_listing.png" alt="Battery Agent app battery listing showing charge percentage and Charging or Available status per battery" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--border);display:block"/>
+          <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Battery listing — searchable by Battery ID or QR scan.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Charging Batteries</div>
+      <div class="sub-section-body">
+        <p>Tapping a battery opens its detail: current charge, Battery Type, Charger Type, and — for IoT-connected batteries — the Charger ID and connection status. Tap <strong>Start Charging</strong> to begin and <strong>End Charging</strong> to close the session. For smart batteries, SOC, voltage, and temperature flow automatically from the IoT platform; for non-smart batteries, you enter the charge percentage manually at start and end.</p>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_battery_agent_charging.png" alt="Battery Agent app battery detail and charging screen showing charge percentage, charger type, and start/end charging controls" style="width:100%;max-width:260px;display:block;border-radius:10px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Battery detail — Start/End Charging.</figcaption>
+      </figure>
+      <div class="compliance-section">
+        <div class="compliance-section-head"><span class="cs-icon">🔋</span><span class="cs-label">Compliance — What is Paramount in This Section</span></div>
+        <div class="compliance-section-body">
+          <div class="compliance-must-box">
+            <div class="cmb-label">Must be fully respected</div>
+            <ul>
+              <li>For non-smart batteries, enter the charge percentage <strong>accurately at both start and end</strong> — this is the only record of that battery's energy state.</li>
+              <li>If a smart battery physically disconnects from a charger, the platform reflects this in real time — check that the physical connection actually matches what the app shows before reporting a fault.</li>
+              <li>Every battery you handle should be searchable and accounted for — batteries are Songa's primary revenue asset, not a spare part.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Battery Transfers: Check-Out, Check-In &amp; Swap</div>
+      <div class="sub-section-body">
+        <p>Transfer requests arrive from two sources — a hub-to-hub request raised on the web, or a driver's mid-trip SOS "battery ambulance." Both land in the same Transfer Requests queue.</p>
+        <ol class="num-list">
+          <li><strong>Check-Out (sending)</strong> — open the request, scan each expected battery (or enter its ID), then tap <strong>Initiate Transfer</strong>. Status becomes In Transit.</li>
+          <li><strong>Check-In (receiving)</strong> — scan each expected battery; each gets a green tick when confirmed. Tap <strong>Complete Transfer</strong> once all are scanned — batteries become Available at the receiving hub.</li>
+          <li><strong>Swap</strong> — both a Check-Out (charged batteries out) and a Check-In (depleted batteries back) must be completed before the record closes.</li>
+        </ol>
+      </div>
+      <figure class="doc-screenshot" style="margin:8px 0 4px">
+        <img src="img/app_battery_agent_checkin.png" alt="Battery Agent app check-in screen scanning received batteries with green ticks confirming each one" style="width:100%;max-width:260px;display:block;border-radius:10px;border:1px solid var(--border)"/>
+        <figcaption style="font-family:var(--font-ui);font-size:12px;color:var(--text-muted);padding-top:6px">Check-In — each scanned battery gets a green tick.</figcaption>
+      </figure>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>The Battery Agent / Hub Manager app has three tabs: Hubs, Transfer Requests, and Kilikawi.</li>
+          <li>Smart batteries report SOC, voltage, and temperature automatically; non-smart batteries need manual charge entries at start and end.</li>
+          <li>Transfer requests come from web hub-to-hub requests or driver SOS battery ambulances — both use the same queue.</li>
+          <li>Check-Out marks batteries In Transit; Check-In scans each one to a green tick and completes the transfer.</li>
+          <li>A Swap is not complete until both the Check-Out and the Check-In sides are done.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-09">
+    <h2 class="m-section-title">09. How a Trip Becomes a Payment</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-body">
+        <p>Every role's diligence feeds the same chain. A driver's careful data entry, a Hub Manager's timely receipt verification, and a Battery Agent's accurate charge logging all converge into a single financial pipeline. Understanding this chain is what makes each role's "small" software steps feel meaningful.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="fc-icon">1</div><h4>Driver completes the trip</h4><p>Collections and deliveries are recorded per farmer; receipts are uploaded with a Receipt ID and photo; the mandatory sync pushes it all to the platform.</p></div>
+        <div class="feature-card"><div class="fc-icon">2</div><h4>Hub Manager verifies receipts</h4><p>Each uploaded receipt is checked against its photo and ID on the trip detail page. Only once every delivery is verified does the trip reach clean Completed status.</p></div>
+        <div class="feature-card"><div class="fc-icon">3</div><h4>Revenue Manager calculates</h4><p>Verified trip data flows into farmer payment and driver commission calculations, using the rates configured in the Rates Manager.</p></div>
+        <div class="feature-card"><div class="fc-icon">4</div><h4>Weekly finance cycle</h4><p>Every Wednesday, aggregated data is pushed to the finance system. Approval there confirms the payment and credits the driver's wallet.</p></div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Driver Commission Calculation Logic</div>
+      <div class="sub-section-body">
+        <p>Commission is not a simple per-kg rate applied directly to one driver's total — it is a <strong>hub-level, trip-proportional</strong> calculation:</p>
+        <ol class="num-list">
+          <li>Calculate total weight delivered at the hub for the week.</li>
+          <li>Divide by 7 to get average daily weight at the hub.</li>
+          <li>Calculate total trips at the hub for the week; divide by 7 for average daily trips.</li>
+          <li>Divide average daily weight by average daily trips to get weight per trip.</li>
+          <li>Fetch the Commission Rate (KSH/unit) for the commodity and hub from the Rates Manager.</li>
+          <li>Count the individual driver's total trips for the period.</li>
+          <li>Per-driver commission (pre-deduction) = driver trips × weight per trip × commission rate.</li>
+          <li>Spoilt milk deduction: if the spoilt milk's value exceeds half the commission, deduct half the commission (capped); otherwise deduct the full spoilt milk value, valued at the Collection Rate.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Energy Accounting</div>
+      <div class="sub-section-body">
+        <p>Energy is Songa's primary revenue stream, and the formula behind every driver charge is the same across trips, sessions, and rentals:</p>
+        <div class="stat-grid">
+          <div class="stat-card gold"><div class="stat-num" style="font-size:20px">(Start Energy − End Energy) × Rate</div><div class="stat-label">Energy charge, per operation</div></div>
+        </div>
+        <p>Start and end energy are logged when a battery leaves and returns to a charger (or, once fully IoT-integrated, read automatically). The rate itself is set per battery type, hub, and operation type in the Rates Manager.</p>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>Receipt verification by the Hub Manager is the single gate that releases both farmer payments and driver commission.</li>
+          <li>Commission is calculated at hub level and distributed proportionally by trip count, not as a flat per-driver rate.</li>
+          <li>Spoilt milk is deducted from commission at the Collection Rate, capped at half the commission owed.</li>
+          <li>Every energy charge follows the same formula: (Start Energy − End Energy) × Rate.</li>
+          <li>Farmer and driver payments run on a weekly cycle, confirmed through the finance system every Wednesday.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-10">
+    <h2 class="m-section-title">10. Glossary &amp; Quick Reference</h2>
+
+    <div class="sub-section">
+      <div class="sub-section-body">
+        <ul>
+          <li><strong>Aggregation Trip</strong> — the driver's multi-stop journey collecting produce from farmers and delivering it to off-takers.</li>
+          <li><strong>BMS</strong> — Battery Management System; the electronics inside a battery reporting SOC, voltage, current, and temperature.</li>
+          <li><strong>BMS Serial Number</strong> — the unique battery ID used to link a charger node to the correct Songa battery record.</li>
+          <li><strong>Canister / Crate</strong> — physical containers with their own QR codes, scanned per farmer during milk collection for traceability.</li>
+          <li><strong>Geofence</strong> — the 200-metre boundary used to check driver arrival at each stop, and the custom boundary that flags a trike as Out of Geofence.</li>
+          <li><strong>Kilikawi</strong> — Songa's brand name for its agri-tech services, and the app mode used by drivers running those sessions.</li>
+          <li><strong>M-Pesa Reference</strong> — the mandatory payment transaction code entered at the end of a Kilikawi session.</li>
+          <li><strong>Off-Taker</strong> — a buyer of agricultural produce, typically a dairy or processing facility.</li>
+          <li><strong>Receipt ID</strong> — the reference number from the physical receipt an off-taker issues, required for every delivery upload.</li>
+          <li><strong>SOC</strong> — State of Charge; a battery's current charge level as a percentage.</li>
+          <li><strong>SOH</strong> — State of Health; a battery's remaining capacity relative to its original specification.</li>
+          <li><strong>Spoilt Milk</strong> — milk found undeliverable during a trip; deducted from driver commission at weekly settlement.</li>
+          <li><strong>TCU</strong> — Trike Control Unit; the onboard computer transmitting real-time GPS and battery data.</li>
+          <li><strong>USSD</strong> — the *384*385# service allowing anyone to request transport, sessions, or purchases without a smartphone.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-section-h">Key Points</div>
+      <div class="sub-section-body">
+        <ul>
+          <li>These terms recur across both the Web App and the Mobile App — knowing them helps every role communicate clearly with every other role.</li>
+          <li>When in doubt about a status or a field on screen, this glossary is the fastest way to check its precise meaning.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-section" id="s-m8-11">
+    <h2 class="m-section-title">11. Assessment</h2>
+    <section class="quiz" id="quiz-m8">
+      <div class="quiz-head"><h2>Module Assessment</h2><span class="quiz-tag">Quiz</span></div>
+      <p class="quiz-intro">Answer all 6 questions. Pass mark: 95% — required for a Certificate of Completion.</p>
+      <ol class="quiz-questions">
+        <li class="quiz-q" data-answer="b"><div class="quiz-q-text"><span class="quiz-q-num">1</span>A driver's trike fails a mandatory item on the pre-trip safety checklist. What should the driver do?</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m8-q1" value="a"> Proceed carefully, since only one item failed</label><label class="quiz-option"><input type="radio" name="m8-q1" value="b"> Inform the Fleet Manager, or scan a different trike — the trip cannot proceed on this trike</label><label class="quiz-option"><input type="radio" name="m8-q1" value="c"> Mark the item as passed and continue</label><label class="quiz-option"><input type="radio" name="m8-q1" value="d"> Skip the checklist entirely for a familiar route</label></div></li>
+        <li class="quiz-q" data-answer="c"><div class="quiz-q-text"><span class="quiz-q-num">2</span>What must happen before farmer payments and driver commission are released for a completed trip?</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m8-q2" value="a"> The driver must request payment manually</label><label class="quiz-option"><input type="radio" name="m8-q2" value="b"> The trike must be returned to its permanent hub</label><label class="quiz-option"><input type="radio" name="m8-q2" value="c"> The Hub Manager must verify every uploaded delivery receipt on the web app</label><label class="quiz-option"><input type="radio" name="m8-q2" value="d"> The battery must be fully recharged</label></div></li>
+        <li class="quiz-q" data-answer="a"><div class="quiz-q-text"><span class="quiz-q-num">3</span>On the Battery Agent app, what does scanning a battery during the Check-In step accomplish?</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m8-q3" value="a"> Confirms receipt of that battery and, once all are scanned, completes the transfer so it becomes Available at the receiving hub</label><label class="quiz-option"><input type="radio" name="m8-q3" value="b"> Immediately starts charging the battery</label><label class="quiz-option"><input type="radio" name="m8-q3" value="c"> Deletes the battery from the sending hub's records</label><label class="quiz-option"><input type="radio" name="m8-q3" value="d"> Automatically reassigns the battery to a driver</label></div></li>
+        <li class="quiz-q" data-answer="d"><div class="quiz-q-text"><span class="quiz-q-num">4</span>What does a driver's "Login As" selection (Aggregation, Kilikawi, or Rental) actually do?</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m8-q4" value="a"> Restricts the driver to only that type of operation for the day</label><label class="quiz-option"><input type="radio" name="m8-q4" value="b"> Sets the driver's commission rate</label><label class="quiz-option"><input type="radio" name="m8-q4" value="c"> Determines which hub the driver is assigned to</label><label class="quiz-option"><input type="radio" name="m8-q4" value="d"> Only sets which homepage the driver lands on — it does not restrict access to other functions</label></div></li>
+        <li class="quiz-q" data-answer="b"><div class="quiz-q-text"><span class="quiz-q-num">5</span>How is a driver's energy charge calculated for a trip, session, or rental?</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m8-q5" value="a"> A flat fee regardless of distance or battery use</label><label class="quiz-option"><input type="radio" name="m8-q5" value="b"> (Start Energy − End Energy) × the energy rate for that battery type, hub, and operation</label><label class="quiz-option"><input type="radio" name="m8-q5" value="c"> The driver's commission rate multiplied by trip distance</label><label class="quiz-option"><input type="radio" name="m8-q5" value="d"> A charge set individually by each driver</label></div></li>
+        <li class="quiz-q" data-answer="c"><div class="quiz-q-text"><span class="quiz-q-num">6</span>Why can't a Kilikawi session always be ended the moment the work is finished?</div><div class="quiz-options"><label class="quiz-option"><input type="radio" name="m8-q6" value="a"> Sessions can only be ended at the hub, never in the field</label><label class="quiz-option"><input type="radio" name="m8-q6" value="b"> A Hub Manager must be physically present</label><label class="quiz-option"><input type="radio" name="m8-q6" value="c"> Ending a session requires live connectivity to sync — if offline, the driver must wait for a "you're back online" sync before it can close</label><label class="quiz-option"><input type="radio" name="m8-q6" value="d"> The battery must first be fully depleted</label></div></li>
+      </ol>
+      <div class="quiz-actions"><button class="btn btn-primary" onclick="submitQuiz('m8')">Submit Answers</button><button class="btn btn-secondary" onclick="retakeQuiz('m8')">Retake</button></div>
+      <div class="quiz-result" id="quiz-result-m8"></div>
+    </section>
+    <div id="cert-m8"></div>
+  </section>
+</div>
 
   </div><!-- /content -->
 </div><!-- /main -->
 </div><!-- /app -->
 
 <script>
-const MODULE_IDS = ['m1','m2','m3','m4','m5','m6','m7'];
-const MODULE_TITLES = {m1:'Drivers', m2:'Hub Managers', m3:'Battery Agents / Technicians', m4:'Data & Innovation Managers', m5:'Finance Managers', m6:'HR Managers', m7:'Agricultural and Extension Managers'};
+const MODULE_IDS = ['m1','m2','m3','m4','m5','m6','m7','m8'];
+const MODULE_TITLES = {m1:'Drivers', m2:'Hub Managers', m3:'Battery Agents / Technicians', m4:'Data & Innovation Managers', m5:'Finance Managers', m6:'HR Managers', m7:'Agriculture and Extension Managers', m8:'SONGA App'};
+// SONGA App (m8) is cross-role platform training, not a job role — excluded from "select your role" pickers
+const SELECTABLE_ROLE_IDS = MODULE_IDS.filter(m => m !== 'm8');
 const PASS_MARK = 95;
 // Per-module pass marks override the default (the Hub Manager assessment is graded at its documented 70%)
 const PASS_MARKS = {m2: 70};
@@ -7618,6 +8485,12 @@ document.addEventListener('click', function(e){
   e.preventDefault();
   const target = document.getElementById(a.dataset.jump);
   if(target){
+    // If the target is a collapsed section, open it first so its content is visible
+    if(target.classList && target.classList.contains('collapsible')){
+      target.classList.remove('collapsed');
+      const head = target.querySelector('.m-sec-head') || target.querySelector('.m-section-title');
+      if(head) head.setAttribute('aria-expanded','true');
+    }
     const y = target.getBoundingClientRect().top + window.scrollY - 70;
     window.scrollTo({top:y, behavior:'smooth'});
   }
@@ -7638,7 +8511,7 @@ function renderTraineeSection(){
           '<label>Full name<input type="text" id="setup-name" placeholder="e.g. Jane Doe" autocomplete="off"/></label>' +
           '<label>Your role<select id="setup-role">' +
             '<option value="">— Select role —</option>' +
-            MODULE_IDS.map(m => '<option value="'+m+'">'+MODULE_TITLES[m]+'</option>').join('') +
+            SELECTABLE_ROLE_IDS.map(m => '<option value="'+m+'">'+MODULE_TITLES[m]+'</option>').join('') +
           '</select></label>' +
         '</div>' +
         '<div class="setup-actions">' +
@@ -8048,6 +8921,31 @@ function enhanceModuleVisuals(){
   document.querySelectorAll('.sub-section').forEach(ss => {
     const h = ss.querySelector('.sub-section-h');
     if(h && h.textContent.trim() === 'Key Points') ss.classList.add('key-points');
+  });
+  // Make each section collapsible (every module except Mission, Impact & Values — m0)
+  document.querySelectorAll('.module-page').forEach(page => {
+    if(page.id === 'page-m0') return;
+    page.querySelectorAll('.m-section').forEach(sec => {
+      if(sec.dataset.collapsible) return;
+      const title = sec.querySelector('.m-section-title');
+      if(!title) return;
+      sec.classList.add('collapsible','collapsed');
+      const tri = document.createElement('span');
+      tri.className = 'sec-toggle';
+      tri.setAttribute('aria-hidden','true');
+      title.insertBefore(tri, title.firstChild);
+      const head = title.closest('.m-sec-head') || title;
+      head.setAttribute('role','button');
+      head.setAttribute('tabindex','0');
+      head.setAttribute('aria-expanded','false');
+      const toggle = () => {
+        const open = !sec.classList.toggle('collapsed');
+        head.setAttribute('aria-expanded', String(open));
+      };
+      head.addEventListener('click', toggle);
+      head.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+      sec.dataset.collapsible = '1';
+    });
   });
 }
 
