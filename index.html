@@ -6,7 +6,7 @@
 <title>SONGA Mobility — Training Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400;1,500&family=Roboto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #075155;
@@ -24,6 +24,7 @@
     --border: #E2E8EF;
     --sidebar-w: 300px;
     --font-ui: 'Roboto',-apple-system,'Segoe UI',sans-serif;
+    --font-serif: 'Roboto Serif','Georgia',serif;
     --font-mono: 'Menlo',monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -40,7 +41,7 @@
   .logo-panel svg{width:100%;height:auto;display:block}
   .sidebar-logo{padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0}
   .sidebar-logo .brand{font-family:var(--font-ui);font-size:10px;font-weight:700;color:var(--yellow);letter-spacing:0.18em;text-transform:uppercase;margin:14px 0 3px}
-  .sidebar-logo h1{font-family:var(--font-ui);font-size:14px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0.02em}
+  .sidebar-logo h1{font-family:var(--font-serif);font-size:15px;font-weight:600;color:#fff;line-height:1.25;letter-spacing:0.01em}
   .sidebar-logo .version{font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px}
   #sidebar-search{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0}
   .search-wrap{position:relative}
@@ -93,40 +94,63 @@
   #content{padding:40px 48px 96px}
   .module-page{display:none}
   .module-page.active{display:block}
-  .module-hero{margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid var(--border)}
-  .module-tag{display:inline-flex;align-items:center;font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-mid);background:var(--teal-light);padding:4px 10px;border-radius:20px;margin-bottom:14px}
+  .module-hero{margin:0 0 32px;padding:34px 38px 36px;background:var(--navy);border-radius:16px;color:#fff}
+  .module-tag{display:inline-flex;align-items:center;font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.14);padding:5px 12px;border-radius:20px;margin-bottom:16px}
   .module-tag.assigned{background:var(--yellow);color:var(--navy)}
-  .module-hero h1{font-family:var(--font-ui);font-size:32px;font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:12px}
-  .module-hero .lead{font-size:16.5px;color:var(--text-muted);line-height:1.65;max-width:700px}
-  .module-status{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .ms-chip{font-family:var(--font-ui);font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;background:var(--bg);border:1px solid var(--border);color:var(--text-muted)}
-  .ms-chip.passed{background:var(--teal-light);border-color:var(--teal);color:var(--teal-mid)}
-  .ms-chip.try{background:#FFF8DC;border-color:var(--yellow);color:#8A5A00}
-  .ms-chip.read{background:#EAF4FB;border-color:#9CCDEB;color:#1F5A85}
-  .ms-chip .ms-num{color:var(--navy);font-weight:700}
+  .module-hero h1{font-family:var(--font-serif);font-size:32px;font-weight:600;color:#fff;line-height:1.15;margin-bottom:10px}
+  .module-hero .lead{font-size:15.5px;color:rgba(255,255,255,0.72);line-height:1.65;max-width:640px}
+  .module-status{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .ms-chip{font-family:var(--font-ui);font-size:12px;font-weight:600;padding:5px 12px 5px 10px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);color:rgba(255,255,255,0.75);display:inline-flex;align-items:center;gap:7px}
+  .ms-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);flex-shrink:0}
+  .ms-chip.passed{background:rgba(52,171,107,0.16);border-color:rgba(52,171,107,0.45);color:#B7EDD1}
+  .ms-chip.passed::before{background:#34ab6b}
+  .ms-chip.try{background:rgba(255,212,21,0.12);border-color:rgba(255,212,21,0.4);color:var(--yellow)}
+  .ms-chip.try::before{background:var(--yellow)}
+  .ms-chip.read{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.8)}
+  .ms-chip .ms-num{color:#fff;font-weight:700}
 
-  .read-progress{margin-top:18px;font-family:var(--font-ui)}
-  .read-progress-label{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;display:flex;justify-content:space-between}
-  .read-progress-label .pct{color:var(--teal-mid)}
-  .read-progress-bar{height:8px;background:var(--bg);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
-  .read-progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--green-2));width:0%;transition:width 0.18s ease-out}
+  .read-progress{margin-top:22px;font-family:var(--font-ui)}
+  .read-progress-label{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;display:flex;justify-content:space-between}
+  .read-progress-label .pct{color:var(--yellow)}
+  .read-progress-bar{height:6px;background:rgba(255,255,255,0.16);border-radius:6px;overflow:hidden}
+  .read-progress-fill{height:100%;background:var(--yellow);width:0%;transition:width 0.18s ease-out}
 
   /* Section TOC */
-  .section-nav{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin:0 0 40px}
+  .section-nav{background:transparent;border:none;padding:0;margin:0 0 40px}
   .section-nav-head{font-family:var(--font-ui);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}
-  .section-nav-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:2px 20px}
-  .section-nav-list li{font-family:var(--font-ui);font-size:15.5px;line-height:1.5}
-  .section-nav-list a{display:flex;align-items:flex-start;gap:10px;text-decoration:none;color:var(--text);padding:8px 12px;border-left:2px solid transparent;border-radius:0 4px 4px 0;transition:all 0.12s;cursor:pointer}
-  .section-nav-list a:hover{color:var(--teal-mid);background:var(--teal-light);border-left-color:var(--teal)}
-  .section-nav-list a.active{color:var(--navy);font-weight:700;border-left-color:var(--yellow);background:var(--teal-light)}
-  .section-nav-list .sn-num{flex-shrink:0;width:28px;color:var(--text-light);font-weight:700;font-size:13px;padding-top:1px}
-  .section-nav-list a.active .sn-num{color:var(--teal-mid)}
+  .section-nav-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+  .section-nav-list li{font-family:var(--font-ui);font-size:14px;line-height:1.4}
+  .section-nav-list a{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-decoration:none;color:var(--text);font-size:14.5px;font-weight:700;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;transition:all 0.12s;cursor:pointer;height:100%}
+  .section-nav-list a:hover{border-color:var(--teal);background:var(--teal-light)}
+  .section-nav-list a.active{border-color:var(--yellow);background:var(--teal-light);color:var(--navy)}
+  .section-nav-list .sn-num{flex-shrink:0;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal-mid)}
+  .section-nav-list a.active .sn-num{color:var(--navy)}
+  .sn-status{font-family:var(--font-ui);font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--bg);color:var(--text-muted)}
+  .sn-status.visited{background:var(--teal-light);color:var(--teal-mid)}
+  .sn-status.current{background:var(--yellow);color:var(--navy)}
   @media(max-width:760px){.section-nav-list{grid-template-columns:1fr}}
+
+  /* === Single-section lesson view: one section shown at a time + rail === */
+  .lesson-layout{display:grid;grid-template-columns:1.7fr 1fr;gap:24px;align-items:start;margin-top:8px}
+  .lesson-main{min-width:0}
+  .lesson-main .m-section{display:none}
+  .lesson-main .m-section.current{display:block}
+  .lesson-rail{position:sticky;top:76px;background:var(--navy);border-radius:14px;padding:20px 22px;color:#fff}
+  .lesson-rail-head{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  .lesson-rail-list{display:flex;flex-direction:column;gap:2px}
+  .lesson-rail-item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;cursor:pointer;font-family:var(--font-ui);font-size:12.5px;color:rgba(255,255,255,0.55);transition:background 0.12s}
+  .lesson-rail-item:hover{background:rgba(255,255,255,0.08)}
+  .lesson-rail-item .lri-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);flex-shrink:0}
+  .lesson-rail-item.visited{color:rgba(255,255,255,0.78)}
+  .lesson-rail-item.visited .lri-dot{background:#34ab6b}
+  .lesson-rail-item.active{color:#fff;font-weight:700;background:rgba(255,255,255,0.10)}
+  .lesson-rail-item.active .lri-dot{background:var(--yellow)}
+  @media(max-width:900px){.lesson-layout{grid-template-columns:1fr}.lesson-rail{position:static}}
 
   /* Sections & sub-sections */
   .m-section{margin:48px 0;padding-top:8px;scroll-margin-top:80px}
   .m-section:first-of-type{margin-top:16px}
-  .m-section-title{font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);position:relative;padding-bottom:15px;margin-bottom:26px;line-height:1.3;letter-spacing:-0.01em}
+  .m-section-title{font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--navy);position:relative;padding-bottom:12px;margin-bottom:16px;line-height:1.5;letter-spacing:-0.005em}
   .m-section-title::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--border)}
   .m-section-title::before{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green-2),var(--yellow-deep));z-index:1}
   .sub-section{margin:22px 0 28px}
@@ -173,7 +197,7 @@
   .trainee-banner{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid var(--teal);border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .trainee-banner .tb-info{flex:1;min-width:220px}
   .trainee-banner .tb-hi{font-family:var(--font-ui);font-size:13px;color:var(--text-muted)}
-  .trainee-banner .tb-name{font-family:var(--font-ui);font-size:22px;font-weight:700;color:var(--navy);margin:2px 0 6px}
+  .trainee-banner .tb-name{font-family:var(--font-serif);font-size:23px;font-weight:600;color:var(--navy);margin:2px 0 6px}
   .trainee-banner .tb-role{font-family:var(--font-ui);font-size:13.5px;color:var(--teal-mid)}
   .trainee-banner .tb-role strong{color:var(--navy)}
   .trainee-banner .tb-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
@@ -182,10 +206,17 @@
 
   .other-roles{margin:28px 0}
   .other-roles h3{font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
-  .roles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-  .role-tile{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-decoration:none;cursor:pointer;font-family:var(--font-ui);font-size:13px;color:var(--text-muted);transition:all 0.12s;display:flex;align-items:center;justify-content:space-between}
-  .role-tile:hover{border-color:var(--teal-mid);color:var(--navy)}
-  .role-tile .rt-num{font-size:10px;font-weight:700;color:var(--teal-mid);margin-right:8px}
+  .roles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .role-tile{background:var(--bg-card);border:1px solid var(--border);border-top:3px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;cursor:pointer;font-family:var(--font-ui);font-size:13px;color:var(--text);transition:all 0.12s;display:block}
+  .role-tile:hover{border-color:var(--teal-mid);border-top-color:var(--teal-mid)}
+  .role-tile .rt-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .role-tile .rt-label{font-weight:700;color:var(--navy);font-size:13.5px}
+  .role-tile .rt-num{font-size:10px;font-weight:700;color:var(--text-light);margin-right:6px}
+  .role-tile .rt-status{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--bg);color:var(--text-muted);white-space:nowrap;flex-shrink:0}
+  .role-tile.passed{border-top-color:var(--teal)}
+  .role-tile.passed .rt-status{background:var(--teal-light);color:var(--teal-mid)}
+  .role-tile.try{border-top-color:var(--yellow)}
+  .role-tile.try .rt-status{background:#FFF8DC;color:#8A5A00}
 
   .btn{font-family:var(--font-ui);font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;border:none;cursor:pointer;transition:all 0.15s;letter-spacing:0.02em}
   .btn-primary{background:var(--teal-mid);color:#fff}
@@ -220,12 +251,12 @@
   .quiz-result strong{font-weight:700}
 
   /* Certificate */
-  .certificate{margin:30px 0 12px;background:#fff;border:2px solid var(--navy);border-radius:14px;padding:36px 40px;position:relative;font-family:var(--font-ui);box-shadow:0 8px 30px rgba(7,81,85,0.08)}
+  .certificate{margin:30px 0 12px;background:#fff;border:2px solid var(--navy);border-radius:14px;padding:36px 40px;position:relative;font-family:var(--font-ui)}
   .certificate::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--yellow),var(--yellow-deep));border-radius:12px 12px 0 0}
   .cert-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
   .cert-logo{width:120px;flex-shrink:0}
   .cert-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-mid);text-align:right}
-  .cert-title{font-size:28px;font-weight:700;color:var(--navy);letter-spacing:0.04em;text-align:center;margin:8px 0 4px}
+  .cert-title{font-family:var(--font-serif);font-size:28px;font-weight:600;color:var(--navy);letter-spacing:0.02em;text-align:center;margin:8px 0 4px}
   .cert-sub{font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:24px}
   .cert-body{text-align:center;line-height:1.7;color:var(--text);font-size:15px}
   .cert-name{font-family:var(--font-ui);font-style:italic;font-size:34px;font-weight:700;color:var(--navy);margin:14px 0 6px;border-bottom:1px solid var(--border);padding-bottom:14px;display:inline-block;min-width:280px}
@@ -237,9 +268,8 @@
   .cert-actions{margin-top:20px;display:flex;justify-content:center;gap:10px}
 
   /* === Foundation module (m0): mission, impact & values visual components === */
-  .values-hero{background:linear-gradient(135deg,#053a3e 0%,#075155 55%,#0a6166 100%);border-radius:14px;padding:64px 64px 64px 80px;color:#fff;margin:0 0 16px;position:relative;overflow:hidden;box-shadow:0 4px 32px rgba(7,81,85,0.10)}
+  .values-hero{background:var(--navy);border-radius:14px;padding:64px 64px 64px 80px;color:#fff;margin:0 0 16px;position:relative;overflow:hidden}
   .values-hero::before{content:"";position:absolute;left:36px;top:54px;bottom:54px;width:2px;background:var(--yellow);border-radius:2px;opacity:0.95}
-  .values-hero::after{content:"";position:absolute;right:-100px;bottom:-100px;width:360px;height:360px;background:radial-gradient(circle,rgba(255,212,21,0.09),transparent 65%);pointer-events:none}
   .values-hero .vh-eyebrow{font-family:var(--font-ui);font-size:11px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--yellow);margin-bottom:24px;position:relative}
   .values-hero h2{font-family:var(--font-ui);font-size:30px;font-weight:500;line-height:1.32;margin:0 0 20px;max-width:760px;color:#fff;border:none;padding:0;position:relative;letter-spacing:-0.005em}
   .values-hero p{font-family:var(--font-ui);font-size:15.5px;line-height:1.7;color:rgba(255,255,255,0.72);max-width:660px;position:relative;font-weight:400}
@@ -259,21 +289,21 @@
   .pull-quote .pq-author{display:block;margin-top:10px;font-style:normal;font-family:var(--font-ui);font-size:13px;font-weight:700;color:var(--teal-mid)}
   .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
   .feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px}
-  .feature-card .fc-icon{width:40px;height:40px;border-radius:10px;background:var(--teal-light);color:var(--teal-mid);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+  .feature-card .fc-icon{width:36px;height:36px;border-radius:10px;background:var(--teal-light);color:var(--teal-mid);display:flex;align-items:center;justify-content:center;font-family:var(--font-ui);font-size:15px;font-weight:700;margin-bottom:12px}
   .feature-card h4{font-family:var(--font-ui);font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
   .feature-card p{font-family:var(--font-ui);font-size:13.5px;color:var(--text-muted);line-height:1.55}
   .sat-row{display:flex;align-items:center;gap:14px;margin:9px 0;font-family:var(--font-ui)}
   .sat-label{font-size:13px;color:var(--text);width:240px;flex-shrink:0;line-height:1.35}
   .sat-bar-track{flex:1;height:24px;background:var(--bg);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
-  .sat-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--green-2));display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:11px;font-weight:700;min-width:36px}
-  .motivate-banner{background:linear-gradient(135deg,#0a6166 0%,#075155 50%,#053a3e 100%);border-radius:14px;padding:56px 56px;color:#fff;text-align:center;margin:16px 0;position:relative;overflow:hidden;box-shadow:0 4px 32px rgba(7,81,85,0.10)}
+  .sat-bar-fill{height:100%;background:var(--teal-mid);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:11px;font-weight:700;min-width:36px}
+  .motivate-banner{background:var(--navy);border-radius:14px;padding:56px 56px;color:#fff;text-align:center;margin:16px 0;position:relative;overflow:hidden}
   .motivate-banner::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:48px;height:3px;background:var(--yellow);border-radius:0 0 4px 4px}
-  .motivate-banner h3{font-family:var(--font-ui);font-size:26px;font-weight:500;margin-bottom:16px;color:#fff;letter-spacing:-0.005em;line-height:1.3}
+  .motivate-banner h3{font-family:var(--font-serif);font-size:27px;font-weight:600;margin-bottom:16px;color:#fff;letter-spacing:-0.005em;line-height:1.3}
   .motivate-banner p{font-family:var(--font-ui);font-size:15.5px;line-height:1.7;color:rgba(255,255,255,0.78);max-width:600px;margin:0 auto;font-weight:400}
-  .foundation-callout{background:linear-gradient(135deg,var(--navy),var(--teal-mid));border-radius:14px;padding:22px 26px;margin:0 0 24px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .foundation-callout{background:var(--navy);border-radius:14px;padding:22px 26px;margin:0 0 24px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .foundation-callout .fc-text{flex:1;min-width:240px}
   .foundation-callout .fc-eyebrow{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:6px}
-  .foundation-callout h3{font-family:var(--font-ui);font-size:19px;font-weight:700;margin-bottom:6px;color:#fff}
+  .foundation-callout h3{font-family:var(--font-serif);font-size:20px;font-weight:600;margin-bottom:6px;color:#fff}
   .foundation-callout p{font-family:var(--font-ui);font-size:13.5px;color:rgba(255,255,255,0.85);line-height:1.5}
   .nav-item.foundation .num{color:var(--yellow)}
   .nav-icon{width:80px;height:45px;flex-shrink:0;overflow:hidden;border-radius:6px;background:rgba(255,255,255,0.06);display:inline-flex;align-items:center;justify-content:center}
@@ -284,14 +314,10 @@
 
   /* === Cross-module visual enhancements (applied to all role modules) === */
   .m-section-title{display:flex;align-items:center;gap:12px}
-  .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 9px;border-radius:8px;background:linear-gradient(140deg,var(--navy),var(--green-2));color:#fff;font-size:14px;font-weight:700;letter-spacing:0.02em;box-shadow:0 2px 8px rgba(7,81,85,0.22)}
+  .sec-badge{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;border-radius:7px;background:var(--navy);color:#fff;font-family:var(--font-ui);font-size:11.5px;font-weight:700;letter-spacing:0.02em}
   .sec-title-text{flex:1}
-  /* === Collapsible sections (all modules except Mission/Foundation) === */
-  .m-section.collapsible > .m-section-title,
-  .m-section.collapsible > .m-sec-head{cursor:pointer;user-select:none}
-  .sec-toggle{flex-shrink:0;width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent var(--yellow-deep);transition:transform 0.18s ease;margin-right:4px}
-  .m-section.collapsible:not(.collapsed) .sec-toggle{transform:rotate(90deg)}
-  .m-section.collapsed > :not(.m-section-title):not(.m-sec-head){display:none}
+  /* Accordion toggle removed — superseded by the single-section lesson view above */
+  .lesson-main .m-section.current{margin:0;padding-top:0}
   /* Polished numbered-step lists */
   .num-list{counter-reset:numlist;list-style:none;padding:0;margin:14px 0 18px}
   .num-list>li{counter-increment:numlist;position:relative;padding-left:42px;margin-bottom:11px;font-size:15px;line-height:1.6;font-family:var(--font-ui);min-height:28px}
@@ -304,11 +330,10 @@
   .sub-section.key-points .sub-section-body ul li{position:relative;padding-left:26px;margin-bottom:9px}
   .sub-section.key-points .sub-section-body ul li::before{content:"";position:absolute;left:0;top:0.58em;width:8px;height:8px;border-radius:50%;background:var(--teal-mid);opacity:0.9}
   /* === Driver Compliance Highlights === */
-  .compliance-banner{background:linear-gradient(135deg,#ffd415 0%,#ffc700 100%);border-radius:14px;padding:28px 32px;margin:28px 0 10px;color:var(--navy);position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12)}
+  .compliance-banner{background:var(--yellow);border-radius:14px;padding:28px 32px;margin:28px 0 10px;color:var(--navy);position:relative;overflow:hidden}
   .compliance-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--navy);border-radius:12px 12px 0 0}
-  .compliance-banner::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(255,199,0,0.25),transparent 65%);pointer-events:none}
   .compliance-banner .cb-eyebrow{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
-  .compliance-banner h3{font-family:var(--font-ui);font-size:20px;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.3}
+  .compliance-banner h3{font-family:var(--font-serif);font-size:21px;font-weight:600;color:var(--navy);margin:0 0 10px;line-height:1.3}
   .compliance-banner p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:rgba(7,81,85,0.85);margin:0;max-width:680px}
   .compliance-section{border:2px solid #ffd415;border-radius:12px;margin:20px 0;overflow:hidden}
   .compliance-section-head{background:linear-gradient(90deg,#ffd415,#ffc700);padding:10px 18px;display:flex;align-items:center;gap:10px}
@@ -335,12 +360,12 @@
   table.esc-table td .esc-level{display:inline-block;font-weight:700;font-size:12px;color:var(--teal-mid);white-space:nowrap}
   table.esc-table td.esc-fault{font-weight:600;color:var(--navy)}
   /* === HR Manager "voice" sidebar — first-person account from a real HR Manager === */
-  .hr-voice{position:relative;background:linear-gradient(135deg,#ffd415 0%,#ffc700 100%);border-radius:16px;padding:34px 38px 38px;margin:36px 0 14px;color:var(--navy);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.12)}
-  .hr-voice::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--green-2),var(--navy))}
+  .hr-voice{position:relative;background:var(--yellow);border-radius:16px;padding:34px 38px 38px;margin:36px 0 14px;color:var(--navy);overflow:hidden}
+  .hr-voice::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--navy)}
   .hr-voice::after{content:"\201C";position:absolute;top:6px;right:26px;font-family:Georgia,serif;font-size:160px;line-height:1;color:rgba(7,81,85,0.10);pointer-events:none}
   .hr-voice .hv-eyebrow{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:9px}
   .hr-voice .hv-eyebrow .hv-dot{width:8px;height:8px;border-radius:50%;background:var(--navy);box-shadow:0 0 0 4px rgba(7,81,85,0.18)}
-  .hr-voice h3{font-family:var(--font-ui);font-size:23px;font-weight:700;color:var(--navy);margin:0 0 6px;line-height:1.25}
+  .hr-voice h3{font-family:var(--font-serif);font-size:24px;font-weight:600;color:var(--navy);margin:0 0 6px;line-height:1.25}
   .hr-voice .hv-byline{font-family:var(--font-ui);font-size:13.5px;font-style:italic;color:rgba(7,81,85,0.85);margin-bottom:20px}
   .hr-voice .hv-intro{font-family:var(--font-ui);font-size:16px;line-height:1.7;color:var(--text);margin-bottom:22px;max-width:760px;position:relative;z-index:1}
   .hr-voice .hv-skill{background:rgba(255,255,255,0.5);border:1px solid rgba(7,81,85,0.12);border-left:3px solid var(--navy);border-radius:10px;padding:15px 18px;margin-bottom:13px;position:relative;z-index:1}
@@ -384,7 +409,7 @@
   .scoring-bands{font-family:var(--font-ui);font-size:12.5px;color:var(--text-muted);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin:14px 0}
   .scoring-bands strong{color:var(--navy)}
   .discussion{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:20px 0 12px;border-top:3px solid var(--navy)}
-  .discussion h3{font-family:var(--font-ui);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .discussion h3{font-family:var(--font-serif);font-size:17px;font-weight:600;color:var(--navy);margin-bottom:4px}
   .discussion .disc-sub{font-family:var(--font-ui);font-size:12.5px;color:var(--text-muted);margin-bottom:14px}
   .disc-q{padding:13px 0;border-bottom:1px solid var(--border);font-family:var(--font-ui)}
   .disc-q:last-child{border-bottom:none}
@@ -519,14 +544,14 @@
   <div class="other-roles">
     <h3>All roles (reference)</h3>
     <div class="roles-list">
-      <a class="role-tile" onclick="showPage('m1',null)"><span><span class="rt-num">01</span>Drivers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m2',null)"><span><span class="rt-num">02</span>Hub Managers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m3',null)"><span><span class="rt-num">03</span>Battery Agents / Technicians</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m4',null)"><span><span class="rt-num">04</span>Data &amp; Innovation Managers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m5',null)"><span><span class="rt-num">05</span>Finance Managers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m6',null)"><span><span class="rt-num">06</span>HR Managers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m7',null)"><span><span class="rt-num">07</span>Agriculture and Extension Managers</span><span>→</span></a>
-      <a class="role-tile" onclick="showPage('m8',null)"><span><span class="rt-num">08</span>SONGA App</span><span>→</span></a>
+      <a class="role-tile" data-role="m1" onclick="showPage('m1',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">01</span>Drivers</span><span class="rt-status" data-rt-status="m1">—</span></div></a>
+      <a class="role-tile" data-role="m2" onclick="showPage('m2',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">02</span>Hub Managers</span><span class="rt-status" data-rt-status="m2">—</span></div></a>
+      <a class="role-tile" data-role="m3" onclick="showPage('m3',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">03</span>Battery Agents / Technicians</span><span class="rt-status" data-rt-status="m3">—</span></div></a>
+      <a class="role-tile" data-role="m4" onclick="showPage('m4',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">04</span>Data &amp; Innovation Managers</span><span class="rt-status" data-rt-status="m4">—</span></div></a>
+      <a class="role-tile" data-role="m5" onclick="showPage('m5',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">05</span>Finance Managers</span><span class="rt-status" data-rt-status="m5">—</span></div></a>
+      <a class="role-tile" data-role="m6" onclick="showPage('m6',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">06</span>HR Managers</span><span class="rt-status" data-rt-status="m6">—</span></div></a>
+      <a class="role-tile" data-role="m7" onclick="showPage('m7',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">07</span>Agriculture and Extension Managers</span><span class="rt-status" data-rt-status="m7">—</span></div></a>
+      <a class="role-tile" data-role="m8" onclick="showPage('m8',null)"><div class="rt-top"><span class="rt-label"><span class="rt-num">08</span>SONGA App</span><span class="rt-status" data-rt-status="m8">—</span></div></a>
     </div>
   </div>
 </div>
@@ -731,9 +756,9 @@
         <p>The SONGA platform exists for three reasons:</p>
       </div>
       <div class="feature-grid">
-        <div class="feature-card"><div class="fc-icon">①</div><h4>Economic viability</h4><p>The platform optimizes the use of assets (vehicles, batteries, chargers) so the operation can sustain itself financially. Without economic viability, there is no sustainability. Without sustainability, we are making promises we cannot keep.</p></div>
-        <div class="feature-card"><div class="fc-icon">②</div><h4>Systematization</h4><p>SONGA is not here to support two or three farms. The platform allows the model to be replicated and scaled across regions and countries. Systematization is what turns a local project into a lasting solution.</p></div>
-        <div class="feature-card"><div class="fc-icon">③</div><h4>Traceability, control &amp; trust</h4><p>Every transaction, every trip, every battery swap is tracked. Without integrity in the system, we cannot guarantee the model is truly working for everyone. Trust is what holds the whole ecosystem together.</p></div>
+        <div class="feature-card"><div class="fc-icon">1</div><h4>Economic viability</h4><p>The platform optimizes the use of assets (vehicles, batteries, chargers) so the operation can sustain itself financially. Without economic viability, there is no sustainability. Without sustainability, we are making promises we cannot keep.</p></div>
+        <div class="feature-card"><div class="fc-icon">2</div><h4>Systematization</h4><p>SONGA is not here to support two or three farms. The platform allows the model to be replicated and scaled across regions and countries. Systematization is what turns a local project into a lasting solution.</p></div>
+        <div class="feature-card"><div class="fc-icon">3</div><h4>Traceability, control &amp; trust</h4><p>Every transaction, every trip, every battery swap is tracked. Without integrity in the system, we cannot guarantee the model is truly working for everyone. Trust is what holds the whole ecosystem together.</p></div>
       </div>
     </div>
 
@@ -788,10 +813,10 @@
         <p>Food security consists of four pillars: food availability, food access, food utilization, and stability. Our solution contributes to each.</p>
       </div>
       <div class="feature-grid">
-        <div class="feature-card"><div class="fc-icon">🌾</div><h4>Availability</h4><p>Solar-powered Agri-E-Hubs, cold storage, and routed E3Ws move produce quickly from farms to markets, cutting post-harvest losses and increasing safe, marketable volumes.</p></div>
-        <div class="feature-card"><div class="fc-icon">💵</div><h4>Access</h4><p>Reliable first/last-mile logistics lower delivered costs for offtakers and raise farmer incomes through timely pickups and transparent payments, improving households' ability to purchase food.</p></div>
-        <div class="feature-card"><div class="fc-icon">🥛</div><h4>Utilization</h4><p>Cold-chain handling, digital weighing/moisture checks, and hygienic aggregation at Agri-E-Hubs preserve quality and safety — especially for milk and tea — supporting better nutrition outcomes.</p></div>
-        <div class="feature-card"><div class="fc-icon">📈</div><h4>Stability</h4><p>Dual-shift, multi-crop routes (e.g., milk in the morning, tea in the afternoon), renewable energy at Agri-E-Hubs that buffers fuel-price shocks, and data-driven dispatch smooth seasonal volatility and sustain supply during climate and market disruptions.</p></div>
+        <div class="feature-card"><div class="fc-icon">1</div><h4>Availability</h4><p>Solar-powered Agri-E-Hubs, cold storage, and routed E3Ws move produce quickly from farms to markets, cutting post-harvest losses and increasing safe, marketable volumes.</p></div>
+        <div class="feature-card"><div class="fc-icon">2</div><h4>Access</h4><p>Reliable first/last-mile logistics lower delivered costs for offtakers and raise farmer incomes through timely pickups and transparent payments, improving households' ability to purchase food.</p></div>
+        <div class="feature-card"><div class="fc-icon">3</div><h4>Utilization</h4><p>Cold-chain handling, digital weighing/moisture checks, and hygienic aggregation at Agri-E-Hubs preserve quality and safety — especially for milk and tea — supporting better nutrition outcomes.</p></div>
+        <div class="feature-card"><div class="fc-icon">4</div><h4>Stability</h4><p>Dual-shift, multi-crop routes (e.g., milk in the morning, tea in the afternoon), renewable energy at Agri-E-Hubs that buffers fuel-price shocks, and data-driven dispatch smooth seasonal volatility and sustain supply during climate and market disruptions.</p></div>
       </div>
     </div>
 
@@ -8472,25 +8497,16 @@ function showPage(id, el){
   rail.classList.toggle('show', id !== 'home' && id !== 'profile');
   if(id === 'profile') renderProfile();
   window.scrollTo(0,0);
-  updateReadingProgress();
-  setupScrollSpy();
+  if(pages[id] && pages[id].querySelector('.lesson-layout')) refreshModuleProgress(id);
 }
 
 document.addEventListener('click', function(e){
   const a = e.target.closest('[data-jump]');
   if(!a) return;
   e.preventDefault();
-  const target = document.getElementById(a.dataset.jump);
-  if(target){
-    // If the target is a collapsed section, open it first so its content is visible
-    if(target.classList && target.classList.contains('collapsible')){
-      target.classList.remove('collapsed');
-      const head = target.querySelector('.m-sec-head') || target.querySelector('.m-section-title');
-      if(head) head.setAttribute('aria-expanded','true');
-    }
-    const y = target.getBoundingClientRect().top + window.scrollY - 70;
-    window.scrollTo({top:y, behavior:'smooth'});
-  }
+  const sectionId = a.dataset.jump;
+  const modId = sectionId.split('-')[1];
+  showSection(modId, sectionId);
 });
 
 function escapeHTML(str){ return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -8693,56 +8709,162 @@ function retakeQuiz(mod, silent){
   if(!silent) window.scrollTo({top: quiz.offsetTop - 70, behavior:'smooth'});
 }
 
-function updateReadingProgress(){
-  const activePage = document.querySelector('.module-page.active');
-  if(!activePage || activePage.id === 'page-home'){
-    document.getElementById('reading-rail-bar').style.width = '0%';
-    return;
-  }
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = scrollable > 0 ? Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100)) : 100;
-  const pctRounded = Math.round(pct);
-  document.getElementById('reading-rail-bar').style.width = pct + '%';
+// Reading progress is now based on how many of a module's sections have been
+// visited (opened at least once), not on scroll position — each section is
+// shown one at a time, so a scroll-based percentage no longer means anything.
+function refreshModuleProgress(modId){
+  const page = pages[modId];
+  if(!page) return;
+  const sections = page.querySelectorAll('.m-section');
+  const total = sections.length;
+  const s = getState();
+  const e = s.progress[modId] || {attempts:0, bestScore:0, lastScore:null, readPct:0, certifiedAt:null, visited:[]};
+  if(!e.visited) e.visited = [];
+  const pct = total ? Math.round((e.visited.length / total) * 100) : 0;
+  e.readPct = pct;
+  s.progress[modId] = e;
+  setState(s);
 
-  const modId = activePage.id.replace('page-','');
-  // Update the in-hero reading bar for any module page (incl. the m0 foundation module)
-  const fill = activePage.querySelector('[data-readfill="'+modId+'"]');
-  const label = activePage.querySelector('[data-readpct="'+modId+'"]');
+  const fill = page.querySelector('[data-readfill="'+modId+'"]');
+  const label = page.querySelector('[data-readpct="'+modId+'"]');
   if(fill) fill.style.width = pct + '%';
-  if(label) label.textContent = pctRounded + '%';
-  // Persist read progress only for role modules that carry stored state
-  if(MODULE_IDS.includes(modId)){
-    const s = getState();
-    const e = s.progress[modId] || {attempts:0, bestScore:0, lastScore:null, readPct:0, certifiedAt:null};
-    if(pctRounded > (e.readPct || 0)){
-      e.readPct = pctRounded;
-      s.progress[modId] = e;
-      setState(s);
-    }
-  }
+  if(label) label.textContent = pct + '%';
+  const railBar = document.getElementById('reading-rail-bar');
+  if(railBar && page.classList.contains('active')) railBar.style.width = pct + '%';
 }
-window.addEventListener('scroll', updateReadingProgress);
-window.addEventListener('resize', updateReadingProgress);
 
-let scrollSpyObserver = null;
-function setupScrollSpy(){
-  if(scrollSpyObserver){ scrollSpyObserver.disconnect(); scrollSpyObserver = null; }
-  const activePage = document.querySelector('.module-page.active');
-  if(!activePage || activePage.id === 'page-home') return;
-  const sections = activePage.querySelectorAll('.m-section');
-  const navLinks = activePage.querySelectorAll('.section-nav-list a[data-jump]');
-  if(sections.length === 0 || navLinks.length === 0) return;
+// Pure display toggle — no state writes. Used for the silent initial render
+// so simply loading the page doesn't mark sections as "visited".
+function setCurrentSection(modId, sectionId){
+  const page = pages[modId];
+  if(!page) return;
+  page.querySelectorAll('.m-section').forEach(sec => sec.classList.toggle('current', sec.id === sectionId));
+  page.querySelectorAll('.section-nav-list a[data-jump]').forEach(a => a.classList.toggle('active', a.dataset.jump === sectionId));
+  const rail = page.querySelector('.lesson-rail');
+  if(rail) rail.querySelectorAll('.lesson-rail-item').forEach(it => it.classList.toggle('active', it.dataset.target === sectionId));
+}
 
-  scrollSpyObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const id = entry.target.id;
-        navLinks.forEach(a => a.classList.toggle('active', a.dataset.jump === id));
-      }
-    });
-  }, {rootMargin: '-25% 0px -65% 0px', threshold: 0});
+// User-initiated navigation: display the section AND record it as visited.
+function showSection(modId, sectionId, opts){
+  opts = opts || {};
+  setCurrentSection(modId, sectionId);
 
-  sections.forEach(s => scrollSpyObserver.observe(s));
+  const s = getState();
+  const e = s.progress[modId] || {attempts:0, bestScore:0, lastScore:null, readPct:0, certifiedAt:null, visited:[]};
+  if(!e.visited) e.visited = [];
+  if(!e.visited.includes(sectionId)) e.visited.push(sectionId);
+  s.progress[modId] = e;
+  setState(s);
+
+  renderSectionStatuses(modId);
+  refreshModuleProgress(modId);
+  if(opts.scroll !== false) window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderSectionStatuses(modId){
+  const page = pages[modId];
+  if(!page) return;
+  const s = getState();
+  const e = s.progress[modId] || {visited:[]};
+  const visited = e.visited || [];
+  const current = page.querySelector('.m-section.current');
+  const currentId = current ? current.id : null;
+  page.querySelectorAll('.section-nav-list a[data-jump]').forEach(a => {
+    const id = a.dataset.jump;
+    let status = a.querySelector('.sn-status');
+    if(!status){ status = document.createElement('span'); status.className = 'sn-status'; a.appendChild(status); }
+    if(id === currentId){ status.textContent = 'Viewing now'; status.className = 'sn-status current'; }
+    else if(visited.includes(id)){ status.textContent = 'Viewed'; status.className = 'sn-status visited'; }
+    else { status.textContent = 'Not started'; status.className = 'sn-status'; }
+  });
+  page.querySelectorAll('.lesson-rail-item').forEach(it => {
+    const id = it.dataset.target;
+    it.classList.toggle('visited', id !== currentId && visited.includes(id));
+  });
+}
+
+// A few modules (m2, m5, m6, m7) have extra content — an "hr-voice" spotlight
+// or a "compliance-section" callout — sitting as a sibling BETWEEN two
+// m-sections rather than nested inside one. Fold each into the section that
+// precedes it so it travels along when that section is shown/hidden.
+function foldStraySiblings(page){
+  // Some modules (m2, m6) have an "hr-voice" spotlight with its own TOC entry
+  // and data-jump id — it's a pageable unit in its own right, so alias it as
+  // an m-section rather than folding it away.
+  Array.from(page.querySelectorAll(':scope > aside.hr-voice')).forEach(el => {
+    el.classList.add('m-section');
+  });
+  // Others (m5, m7) have a "compliance-section" callout with no TOC entry of
+  // its own — that one is supplementary and belongs inside the section before it.
+  Array.from(page.querySelectorAll(':scope > div.compliance-section')).forEach(el => {
+    let prev = el.previousElementSibling;
+    while(prev && !prev.classList.contains('m-section')) prev = prev.previousElementSibling;
+    if(prev) prev.appendChild(el);
+  });
+}
+
+function buildLessonLayout(modId){
+  const page = pages[modId];
+  if(!page) return;
+  if(page.querySelector('.lesson-layout')) return;
+  foldStraySiblings(page);
+  const sections = Array.from(page.querySelectorAll('.m-section'));
+  if(sections.length === 0) return;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'lesson-layout';
+  const main = document.createElement('div');
+  main.className = 'lesson-main';
+  const rail = document.createElement('aside');
+  rail.className = 'lesson-rail';
+  const railHead = document.createElement('div');
+  railHead.className = 'lesson-rail-head';
+  railHead.textContent = 'In this module';
+  rail.appendChild(railHead);
+  const railList = document.createElement('div');
+  railList.className = 'lesson-rail-list';
+  rail.appendChild(railList);
+
+  sections[0].parentNode.insertBefore(wrap, sections[0]);
+  sections.forEach(sec => {
+    main.appendChild(sec);
+    const title = sec.querySelector('.m-section-title');
+    let label = sec.id;
+    if(title){
+      const tt = title.querySelector('.sec-title-text');
+      label = tt ? tt.textContent.trim() : title.textContent.trim().replace(/^\d{1,2}\.\s*/, '');
+    } else {
+      const h = sec.querySelector('h2, h3');
+      if(h) label = h.textContent.trim();
+    }
+    const item = document.createElement('div');
+    item.className = 'lesson-rail-item';
+    item.dataset.target = sec.id;
+    item.setAttribute('role','button');
+    item.setAttribute('tabindex','0');
+    const dot = document.createElement('span');
+    dot.className = 'lri-dot';
+    dot.setAttribute('aria-hidden','true');
+    const labelEl = document.createElement('span');
+    labelEl.className = 'lri-label';
+    labelEl.textContent = label;
+    item.appendChild(dot);
+    item.appendChild(labelEl);
+    const go = () => showSection(modId, sec.id);
+    item.addEventListener('click', go);
+    item.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+    railList.appendChild(item);
+  });
+  wrap.appendChild(main);
+  wrap.appendChild(rail);
+
+  const s = getState();
+  const e = s.progress[modId];
+  const visited = e && e.visited ? e.visited : [];
+  const resumeId = visited.length ? visited[visited.length - 1] : sections[0].id;
+  setCurrentSection(modId, resumeId);
+  renderSectionStatuses(modId);
+  refreshModuleProgress(modId);
 }
 
 function renderSidebarScores(){
@@ -8839,9 +8961,28 @@ function renderHomeCertificate(){
   host.innerHTML = certificateHTML(s.trainee.role, s.trainee.name, e.bestScore, e.certifiedAt || new Date().toISOString().slice(0,10));
 }
 
+function renderRoleTiles(){
+  const s = getState();
+  MODULE_IDS.forEach(m => {
+    const el = document.querySelector('.rt-status[data-rt-status="'+m+'"]');
+    if(!el) return;
+    const tile = el.closest('.role-tile');
+    const e = s.progress[m];
+    if(!e || !e.attempts){
+      el.textContent = 'Not started';
+      if(tile) tile.className = 'role-tile';
+      return;
+    }
+    const passed = e.bestScore >= passMarkFor(m);
+    el.textContent = passed ? 'Completed' : 'In progress';
+    if(tile) tile.className = 'role-tile ' + (passed ? 'passed' : 'try');
+  });
+}
+
 function renderAll(){
   renderTraineeSection();
   renderSidebarScores();
+  renderRoleTiles();
   MODULE_IDS.forEach(m => { renderModuleStatus(m); renderReadProgress(m); renderCertificate(m); });
   renderHomeCertificate();
   renderProfile();
@@ -8919,35 +9060,16 @@ function enhanceModuleVisuals(){
     const h = ss.querySelector('.sub-section-h');
     if(h && h.textContent.trim() === 'Key Points') ss.classList.add('key-points');
   });
-  // Make each section collapsible (every module except Mission, Impact & Values — m0)
-  document.querySelectorAll('.module-page').forEach(page => {
-    if(page.id === 'page-m0') return;
-    page.querySelectorAll('.m-section').forEach(sec => {
-      if(sec.dataset.collapsible) return;
-      const title = sec.querySelector('.m-section-title');
-      if(!title) return;
-      sec.classList.add('collapsible','collapsed');
-      const tri = document.createElement('span');
-      tri.className = 'sec-toggle';
-      tri.setAttribute('aria-hidden','true');
-      title.insertBefore(tri, title.firstChild);
-      const head = title.closest('.m-sec-head') || title;
-      head.setAttribute('role','button');
-      head.setAttribute('tabindex','0');
-      head.setAttribute('aria-expanded','false');
-      const toggle = () => {
-        const open = !sec.classList.toggle('collapsed');
-        head.setAttribute('aria-expanded', String(open));
-      };
-      head.addEventListener('click', toggle);
-      head.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
-      sec.dataset.collapsible = '1';
-    });
-  });
 }
+
+// Every module page that has sections (Foundation m0 through m8) gets the
+// single-section lesson view: one section visible at a time, chosen from the
+// card grid or the "In this module" rail.
+const SECTIONED_PAGE_IDS = ['m0'].concat(MODULE_IDS);
 
 renderAll();
 enhanceModuleVisuals();
+SECTIONED_PAGE_IDS.forEach(m => buildLessonLayout(m));
 </script>
 </body>
 </html>
