@@ -4,42 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SONGA Mobility — Training Portal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #075155;
-    --teal: #34ab6b;
-    --teal-mid: #075155;
-    --teal-light: #E8F8EF;
-    --green-2: #34ab6b;
-    --yellow: #ffd415;
-    --yellow-deep: #ffc700;
+    --teal: #1D9E75;
+    --teal-mid: #0F6E56;
+    --teal-light: #E1F5EE;
+    --green-2: #1D9E75;
+    --yellow: #EF9F27;
+    --yellow-deep: #D98A1F;
     --text: #1C2B3A;
     --text-muted: #5A6B7A;
     --text-light: #8A9BAA;
     --bg: #F7F9FC;
     --bg-card: #FFFFFF;
     --border: #E2E8EF;
-    --sidebar-w: 300px;
-    --font-ui: 'Roboto',-apple-system,'Segoe UI',sans-serif;
+    --sidebar-w: 280px;
+    --font-ui: -apple-system,'Segoe UI',sans-serif;
     --font-mono: 'Menlo',monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--font-ui);background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  body{font-family:Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   #app{display:flex;min-height:100vh}
   #sidebar{width:var(--sidebar-w);background:var(--navy);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;z-index:100;transition:transform 0.25s ease}
   body.sidebar-collapsed #sidebar{transform:translateX(-100%)}
   body.sidebar-collapsed #main{margin-left:0}
   #sidebar::-webkit-scrollbar{width:4px}
   #sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px}
-  .logo-panel{background:#fff;border-radius:6px;padding:5px 8px;display:inline-block;max-width:140px;box-shadow:0 1px 4px rgba(0,0,0,0.18);cursor:pointer;transition:transform 0.15s}
-  .logo-panel:hover{transform:translateY(-1px)}
-  .logo-panel svg{width:100%;height:auto;display:block}
+  .logo-img{width:240px;height:70px;overflow:hidden}
+  .logo-img img{width:100%;height:100%;object-fit:scale-down;object-position:center;cursor:pointer}
+  .logo-img a{display:block;width:100%;height:100%}
+  .sidebar-logo .brand a{color:inherit;text-decoration:none;cursor:pointer}
+  .sidebar-logo .brand a:hover{color:rgba(255,255,255,0.7)}
   .sidebar-logo{padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0}
-  .sidebar-logo .brand{font-family:var(--font-ui);font-size:10px;font-weight:700;color:var(--yellow);letter-spacing:0.18em;text-transform:uppercase;margin:14px 0 3px}
+  .sidebar-logo .brand{font-family:var(--font-ui);font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.18em;text-transform:uppercase;margin:14px 0 3px}
   .sidebar-logo h1{font-family:var(--font-ui);font-size:15px;font-weight:600;color:#fff;line-height:1.25;letter-spacing:0.01em}
   .sidebar-logo .version{font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px}
   #sidebar-search{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0}
@@ -49,30 +48,30 @@
   #sidebar-search input:focus{border-color:var(--teal)}
   .search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.32);font-size:13px;pointer-events:none}
   #nav{padding:8px 0 24px;flex:1}
-  .nav-section-label{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px}
-  .nav-group-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:transparent;border:none;cursor:pointer;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffc700;padding:16px 20px 6px;text-align:left;max-width:268px}
+  .nav-section-label{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D98A1F;padding:16px 20px 6px}
+  .nav-group-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:transparent;border:none;cursor:pointer;font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D98A1F;padding:16px 20px 6px;text-align:left;max-width:248px}
   .nav-group-toggle:hover{color:#fff}
   .nav-group-toggle .ngt-caret{font-size:11px;line-height:1;transition:transform 0.18s ease}
   .nav-group-toggle[aria-expanded="true"] .ngt-caret{transform:rotate(90deg)}
   .nav-group-items{display:none}
   .nav-group-items.open{display:block}
-  .nav-item{display:flex;align-items:center;gap:8px;padding:7px 20px;max-width:268px;border-radius:0 12px 12px 0;font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.12s;border-left:2px solid transparent;text-decoration:none;line-height:1.4}
+  .nav-item{display:flex;align-items:center;gap:8px;padding:7px 20px;max-width:248px;border-radius:0 12px 12px 0;font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.12s;border-left:2px solid transparent;text-decoration:none;line-height:1.4}
   .nav-item:hover{color:#fff;background:rgba(255,255,255,0.05)}
-  .nav-item.active{color:#fff;border-left-color:var(--yellow);background:rgba(52,171,107,0.12)}
+  .nav-item.active{color:#fff;border-left-color:var(--yellow);background:rgba(29,158,117,0.12)}
   .nav-item .num{font-size:10px;font-weight:600;color:rgba(255,255,255,0.32);min-width:18px;text-align:right;flex-shrink:0}
   .nav-item.active .num{color:var(--yellow)}
   .nav-item .label{flex:1;font-weight:700}
   .nav-item.assigned .label::after{content:" ★";color:var(--yellow);font-size:10px}
   .nav-score{font-family:var(--font-ui);font-size:10px;font-weight:700;padding:2px 6px;border-radius:10px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7)}
-  .nav-score.passed{background:rgba(52,171,107,0.2);color:var(--teal)}
-  .nav-score.try{background:rgba(255,212,21,0.18);color:var(--yellow)}
+  .nav-score.passed{background:rgba(29,158,117,0.2);color:var(--teal)}
+  .nav-score.try{background:rgba(239,159,39,0.18);color:var(--yellow)}
   #main{margin-left:var(--sidebar-w);flex:1;min-height:100vh;transition:margin-left 0.25s ease}
   #sidebar-toggle{background:transparent;border:1px solid var(--border);color:var(--navy);font-size:18px;cursor:pointer;padding:6px 11px;border-radius:7px;transition:all 0.12s;line-height:1;font-family:var(--font-ui);margin-right:4px;flex-shrink:0}
   #sidebar-toggle:hover{background:var(--teal-light);border-color:var(--teal);color:var(--teal-mid)}
   #topbar{background:var(--bg-card);border-bottom:1px solid var(--border);padding:0 48px;height:56px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(7,81,85,0.04)}
   #topbar-search{flex:1;max-width:480px;position:relative}
   #topbar-search input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--font-ui);font-size:14px;padding:8px 12px 8px 34px;outline:none;color:var(--text);transition:border-color 0.15s,box-shadow 0.15s}
-  #topbar-search input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,171,107,0.14)}
+  #topbar-search input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,158,117,0.14)}
   #topbar-search input::placeholder{color:var(--text-light)}
   .topbar-search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--text-light);font-size:14px;pointer-events:none}
   #search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 32px rgba(7,81,85,0.12);max-height:420px;overflow-y:auto;display:none;z-index:200}
@@ -101,9 +100,9 @@
   .module-status{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
   .ms-chip{font-family:var(--font-ui);font-size:12px;font-weight:600;padding:5px 12px 5px 10px;border-radius:20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);color:rgba(255,255,255,0.75);display:inline-flex;align-items:center;gap:7px}
   .ms-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.4);flex-shrink:0}
-  .ms-chip.passed{background:rgba(52,171,107,0.16);border-color:rgba(52,171,107,0.45);color:#B7EDD1}
-  .ms-chip.passed::before{background:#34ab6b}
-  .ms-chip.try{background:rgba(255,212,21,0.12);border-color:rgba(255,212,21,0.4);color:var(--yellow)}
+  .ms-chip.passed{background:rgba(29,158,117,0.16);border-color:rgba(29,158,117,0.45);color:#A9E8D2}
+  .ms-chip.passed::before{background:#1D9E75}
+  .ms-chip.try{background:rgba(239,159,39,0.12);border-color:rgba(239,159,39,0.4);color:var(--yellow)}
   .ms-chip.try::before{background:var(--yellow)}
   .ms-chip.read{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.8)}
   .ms-chip .ms-num{color:#fff;font-weight:700}
@@ -144,7 +143,7 @@
   .lesson-rail-item:hover{background:rgba(255,255,255,0.08)}
   .lesson-rail-item .lri-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);flex-shrink:0}
   .lesson-rail-item.visited{color:rgba(255,255,255,0.78)}
-  .lesson-rail-item.visited .lri-dot{background:#34ab6b}
+  .lesson-rail-item.visited .lri-dot{background:#1D9E75}
   .lesson-rail-item.active{color:#fff;font-weight:700;background:rgba(255,255,255,0.10)}
   .lesson-rail-item.active .lri-dot{background:var(--yellow)}
   .lesson-rail.collapsed{width:44px;padding:16px 9px;position:sticky}
@@ -186,7 +185,7 @@
   .mission-stack{margin:14px 0 12px}
   .mission-card{padding:4px 0 14px;font-family:var(--font-ui);border-bottom:1px solid var(--border)}
   .mission-card:last-child{border-bottom:none;padding-bottom:4px}
-  .mission-card h4{font-size:13px;font-weight:700;color:#ffc700;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.08em}
+  .mission-card h4{font-size:13px;font-weight:700;color:#D98A1F;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.08em}
   .mission-card p{font-size:15.5px;line-height:1.7;margin:0;color:var(--text)}
   .mission-card.purpose p{font-style:italic;font-size:16px;font-weight:400;color:var(--navy);line-height:1.6}
   code{font-family:var(--font-mono);font-size:13px;background:#F1EEE8;color:var(--teal-mid);padding:1px 5px;border-radius:4px}
@@ -197,7 +196,7 @@
   .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
   .setup-grid label{font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;display:block}
   .setup-grid input,.setup-grid select{display:block;width:100%;margin-top:5px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--font-ui);font-size:14px;padding:9px 12px;color:var(--text);outline:none;text-transform:none;letter-spacing:0;font-weight:400}
-  .setup-grid input:focus,.setup-grid select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,171,107,0.14)}
+  .setup-grid input:focus,.setup-grid select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,158,117,0.14)}
   .setup-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   .trainee-banner{background:linear-gradient(135deg,var(--teal-light),#fff);border:1px solid var(--teal);border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .trainee-banner .tb-info{flex:1;min-width:220px}
@@ -340,22 +339,22 @@
   .compliance-banner .cb-eyebrow{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
   .compliance-banner h3{font-family:var(--font-ui);font-size:21px;font-weight:600;color:var(--navy);margin:0 0 10px;line-height:1.3}
   .compliance-banner p{font-family:var(--font-ui);font-size:14.5px;line-height:1.65;color:rgba(7,81,85,0.85);margin:0;max-width:680px}
-  .compliance-section{border:2px solid #ffd415;border-radius:12px;margin:20px 0;overflow:hidden}
-  .compliance-section-head{background:linear-gradient(90deg,#ffd415,#ffc700);padding:10px 18px;display:flex;align-items:center;gap:10px}
+  .compliance-section{border:2px solid #EF9F27;border-radius:12px;margin:20px 0;overflow:hidden}
+  .compliance-section-head{background:linear-gradient(90deg,#EF9F27,#D98A1F);padding:10px 18px;display:flex;align-items:center;gap:10px}
   .compliance-section-head .cs-icon{font-size:16px}
   .compliance-section-head .cs-label{font-family:var(--font-ui);font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy)}
-  .compliance-section-body{padding:16px 20px 18px;background:rgba(255,212,21,0.08)}
+  .compliance-section-body{padding:16px 20px 18px;background:rgba(239,159,39,0.08)}
   .compliance-section-body p{font-family:var(--font-ui);font-size:15px;line-height:1.65;color:var(--text);margin-bottom:10px}
   .compliance-section-body p:last-child{margin-bottom:0}
   .compliance-section-body ul{list-style:none;padding:0;margin:8px 0 0}
   .compliance-section-body ul li{font-family:var(--font-ui);font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:7px}
-  .compliance-section-body ul li::before{content:"";position:absolute;left:0;top:0.6em;width:8px;height:8px;border-radius:50%;background:#ffc700}
+  .compliance-section-body ul li::before{content:"";position:absolute;left:0;top:0.6em;width:8px;height:8px;border-radius:50%;background:#D98A1F}
   .compliance-must-box{background:linear-gradient(135deg,#fff8e1,#fff3e0);border:2px solid #ff9800;border-radius:10px;padding:14px 18px;margin:14px 0;font-family:var(--font-ui)}
   .compliance-must-box .cmb-label{font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#e65100;margin-bottom:6px}
   .compliance-must-box p{font-size:14.5px;line-height:1.6;color:var(--text);margin:0}
   .compliance-must-box ul{list-style:none;padding:0;margin:6px 0 0}
   .compliance-must-box ul li{font-size:14.5px;line-height:1.6;color:var(--text);padding-left:22px;position:relative;margin-bottom:6px}
-  .compliance-must-box ul li::before{content:"";position:absolute;left:0;top:0.55em;width:8px;height:8px;border-radius:50%;background:#ffc700}
+  .compliance-must-box ul li::before{content:"";position:absolute;left:0;top:0.55em;width:8px;height:8px;border-radius:50%;background:#D98A1F}
   /* === Escalation / data table === */
   .esc-table-wrap{overflow-x:auto;margin:8px 0 4px}
   table.esc-table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:14px;min-width:640px}
@@ -434,7 +433,7 @@
   .profile-card h3{font-family:var(--font-ui);font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px}
   .profile-form label{display:block;font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px}
   .profile-form input,.profile-form select{display:block;width:100%;margin-top:5px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--font-ui);font-size:14px;padding:10px 12px;color:var(--text);outline:none;text-transform:none;letter-spacing:0;font-weight:400}
-  .profile-form input:focus,.profile-form select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(52,171,107,0.14)}
+  .profile-form input:focus,.profile-form select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,158,117,0.14)}
   .profile-actions{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
   .profile-stat-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-family:var(--font-ui);font-size:14px;color:var(--text);gap:12px}
   .profile-stat-row:last-child{border-bottom:none}
@@ -452,7 +451,21 @@
     .cert-actions { display:none; }
   }
 
-  @media(max-width:900px){:root{--sidebar-w:240px}#content{padding:32px 24px 64px}#topbar{padding:0 24px}.module-hero h1{font-size:26px}.setup-grid{grid-template-columns:1fr}}
+  @media(max-width:900px) and (min-width:821px){:root{--sidebar-w:240px}#content{padding:32px 24px 64px}#topbar{padding:0 24px}.module-hero h1{font-size:26px}.setup-grid{grid-template-columns:1fr}}
+
+  /* Responsive shell: off-canvas sidebar drawer on phones/tablets (matches the documentation site) */
+  #sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(7,81,85,0.45);z-index:90}
+  @media(max-width:820px){
+    #sidebar{transform:translateX(-100%);box-shadow:none}
+    body.menu-open #sidebar{transform:none;box-shadow:0 0 40px rgba(0,0,0,0.35)}
+    body.menu-open #sidebar-backdrop{display:block}
+    body.menu-open{overflow:hidden}
+    #main{margin-left:0}
+    #topbar{padding:0 16px}
+    #content{padding:24px 16px 64px}
+    .module-hero{padding:26px 22px 28px;border-radius:12px}
+    .module-hero h1{font-size:24px}
+  }
 
   /* === Crucial-to-remember badge beside section heading === */
   .m-sec-head{display:flex;align-items:center;gap:14px;position:relative;margin-bottom:24px;padding-bottom:15px}
@@ -477,11 +490,12 @@
 </head>
 <body>
 <div id="app">
+<div id="sidebar-backdrop" onclick="toggleMenu(false)"></div>
 <nav id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-panel" onclick="showPage('home',null)" role="img" aria-label="SONGA Mobility"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1734.9 1000.32"><defs><linearGradient id="songaGrad" x1="-2995.32" y1="3348.91" x2="-2979.83" y2="3348.91" gradientTransform="translate(83564.46 93719.12) scale(27.81 -27.81)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fec800"/><stop offset="1" stop-color="#ffd415"/></linearGradient><linearGradient id="songaGrad2" x1="-3004.11" y1="3355.07" x2="-2988.62" y2="3355.07" gradientTransform="translate(83433.25 93588.42) scale(27.77 -27.77)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fec800"/><stop offset="1" stop-color="#ffd415"/></linearGradient><clipPath id="songaClip1"><path d="M271.37,502.32c27.21,27.37,54.38,54.74,81.8,82.28,59.35-59.24,118.99-118.77,179.07-178.73,90.08,98.35,25.01,168.49-6.35,199.99-73.51,73.82-147.14,147.5-220.76,221.17-11.52,11.52-23.43,22.68-34.83,33.75,28.45,28.34,55.73,55.56,83.41,83.11,1.47-1.33,3.44-3.14,5.33-5.03,70.29-70.4,140.67-140.62,210.73-211.22,27.06-27.24,55.17-53.78,79.71-83.21,67.38-80.93,68.74-197.17,4.01-279.06-16.87-21.31-36.66-40.36-55.56-60.02-21.28-22.15-43.09-43.8-63.61-64.62-88.43,87.98-175.88,175.01-262.92,261.59"/></clipPath><clipPath id="songaClip2"><path d="M346.78,66.23c-79.18,79.3-158.54,158.48-237.49,237.99-20.07,20.18-40.6,40.29-58.02,62.7-62.84,80.87-62.13,195.04,2.35,274.25,22.94,28.16,49.8,53.14,75.14,79.33,14.42,14.93,29.35,29.4,45.38,45.38,27.54-27.62,54.8-54.94,82.31-82.57-2.73-2.94-4.34-4.76-6.04-6.49-21.56-21.62-43.09-43.21-64.63-64.79-14.62-14.62-29.43-33.91-42.59-50.11-43.55-53.7-8.69-116.85,35.11-160.88,83.07-83.47,166.32-166.78,249.49-250.14,2.54-2.54,4.99-5.19,7.05-7.28-27.85-27.83-55-54.95-83.45-83.42-1.58,2.12-2.87,4.27-4.6,6.04"/></clipPath></defs><g fill="#005155"><path d="M910.22,480.55c22.81,0,34.22,12.26,34.22,36.77v63.89h-12.74v-63.53c0-9.09-1.68-15.77-5.01-20.02-3.34-4.25-9.07-6.37-17.2-6.37-9.6,0-18.57,3.09-26.94,9.28v80.63h-12.74v-80.45c-6.55-6.31-14.01-9.46-22.38-9.46-9.71,0-18.69,3.16-26.94,9.46v80.45h-12.74v-86.1c7.15-5.34,13.71-9.09,19.66-11.28,5.94-2.18,12.8-3.27,20.57-3.27,11.17,0,20.63,3.34,28.4,10.01,10.3-6.67,21.59-10.01,33.85-10.01"/><path d="M987.85,502.12c-6.25,7.1-9.37,16.9-9.37,29.4s3.12,22.3,9.37,29.4c6.25,7.1,14.59,10.65,25.03,10.65s18.75-3.55,24.93-10.65c6.19-7.1,9.28-16.9,9.28-29.4s-3.09-22.3-9.28-29.4-14.5-10.65-24.93-10.65-18.78,3.55-25.03,10.65M1012.88,480.55c13.95,0,25.33,4.71,34.13,14.11,8.8,9.41,13.2,21.69,13.2,36.86s-4.44,27.49-13.29,36.95c-8.86,9.47-20.21,14.2-34.04,14.2s-25.52-4.73-34.31-14.2c-8.8-9.46-13.2-21.78-13.2-36.95s4.39-27.45,13.2-36.86c8.79-9.4,20.23-14.11,34.31-14.11"/><path d="M1123.91,491.47c-11.65,0-21.36,3.82-29.13,11.47v58.61c7.88,7.52,16.93,11.28,27.12,11.28s18.56-3.64,25.11-10.92c6.56-7.28,9.82-18.2,9.82-32.76,0-12.13-2.76-21.45-8.27-27.94-5.52-6.49-13.75-9.73-24.66-9.73M1125.36,480.55c14.07,0,25.03,4.49,32.85,13.47,7.83,8.98,11.74,20.69,11.74,35.13,0,16.87-4.37,30-13.11,39.4-8.73,9.41-20.32,14.11-34.77,14.11s-28.15-5.28-40.04-15.83v-126.68h12.74v50.05c8.98-6.42,19.17-9.64,30.58-9.64"/></g><rect fill="#005155" x="1195.44" y="485.46" width="12.74" height="95.74"/><g fill="#005155"><path d="M1259.14,440.14v116.49c0,5.7.94,9.74,2.82,12.11,1.88,2.36,5.01,3.55,9.37,3.55s8.49-1.15,12.01-3.46v10.37c-3.64,2.3-8.25,3.46-13.84,3.46-15.41,0-23.12-8.73-23.12-26.21v-116.31h12.74Z"/><path d="M1317.39,581.21h-12.74v-95.74h12.74v95.74ZM1318.48,444.06c2.07,2.13,3.09,4.7,3.09,7.73s-1.03,5.62-3.09,7.74c-2.07,2.13-4.55,3.18-7.46,3.18s-5.56-1.03-7.56-3.09c-2-2.07-3-4.67-3-7.83s.99-5.6,3-7.73c2-2.12,4.53-3.18,7.56-3.18s5.4,1.06,7.46,3.18"/><path d="M1410.58,485.47v9.64h-36.59v54.79c0,14.93,6.01,22.39,18.02,22.39,5.94,0,11.03-1.39,15.29-4.19v10.37c-4.37,2.79-10.5,4.19-18.38,4.19-8.5,0-15.23-2.73-20.21-8.19-4.98-5.46-7.46-13.65-7.46-24.57v-54.79h-19.29v-9.64h19.29v-32.76l12.74-3.09v35.86h36.59Z"/><path d="M1447.17,609.97l16.08-30.84-20.09-33.78c-6.19-10.32-10.59-19.51-13.2-27.58-2.61-8.07-3.91-17.99-3.91-29.76v-4.55h12.74v4.19c0,9.83,1.1,18.54,3.28,26.12,2.18,7.58,5.58,15.37,10.2,23.38l17.21,30.02,1.39-2.66c1.23-2.36,3.56-6.83,6.98-13.38,3.42-6.55,6.01-11.55,7.81-14.98,1.79-3.44,3.87-8.07,6.22-13.9,2.36-5.83,4.02-11.56,4.98-17.21.97-5.65,1.45-11.44,1.45-17.4v-4.19h12.74v4.56c0,6.69-.56,13.11-1.69,19.24-1.13,6.15-2.96,12.26-5.45,18.34-2.5,6.08-4.8,11.08-6.9,14.99-2.1,3.91-4.92,9.16-8.47,15.76-3.55,6.59-6.09,11.33-7.65,14.22l-21.35,39.7-12.38-.3Z"/><path d="M861.23,359.29l-18.47-3.9c-5.83-1.22-10.82-2.96-14.82-5.16-4.29-2.34-4.78-5.12-4.78-7.01,0-5.27,1.85-9.25,5.65-12.16,4.03-3.07,10.11-4.63,18.07-4.63,9.86,0,19.07,2.62,27.37,7.79l4.94,3.08v-18.76l-1.47-.95c-8.59-5.59-19.11-8.42-31.23-8.42-13.1,0-23.61,3.48-31.25,10.36-7.74,6.97-11.67,15-11.67,23.88,0,7.72,2.52,13.96,7.5,18.56,4.7,4.35,10.48,7.33,17.18,8.85,6.19,1.4,12.47,2.64,18.68,3.68,5.78.97,10.72,2.54,14.69,4.67,4.26,2.29,4.75,5.1,4.75,7,0,5.99-2.15,10.73-6.56,14.48-4.51,3.84-11.65,5.78-21.21,5.78-10.44,0-21.4-4.01-32.61-11.92l-5.1-3.61v20.53l1.47.96c11.51,7.5,23.65,11.31,36.05,11.31,14.74,0,26.45-3.71,34.78-11.01,8.47-7.42,12.76-16.34,12.76-26.51,0-7.59-2.52-13.74-7.51-18.29-4.72-4.29-10.51-7.18-17.2-8.6"/><path d="M971.36,395.32c-5.95,6.83-13.79,10.16-23.94,10.16s-18.03-3.33-24.06-10.17c-6.05-6.87-9.11-16.62-9.11-28.97s3.06-22.1,9.11-28.97c6.03-6.84,13.9-10.17,24.06-10.17s17.99,3.32,23.95,10.16c5.99,6.86,9.03,16.62,9.03,28.98s-3.04,22.11-9.03,28.98M985.9,325.12c-9.91-10.58-22.85-15.95-38.48-15.95s-28.76,5.37-38.67,15.95c-9.85,10.52-14.84,24.39-14.84,41.22s4.99,30.72,14.83,41.3c9.91,10.66,22.92,16.06,38.68,16.06s28.41-5.4,38.38-16.05c9.91-10.59,14.94-24.49,14.94-41.31s-5-30.69-14.84-41.22"/><path d="M1056.84,309.17c-17.9,0-28.4,5.4-42.65,16.05l-1.3.97v95.97h19.96v-86.45c8.91-5.96,13.48-8.7,23.41-8.7,8.22,0,14.59,2.1,18.95,6.24,4.37,4.16,6.5,10.19,6.5,18.46v70.46h19.96v-70.84c0-12.8-4.03-23.15-11.98-30.75-7.91-7.56-18.96-11.4-32.86-11.4"/><path d="M1195.65,384.93c-3.96,5.34-8.14,9-12.43,10.9-4.62,2.05-10.25,3.09-16.69,3.09-7.74,0-14.24-2.94-19.88-8.99-5.63-6.02-8.47-14.74-8.47-25.91,0-11.89,3.18-21.1,9.44-27.37,6.37-6.36,14.69-9.45,25.46-9.45,9.11,0,16.51,2.39,22.57,7.31v50.42ZM1214.74,325.6c-10.23-10.9-24.24-16.43-41.66-16.43s-30.63,5.16-40.47,15.33c-9.8,10.15-14.78,23.45-14.78,39.52,0,17.02,4.78,30.25,14.19,39.31,9.37,9.04,20.79,13.62,33.93,13.62,6.93,0,13.67-1.27,20.05-3.79,3.68-1.45,6.97-3.25,9.84-5.42-1.47,19.57-11.38,34.45-30.86,34.45-8.32,0-16.85-2.09-25.36-6.22l-4.65-2.26v18.86l1.71.92c7.89,4.21,17.48,6.36,28.49,6.36,16.02,0,28.58-4.83,37.34-14.34,8.68-9.44,13.09-27.81,13.09-43.35v-75.63l-.88-.93Z"/><path d="M1303.12,401.51c-2.57,1.2-5.76,2.26-9.48,3.19-4.6,1.15-8.61,1.74-11.93,1.74-21.61,0-24.11-10.14-24.11-17.76,0-6.01,3.55-10.59,10.85-14.02,5.52-2.59,13.37-3.89,23.42-3.89,3.48,0,7.24.16,11.25.47v30.27ZM1321.41,333.56c-1.11-3.85-3.01-7.72-5.64-11.53-2.78-4.03-6.95-7.23-12.39-9.53-5.26-2.21-11.65-3.34-18.98-3.34-14.86,0-27.41,3.5-37.29,10.41l-1.38.97v18.69l4.95-3.09c10.34-6.45,21.69-9.71,33.72-9.71,7.16,0,12.08,1.6,14.63,4.76,2.72,3.38,4.1,8.27,4.1,14.53v8.67c-20.53-1.22-36.39,1.13-47.14,6.98-11.92,6.49-17.97,16.13-17.97,28.65,0,9.13,3.73,17.13,11.1,23.78,7.25,6.56,18.29,9.89,32.79,9.89,7.22,0,14.58-1.15,21.86-3.42,7.23-2.25,13.24-4.9,17.84-7.88l1.48-.95v-65.71c0-4.25-.56-8.34-1.68-12.17"/></g><g fill="#005155"><path d="M857.37,643.83c4.46,0,8.07,1.31,10.82,3.93,2.76,2.62,4.14,6.08,4.14,10.39v22.18h-5.63v-20.32c0-3.4-.91-6.05-2.72-7.95-1.81-1.9-4.36-2.85-7.63-2.85-3.1,0-5.7,1-7.8,3-2.1,2-3.15,4.65-3.15,7.95v20.17h-5.63v-20.32c0-3.4-.9-6.05-2.7-7.95-1.8-1.9-4.34-2.85-7.61-2.85-3.1,0-5.7,1-7.8,3-2.1,2-3.15,4.65-3.15,7.95v20.17h-5.67v-35.78h5.59v5.1c1.36-2.01,3.11-3.49,5.25-4.42,2.14-.93,4.41-1.4,6.8-1.4,3.1,0,5.82.66,8.16,1.98,2.34,1.32,4.09,3.17,5.25,5.53,1.33-2.59,3.22-4.5,5.65-5.7s5.04-1.81,7.84-1.81Z"/><path d="M901.23,643.83c5.39,0,9.88,1.78,13.47,5.33s5.38,7.97,5.38,13.26-1.79,9.75-5.38,13.3c-3.59,3.55-8.08,5.33-13.47,5.33s-9.87-1.78-13.45-5.33c-3.58-3.55-5.36-7.98-5.36-13.3s1.8-9.71,5.38-13.26,8.07-5.33,13.43-5.33ZM910.56,652.9c-2.49-2.52-5.6-3.78-9.33-3.78s-6.84,1.26-9.33,3.78c-2.49,2.52-3.74,5.69-3.74,9.52s1.25,7.04,3.74,9.56c2.49,2.52,5.6,3.78,9.33,3.78s6.84-1.26,9.33-3.78c2.49-2.52,3.74-5.7,3.74-9.56s-1.25-7-3.74-9.52Z"/><path d="M961.75,644.55l-15.22,35.85h-6.61l-15.26-35.85h6.12l12.5,30.11,12.5-30.11h5.97Z"/><path d="M972.33,627.85c1.11,0,2.05.38,2.83,1.15.78.77,1.17,1.72,1.17,2.85s-.38,2.08-1.15,2.83-1.72,1.13-2.85,1.13-2.08-.38-2.83-1.13-1.13-1.7-1.13-2.83.38-2.08,1.13-2.85c.76-.77,1.7-1.15,2.83-1.15ZM975.16,644.55v35.78h-5.67v-35.78h5.67Z"/><path d="M1006.03,643.83c4.43,0,8.03,1.31,10.79,3.93,2.76,2.62,4.14,6.08,4.14,10.39v22.18h-5.63v-20.32c0-3.4-.9-6.05-2.7-7.95-1.8-1.9-4.34-2.85-7.61-2.85-3.1,0-5.7,1-7.8,3-2.1,2-3.15,4.65-3.15,7.95v20.17h-5.67v-35.78h5.59v5.1c1.36-2.01,3.11-3.49,5.25-4.42,2.14-.93,4.41-1.4,6.8-1.4Z"/><path d="M1048.75,643.83c5.54,0,9.8,2.03,12.77,6.08v-5.36h5.67v33.32c0,5.72-1.74,10.17-5.21,13.35-3.48,3.19-8.05,4.78-13.71,4.78-2.87,0-5.65-.42-8.33-1.27-2.68-.84-4.93-2.02-6.74-3.53l2.49-4.53c3.7,2.8,7.9,4.19,12.58,4.19,3.98,0,7.18-1.11,9.62-3.32,2.43-2.22,3.65-5.36,3.65-9.44v-3.66c-2.95,4.06-7.2,6.08-12.77,6.08-5.06,0-9.28-1.72-12.66-5.16s-5.06-7.84-5.06-13.2,1.69-9.76,5.06-13.18c3.37-3.43,7.59-5.14,12.66-5.14ZM1049.4,649.12c-3.73,0-6.76,1.25-9.1,3.76-2.34,2.51-3.51,5.6-3.51,9.27s1.17,6.81,3.51,9.31c2.34,2.51,5.38,3.76,9.1,3.76s6.67-1.24,9.05-3.72c2.38-2.48,3.57-5.6,3.57-9.35s-1.19-6.8-3.57-9.29-5.4-3.74-9.05-3.74Z"/><path d="M1123.52,644.55v5.1h-14.24v30.68h-5.67v-30.68h-8.16v-5.1h8.16v-6.12c0-4.06.97-7.27,2.91-9.65,1.94-2.38,4.94-3.57,8.99-3.57,3.6,0,6.86.89,9.78,2.68l-2.04,4.72c-2.39-1.41-4.85-2.12-7.37-2.12-4.41,0-6.61,2.64-6.61,7.93v6.12h14.24Z"/><path d="M1147.24,643.83c5.39,0,9.88,1.78,13.47,5.33s5.38,7.97,5.38,13.26-1.79,9.75-5.38,13.3c-3.59,3.55-8.08,5.33-13.47,5.33s-9.87-1.78-13.45-5.33c-3.58-3.55-5.36-7.98-5.36-13.3s1.8-9.71,5.38-13.26,8.07-5.33,13.43-5.33ZM1156.57,652.9c-2.49-2.52-5.6-3.78-9.33-3.78s-6.84,1.26-9.33,3.78c-2.49,2.52-3.74,5.69-3.74,9.52s1.25,7.04,3.74,9.56c2.49,2.52,5.6,3.78,9.33,3.78s6.84-1.26,9.33-3.78c2.49-2.52,3.74-5.7,3.74-9.56s-1.25-7-3.74-9.52Z"/><path d="M1192.8,643.83c2.62,0,4.81.4,6.57,1.21l-1.36,5.55c-1.76-.96-3.83-1.44-6.2-1.44-2.82,0-5.13,1.02-6.91,3.06-1.79,2.04-2.68,4.74-2.68,8.08v20.02h-5.63v-35.78h5.59v5.02c1.23-1.84,2.76-3.25,4.59-4.25s3.84-1.49,6.03-1.49Z"/><path d="M1237.72,644.55l10.73,29.92,10.77-29.92h5.86l-13.22,35.78h-6.69l-10.69-29.73-10.65,29.73h-6.57l-13.22-35.78h6.01l10.69,29.88,10.65-29.88h6.35Z"/><path d="M1307.16,644.55v35.78h-5.63v-5.33c-3.12,4.03-7.48,6.04-13.07,6.04-5.06,0-9.31-1.77-12.73-5.31-3.43-3.54-5.14-7.98-5.14-13.32s1.71-9.77,5.14-13.3c3.43-3.53,7.67-5.29,12.73-5.29,5.57,0,9.92,2.02,13.07,6.04v-5.33h5.63ZM1289.14,649.12c-3.78,0-6.86,1.28-9.24,3.83-2.38,2.56-3.57,5.71-3.57,9.46s1.2,6.91,3.59,9.48c2.39,2.57,5.46,3.85,9.22,3.85s6.75-1.27,9.14-3.8c2.39-2.53,3.59-5.71,3.59-9.54s-1.2-6.97-3.59-9.5c-2.39-2.53-5.44-3.8-9.14-3.8Z"/><path d="M1336.59,643.83c2.62,0,4.81.4,6.57,1.21l-1.36,5.55c-1.76-.96-3.83-1.44-6.2-1.44-2.82,0-5.13,1.02-6.91,3.06-1.79,2.04-2.68,4.74-2.68,8.08v20.02h-5.63v-35.78h5.59v5.02c1.23-1.84,2.76-3.25,4.59-4.25s3.84-1.49,6.03-1.49Z"/><path d="M1365.37,643.83c5.57,0,9.92,2.02,13.07,6.04v-23.95h5.63v54.4h-5.63v-5.33c-3.12,4.03-7.48,6.04-13.07,6.04-5.06,0-9.31-1.77-12.73-5.31-3.43-3.54-5.14-7.98-5.14-13.32s1.71-9.77,5.14-13.3c3.43-3.53,7.67-5.29,12.73-5.29ZM1366.05,649.12c-3.78,0-6.86,1.28-9.24,3.83-2.38,2.56-3.57,5.71-3.57,9.46s1.2,6.91,3.59,9.48c2.39,2.57,5.46,3.85,9.22,3.85s6.75-1.27,9.14-3.8c2.39-2.53,3.59-5.71,3.59-9.54s-1.2-6.97-3.59-9.5c-2.39-2.53-5.44-3.8-9.14-3.8Z"/><path d="M1441.23,644.55v5.1h-15.45v18.06c0,2.7.64,4.71,1.93,6.04,1.28,1.34,3.01,2,5.18,2,2.69,0,5.2-.84,7.52-2.53l2.64,4.27c-3.12,2.37-6.66,3.55-10.62,3.55s-6.96-1.1-9.09-3.31c-2.13-2.2-3.19-5.51-3.19-9.92v-18.17h-7.82v-5.1h7.82v-11.37h5.63v11.37h15.45Z"/><path d="M1467.18,643.83c5.39,0,9.88,1.78,13.47,5.33s5.38,7.97,5.38,13.26-1.79,9.75-5.38,13.3c-3.59,3.55-8.08,5.33-13.47,5.33s-9.87-1.78-13.45-5.33c-3.58-3.55-5.36-7.98-5.36-13.3s1.8-9.71,5.38-13.26,8.07-5.33,13.43-5.33ZM1476.51,652.9c-2.49-2.52-5.6-3.78-9.33-3.78s-6.84,1.26-9.33,3.78c-2.49,2.52-3.74,5.69-3.74,9.52s1.25,7.04,3.74,9.56c2.49,2.52,5.6,3.78,9.33,3.78s6.84-1.26,9.33-3.78c2.49-2.52,3.74-5.7,3.74-9.56s-1.25-7-3.74-9.52Z"/><path d="M1511.53,643.83c5.54,0,9.8,2.03,12.77,6.08v-5.36h5.67v33.32c0,5.72-1.74,10.17-5.21,13.35-3.48,3.19-8.05,4.78-13.71,4.78-2.87,0-5.65-.42-8.33-1.27-2.68-.84-4.93-2.02-6.74-3.53l2.49-4.53c3.7,2.8,7.9,4.19,12.58,4.19,3.98,0,7.18-1.11,9.62-3.32,2.43-2.22,3.65-5.36,3.65-9.44v-3.66c-2.95,4.06-7.2,6.08-12.77,6.08-5.06,0-9.28-1.72-12.66-5.16s-5.06-7.84-5.06-13.2,1.69-9.76,5.06-13.18c3.37-3.43,7.59-5.14,12.66-5.14ZM1512.18,649.12c-3.73,0-6.76,1.25-9.1,3.76-2.34,2.51-3.51,5.6-3.51,9.27s1.17,6.81,3.51,9.31c2.34,2.51,5.38,3.76,9.1,3.76s6.67-1.24,9.05-3.72c2.38-2.48,3.57-5.6,3.57-9.35s-1.19-6.8-3.57-9.29-5.4-3.74-9.05-3.74Z"/><path d="M1558.23,643.83c4.86,0,8.87,1.73,12.03,5.18,3.16,3.45,4.75,7.88,4.78,13.3,0,.78-.04,1.49-.11,2.12h-28.67c.38,3.73,1.74,6.61,4.08,8.63,2.34,2.03,5.2,3.04,8.58,3.04,4.28,0,8.06-1.5,11.33-4.5l3.02,3.85c-3.9,3.73-8.8,5.59-14.7,5.59-5.31,0-9.66-1.72-13.03-5.16-3.37-3.44-5.06-7.91-5.06-13.43s1.68-9.9,5.03-13.39c3.35-3.49,7.59-5.23,12.73-5.23ZM1558.12,648.86c-3.23,0-5.88,1.01-7.97,3.02s-3.36,4.67-3.82,7.97h22.97c-.35-3.35-1.54-6.02-3.57-8.01-2.03-1.99-4.57-2.98-7.61-2.98Z"/><path d="M1609.53,644.55v5.1h-15.45v18.06c0,2.7.64,4.71,1.93,6.04,1.28,1.34,3.01,2,5.18,2,2.69,0,5.2-.84,7.52-2.53l2.64,4.27c-3.12,2.37-6.66,3.55-10.62,3.55s-6.96-1.1-9.09-3.31c-2.13-2.2-3.19-5.51-3.19-9.92v-18.17h-7.82v-5.1h7.82v-11.37h5.63v11.37h15.45Z"/><path d="M1625.13,625.92v23.61c1.39-1.96,3.14-3.41,5.25-4.33,2.12-.92,4.36-1.38,6.73-1.38,4.43,0,8.03,1.31,10.79,3.93,2.76,2.62,4.14,6.08,4.14,10.39v22.18h-5.63v-20.32c0-3.4-.9-6.05-2.7-7.95-1.8-1.9-4.34-2.85-7.61-2.85-3.1,0-5.7,1-7.8,3-2.1,2-3.15,4.65-3.15,7.95v20.17h-5.67v-54.4h5.67Z"/><path d="M1679.87,643.83c4.86,0,8.87,1.73,12.03,5.18,3.16,3.45,4.75,7.88,4.78,13.3,0,.78-.04,1.49-.11,2.12h-28.67c.38,3.73,1.74,6.61,4.08,8.63,2.34,2.03,5.2,3.04,8.58,3.04,4.28,0,8.06-1.5,11.33-4.5l3.02,3.85c-3.9,3.73-8.8,5.59-14.7,5.59-5.31,0-9.66-1.72-13.03-5.16-3.37-3.44-5.06-7.91-5.06-13.43s1.68-9.9,5.03-13.39c3.35-3.49,7.59-5.23,12.73-5.23ZM1679.76,648.86c-3.23,0-5.88,1.01-7.97,3.02s-3.36,4.67-3.82,7.97h22.97c-.35-3.35-1.54-6.02-3.57-8.01-2.03-1.99-4.57-2.98-7.61-2.98Z"/><path d="M1723.39,643.83c2.62,0,4.81.4,6.57,1.21l-1.36,5.55c-1.76-.96-3.83-1.44-6.2-1.44-2.82,0-5.13,1.02-6.91,3.06-1.79,2.04-2.68,4.74-2.68,8.08v20.02h-5.63v-35.78h5.59v5.02c1.23-1.84,2.76-3.25,4.59-4.25s3.84-1.49,6.03-1.49Z"/></g><g clip-path="url(#songaClip1)"><rect fill="url(#songaGrad)" x="270.28" y="240.73" width="447.91" height="703.16"/></g><g clip-path="url(#songaClip2)"><rect fill="url(#songaGrad2)" x="-11.57" y="60.19" width="446.4" height="705.69"/></g></svg></div>
-    <div class="brand">Training</div>
-    <h1>SONGA Training Portal</h1>
+    <div class="logo-img"><a href="javascript:void(0)" onclick="showPage('home',null)" aria-label="Songa Mobility — Home"><img src="img/Songa_logo_white_web.png" alt="Songa Mobility"></a></div>
+    <div class="brand"><a href="javascript:void(0)" onclick="showPage('home',null)">Songa Mobility</a></div>
+    <h1>Training Portal</h1>
     <div class="version">Role Modules · v1.0</div>
   </div>
   <div id="sidebar-search">
@@ -513,7 +527,7 @@
 </nav>
 <div id="main">
   <div id="topbar">
-    <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar" title="Hide / show sidebar">☰</button>
+    <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation menu" aria-controls="sidebar" aria-expanded="false" title="Toggle navigation menu">☰</button>
     <div id="topbar-search">
       <span class="topbar-search-icon">⌕</span>
       <input type="text" id="searchInput" placeholder="Search training… (Ctrl+K)" autocomplete="off"/>
@@ -8498,8 +8512,18 @@ MODULE_IDS.forEach(m => pages[m] = document.getElementById('page-'+m));
 pages['profile'] = document.getElementById('page-profile');
 
 function toggleSidebar(){
-  document.body.classList.toggle('sidebar-collapsed');
+  if (window.innerWidth <= 820) { toggleMenu(); }
+  else { document.body.classList.toggle('sidebar-collapsed'); }
 }
+
+function toggleMenu(force){
+  const open = typeof force === 'boolean' ? force : !document.body.classList.contains('menu-open');
+  document.body.classList.toggle('menu-open', open);
+  const b = document.getElementById('sidebar-toggle');
+  if (b) b.setAttribute('aria-expanded', String(open));
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+window.addEventListener('resize', () => { if (window.innerWidth > 820) toggleMenu(false); });
 
 function getState(){
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {trainee:null, progress:{}}; }
@@ -8533,6 +8557,7 @@ function showPage(id, el){
   if(id === 'profile') renderProfile();
   window.scrollTo(0,0);
   if(pages[id] && pages[id].querySelector('.lesson-layout')) refreshModuleProgress(id);
+  toggleMenu(false);
 }
 
 document.addEventListener('click', function(e){
